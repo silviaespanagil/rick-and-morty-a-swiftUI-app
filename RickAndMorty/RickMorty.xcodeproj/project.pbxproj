@@ -9,16 +9,16 @@
 /* Begin PBXBuildFile section */
 		A7CE2B5C27340B65001B5491 /* RickMortyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE2B5B27340B65001B5491 /* RickMortyApp.swift */; };
 		A7CE2B5E27340B65001B5491 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE2B5D27340B65001B5491 /* ContentView.swift */; };
-		A7CE2B6027340B67001B5491 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7CE2B5F27340B67001B5491 /* Assets.xcassets */; };
 		A7CE2B6327340B67001B5491 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7CE2B6227340B67001B5491 /* Preview Assets.xcassets */; };
+		A7CE2B6A27340E3A001B5491 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7CE2B6927340E3A001B5491 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A7CE2B5827340B65001B5491 /* RickMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7CE2B5B27340B65001B5491 /* RickMortyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickMortyApp.swift; sourceTree = "<group>"; };
 		A7CE2B5D27340B65001B5491 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		A7CE2B5F27340B67001B5491 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A7CE2B6227340B67001B5491 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A7CE2B6927340E3A001B5491 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../Downloads/AppIcons/Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +53,7 @@
 			children = (
 				A7CE2B5B27340B65001B5491 /* RickMortyApp.swift */,
 				A7CE2B5D27340B65001B5491 /* ContentView.swift */,
-				A7CE2B5F27340B67001B5491 /* Assets.xcassets */,
+				A7CE2B6927340E3A001B5491 /* Assets.xcassets */,
 				A7CE2B6127340B67001B5491 /* Preview Content */,
 			);
 			path = RickMorty;
@@ -126,7 +126,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7CE2B6327340B67001B5491 /* Preview Assets.xcassets in Resources */,
-				A7CE2B6027340B67001B5491 /* Assets.xcassets in Resources */,
+				A7CE2B6A27340E3A001B5491 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
