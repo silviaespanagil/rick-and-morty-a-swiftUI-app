@@ -22,6 +22,8 @@
 		A7CE2B8327343ED1001B5491 /* ServerOriginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE2B8227343ED1001B5491 /* ServerOriginResponse.swift */; };
 		A7CE2B852734407C001B5491 /* ServerLocationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE2B842734407C001B5491 /* ServerLocationResponse.swift */; };
 		A7CE2B87273440EE001B5491 /* ServerEpisodeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE2B86273440EE001B5491 /* ServerEpisodeResponse.swift */; };
+		A7CE2B8927344A5F001B5491 /* CharacterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE2B8827344A5F001B5491 /* CharacterRepository.swift */; };
+		A7CE2B8B27344AC5001B5491 /* CharacterRepositoryImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE2B8A27344AC5001B5491 /* CharacterRepositoryImplementation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,8 @@
 		A7CE2B8227343ED1001B5491 /* ServerOriginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerOriginResponse.swift; sourceTree = "<group>"; };
 		A7CE2B842734407C001B5491 /* ServerLocationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerLocationResponse.swift; sourceTree = "<group>"; };
 		A7CE2B86273440EE001B5491 /* ServerEpisodeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerEpisodeResponse.swift; sourceTree = "<group>"; };
+		A7CE2B8827344A5F001B5491 /* CharacterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterRepository.swift; sourceTree = "<group>"; };
+		A7CE2B8A27344AC5001B5491 /* CharacterRepositoryImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterRepositoryImplementation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +126,8 @@
 			isa = PBXGroup;
 			children = (
 				A7CE2B752734342B001B5491 /* CharacterRemoteDataSource.swift */,
+				A7CE2B8827344A5F001B5491 /* CharacterRepository.swift */,
+				A7CE2B8A27344AC5001B5491 /* CharacterRepositoryImplementation.swift */,
 			);
 			path = Character;
 			sourceTree = "<group>";
@@ -234,9 +240,11 @@
 				A7CE2B7A27343B15001B5491 /* ServerBaseArrayResponse.swift in Sources */,
 				A7CE2B5E27340B65001B5491 /* ContentView.swift in Sources */,
 				A7CE2B852734407C001B5491 /* ServerLocationResponse.swift in Sources */,
+				A7CE2B8B27344AC5001B5491 /* CharacterRepositoryImplementation.swift in Sources */,
 				A7CE2B6D27341BFC001B5491 /* HTTPError.swift in Sources */,
 				A7CE2B8127343DB2001B5491 /* Character.swift in Sources */,
 				A7CE2B7C27343B3B001B5491 /* ServerResultsResponse.swift in Sources */,
+				A7CE2B8927344A5F001B5491 /* CharacterRepository.swift in Sources */,
 				A7CE2B5C27340B65001B5491 /* RickMortyApp.swift in Sources */,
 				A7CE2B8327343ED1001B5491 /* ServerOriginResponse.swift in Sources */,
 			);
