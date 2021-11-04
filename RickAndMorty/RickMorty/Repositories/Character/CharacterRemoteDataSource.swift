@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 class CharacterRemoteDataSource {
     
@@ -18,8 +19,8 @@ class CharacterRemoteDataSource {
         self.baseURLString = baseURL
         self.session = session
     }
-    
-    func getAllCharacters() -> <#Return Type#> {
+        
+    func getAllCharacters() -> AnyPublisher<ServerResultResponse<ServerCharacterResponse>, Error> {
         
         let apiManager = ApiManager(baseURL: baseURLString, session: session)
         

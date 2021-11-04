@@ -15,6 +15,13 @@
 		A7CE2B7027341ED8001B5491 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE2B6F27341ED8001B5491 /* APIManager.swift */; };
 		A7CE2B7227342F2A001B5491 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE2B7127342F2A001B5491 /* Constants.swift */; };
 		A7CE2B762734342B001B5491 /* CharacterRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE2B752734342B001B5491 /* CharacterRemoteDataSource.swift */; };
+		A7CE2B7A27343B15001B5491 /* ServerBaseArrayResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE2B7927343B15001B5491 /* ServerBaseArrayResponse.swift */; };
+		A7CE2B7C27343B3B001B5491 /* ServerResultsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE2B7B27343B3B001B5491 /* ServerResultsResponse.swift */; };
+		A7CE2B7E27343B7B001B5491 /* ServerCharacterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE2B7D27343B7B001B5491 /* ServerCharacterResponse.swift */; };
+		A7CE2B8127343DB2001B5491 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE2B8027343DB2001B5491 /* Character.swift */; };
+		A7CE2B8327343ED1001B5491 /* ServerOriginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE2B8227343ED1001B5491 /* ServerOriginResponse.swift */; };
+		A7CE2B852734407C001B5491 /* ServerLocationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE2B842734407C001B5491 /* ServerLocationResponse.swift */; };
+		A7CE2B87273440EE001B5491 /* ServerEpisodeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE2B86273440EE001B5491 /* ServerEpisodeResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +34,13 @@
 		A7CE2B6F27341ED8001B5491 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		A7CE2B7127342F2A001B5491 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A7CE2B752734342B001B5491 /* CharacterRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterRemoteDataSource.swift; sourceTree = "<group>"; };
+		A7CE2B7927343B15001B5491 /* ServerBaseArrayResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerBaseArrayResponse.swift; sourceTree = "<group>"; };
+		A7CE2B7B27343B3B001B5491 /* ServerResultsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerResultsResponse.swift; sourceTree = "<group>"; };
+		A7CE2B7D27343B7B001B5491 /* ServerCharacterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerCharacterResponse.swift; sourceTree = "<group>"; };
+		A7CE2B8027343DB2001B5491 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		A7CE2B8227343ED1001B5491 /* ServerOriginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerOriginResponse.swift; sourceTree = "<group>"; };
+		A7CE2B842734407C001B5491 /* ServerLocationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerLocationResponse.swift; sourceTree = "<group>"; };
+		A7CE2B86273440EE001B5491 /* ServerEpisodeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerEpisodeResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +73,7 @@
 		A7CE2B5A27340B65001B5491 /* RickMorty */ = {
 			isa = PBXGroup;
 			children = (
+				A7CE2B7727343AE7001B5491 /* Entities */,
 				A7CE2B73273433E8001B5491 /* Repositories */,
 				A7CE2B6E27341EC0001B5491 /* API */,
 				A7CE2B6B27341088001B5491 /* Enumerations */,
@@ -109,6 +124,36 @@
 				A7CE2B752734342B001B5491 /* CharacterRemoteDataSource.swift */,
 			);
 			path = Character;
+			sourceTree = "<group>";
+		};
+		A7CE2B7727343AE7001B5491 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				A7CE2B7F27343DA3001B5491 /* Entities */,
+				A7CE2B7827343AEF001B5491 /* ServerEntities */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		A7CE2B7827343AEF001B5491 /* ServerEntities */ = {
+			isa = PBXGroup;
+			children = (
+				A7CE2B7927343B15001B5491 /* ServerBaseArrayResponse.swift */,
+				A7CE2B7B27343B3B001B5491 /* ServerResultsResponse.swift */,
+				A7CE2B7D27343B7B001B5491 /* ServerCharacterResponse.swift */,
+				A7CE2B8227343ED1001B5491 /* ServerOriginResponse.swift */,
+				A7CE2B842734407C001B5491 /* ServerLocationResponse.swift */,
+				A7CE2B86273440EE001B5491 /* ServerEpisodeResponse.swift */,
+			);
+			path = ServerEntities;
+			sourceTree = "<group>";
+		};
+		A7CE2B7F27343DA3001B5491 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				A7CE2B8027343DB2001B5491 /* Character.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,12 +226,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7CE2B7E27343B7B001B5491 /* ServerCharacterResponse.swift in Sources */,
 				A7CE2B7227342F2A001B5491 /* Constants.swift in Sources */,
 				A7CE2B7027341ED8001B5491 /* APIManager.swift in Sources */,
 				A7CE2B762734342B001B5491 /* CharacterRemoteDataSource.swift in Sources */,
+				A7CE2B87273440EE001B5491 /* ServerEpisodeResponse.swift in Sources */,
+				A7CE2B7A27343B15001B5491 /* ServerBaseArrayResponse.swift in Sources */,
 				A7CE2B5E27340B65001B5491 /* ContentView.swift in Sources */,
+				A7CE2B852734407C001B5491 /* ServerLocationResponse.swift in Sources */,
 				A7CE2B6D27341BFC001B5491 /* HTTPError.swift in Sources */,
+				A7CE2B8127343DB2001B5491 /* Character.swift in Sources */,
+				A7CE2B7C27343B3B001B5491 /* ServerResultsResponse.swift in Sources */,
 				A7CE2B5C27340B65001B5491 /* RickMortyApp.swift in Sources */,
+				A7CE2B8327343ED1001B5491 /* ServerOriginResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
