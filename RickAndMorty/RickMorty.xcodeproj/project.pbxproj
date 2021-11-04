@@ -14,6 +14,7 @@
 		A7CE2B6D27341BFC001B5491 /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE2B6C27341BFC001B5491 /* HTTPError.swift */; };
 		A7CE2B7027341ED8001B5491 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE2B6F27341ED8001B5491 /* APIManager.swift */; };
 		A7CE2B7227342F2A001B5491 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE2B7127342F2A001B5491 /* Constants.swift */; };
+		A7CE2B762734342B001B5491 /* CharacterRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE2B752734342B001B5491 /* CharacterRemoteDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		A7CE2B6C27341BFC001B5491 /* HTTPError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HTTPError.swift; path = ../../../../HTTPError.swift; sourceTree = "<group>"; };
 		A7CE2B6F27341ED8001B5491 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		A7CE2B7127342F2A001B5491 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A7CE2B752734342B001B5491 /* CharacterRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterRemoteDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 		A7CE2B5A27340B65001B5491 /* RickMorty */ = {
 			isa = PBXGroup;
 			children = (
+				A7CE2B73273433E8001B5491 /* Repositories */,
 				A7CE2B6E27341EC0001B5491 /* API */,
 				A7CE2B6B27341088001B5491 /* Enumerations */,
 				A7CE2B5B27340B65001B5491 /* RickMortyApp.swift */,
@@ -90,6 +93,22 @@
 				A7CE2B6F27341ED8001B5491 /* APIManager.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		A7CE2B73273433E8001B5491 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				A7CE2B74273433F6001B5491 /* Character */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		A7CE2B74273433F6001B5491 /* Character */ = {
+			isa = PBXGroup;
+			children = (
+				A7CE2B752734342B001B5491 /* CharacterRemoteDataSource.swift */,
+			);
+			path = Character;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +183,7 @@
 			files = (
 				A7CE2B7227342F2A001B5491 /* Constants.swift in Sources */,
 				A7CE2B7027341ED8001B5491 /* APIManager.swift in Sources */,
+				A7CE2B762734342B001B5491 /* CharacterRemoteDataSource.swift in Sources */,
 				A7CE2B5E27340B65001B5491 /* ContentView.swift in Sources */,
 				A7CE2B6D27341BFC001B5491 /* HTTPError.swift in Sources */,
 				A7CE2B5C27340B65001B5491 /* RickMortyApp.swift in Sources */,
