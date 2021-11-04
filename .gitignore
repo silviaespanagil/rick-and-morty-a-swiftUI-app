@@ -25,6 +25,17 @@ DerivedData/
 ## Obj-C/Swift specific
 *.hmap
 
+### Xcode Patch ###
+*.xcarchive
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+!*.xcworkspace/contents.xcworkspacedata
+/*.gcno
+### Projects ###
+*.xcodeproj
+*.xcworkspace
+
 ## App packaging
 *.ipa
 *.dSYM.zip
