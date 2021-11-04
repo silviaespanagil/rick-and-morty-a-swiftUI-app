@@ -11,6 +11,7 @@
 		A7CE2B5E27340B65001B5491 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE2B5D27340B65001B5491 /* ContentView.swift */; };
 		A7CE2B6327340B67001B5491 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7CE2B6227340B67001B5491 /* Preview Assets.xcassets */; };
 		A7CE2B6A27340E3A001B5491 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7CE2B6927340E3A001B5491 /* Assets.xcassets */; };
+		A7CE2B6D27341BFC001B5491 /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE2B6C27341BFC001B5491 /* HTTPError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		A7CE2B5D27340B65001B5491 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A7CE2B6227340B67001B5491 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A7CE2B6927340E3A001B5491 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../Downloads/AppIcons/Assets.xcassets; sourceTree = "<group>"; };
+		A7CE2B6C27341BFC001B5491 /* HTTPError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HTTPError.swift; path = ../../../../HTTPError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,7 @@
 		A7CE2B5A27340B65001B5491 /* RickMorty */ = {
 			isa = PBXGroup;
 			children = (
+				A7CE2B6B27341088001B5491 /* Enumerations */,
 				A7CE2B5B27340B65001B5491 /* RickMortyApp.swift */,
 				A7CE2B5D27340B65001B5491 /* ContentView.swift */,
 				A7CE2B6927340E3A001B5491 /* Assets.xcassets */,
@@ -65,6 +68,14 @@
 				A7CE2B6227340B67001B5491 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A7CE2B6B27341088001B5491 /* Enumerations */ = {
+			isa = PBXGroup;
+			children = (
+				A7CE2B6C27341BFC001B5491 /* HTTPError.swift */,
+			);
+			path = Enumerations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7CE2B5E27340B65001B5491 /* ContentView.swift in Sources */,
+				A7CE2B6D27341BFC001B5491 /* HTTPError.swift in Sources */,
 				A7CE2B5C27340B65001B5491 /* RickMortyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
