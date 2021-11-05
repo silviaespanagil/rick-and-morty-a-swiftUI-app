@@ -18,10 +18,9 @@ struct TabBar: View {
         
         TabView(){
             
-            CharacterCellView()
+            CharacterCellView(viewModel: CharacterListViewModel())
                 .tabItem{
                     Image(systemName: "person.2")
-                        .foregroundColor(.white)
                     Text("Characters")
                 }
             
