@@ -17,13 +17,20 @@ class CharacterRepositoryImplementation: CharacterRepository {
         self.remoteDataSource = remoteDataSource
     }
     
-    func getAllCharacters() -> AnyPublisher<Character, Error> {
+    func getAllCharacters() -> AnyPublisher<[Character], Error> {
         
-        return remoteDataSource.getAllCharacters().map { serverCharacter -> Character in
+        return remoteDataSource.getAllCharacters().map { serverCharacter -> [Character] in
             
-            let character = serverCharacter.results.converToEntity()
             
-            return character
+            var characters: [Character] = []
+            
+            for serverCharacter in serverCharacter.results {
+                
+                let character = serverCharacter.converToEntity()
+                characters.append(character)
+            }
+            
+            return characters
         }
         .mapError({ $0 })
         .eraseToAnyPublisher()
