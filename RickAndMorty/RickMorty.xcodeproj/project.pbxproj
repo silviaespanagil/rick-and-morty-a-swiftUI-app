@@ -24,6 +24,7 @@
 		A7CE2B87273440EE001B5491 /* ServerEpisodeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE2B86273440EE001B5491 /* ServerEpisodeResponse.swift */; };
 		A7CE2B8927344A5F001B5491 /* CharacterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE2B8827344A5F001B5491 /* CharacterRepository.swift */; };
 		A7CE2B8B27344AC5001B5491 /* CharacterRepositoryImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE2B8A27344AC5001B5491 /* CharacterRepositoryImplementation.swift */; };
+		A7CE2B8E273526B5001B5491 /* GetAllCharactersUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE2B8D273526B5001B5491 /* GetAllCharactersUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		A7CE2B86273440EE001B5491 /* ServerEpisodeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerEpisodeResponse.swift; sourceTree = "<group>"; };
 		A7CE2B8827344A5F001B5491 /* CharacterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterRepository.swift; sourceTree = "<group>"; };
 		A7CE2B8A27344AC5001B5491 /* CharacterRepositoryImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterRepositoryImplementation.swift; sourceTree = "<group>"; };
+		A7CE2B8D273526B5001B5491 /* GetAllCharactersUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllCharactersUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		A7CE2B5A27340B65001B5491 /* RickMorty */ = {
 			isa = PBXGroup;
 			children = (
+				A7CE2B8C2735269F001B5491 /* UseCases */,
 				A7CE2B7727343AE7001B5491 /* Entities */,
 				A7CE2B73273433E8001B5491 /* Repositories */,
 				A7CE2B6E27341EC0001B5491 /* API */,
@@ -162,6 +165,14 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
+		A7CE2B8C2735269F001B5491 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				A7CE2B8D273526B5001B5491 /* GetAllCharactersUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -242,6 +253,7 @@
 				A7CE2B852734407C001B5491 /* ServerLocationResponse.swift in Sources */,
 				A7CE2B8B27344AC5001B5491 /* CharacterRepositoryImplementation.swift in Sources */,
 				A7CE2B6D27341BFC001B5491 /* HTTPError.swift in Sources */,
+				A7CE2B8E273526B5001B5491 /* GetAllCharactersUseCase.swift in Sources */,
 				A7CE2B8127343DB2001B5491 /* Character.swift in Sources */,
 				A7CE2B7C27343B3B001B5491 /* ServerResultsResponse.swift in Sources */,
 				A7CE2B8927344A5F001B5491 /* CharacterRepository.swift in Sources */,
