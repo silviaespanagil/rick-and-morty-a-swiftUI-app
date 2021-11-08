@@ -26,7 +26,7 @@ struct CharacterCellView: View {
                                 
                                 Image("")
                                     .renderImage(url: URL(string:character.image)!)
-                                    .frame(width: 90, height: 90)
+                                    .frame(width: viewModel.imageSize, height: viewModel.imageSize)
                                 
                                 VStack {
                                     
