@@ -50,8 +50,11 @@ extension TabBar {
     
     func tabBarAppearance() {
         
-        UITabBar.appearance().isTranslucent = false
-        UITabBar.appearance().barTintColor = UIColor.init(named: "NoBlack")
-        UITabBar.appearance().unselectedItemTintColor = UIColor.init(named: "DeepBlue")
+        let appearance = UITabBar.appearance()
+        let tabBarAppearance = UITabBarAppearance()
+        tabBarAppearance.configureWithOpaqueBackground()
+        tabBarAppearance.backgroundColor = UIColor.init(named: "NoBlack")
+        appearance.standardAppearance = tabBarAppearance
+        appearance.unselectedItemTintColor = UIColor.init(named: "DeepBlue")
     }
 }
