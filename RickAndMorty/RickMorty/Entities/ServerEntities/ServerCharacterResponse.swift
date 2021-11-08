@@ -15,8 +15,8 @@ struct ServerCharacterResponse: Codable {
     let species: String
     let type: String?
     let gender: String
-    let origin: ServerOriginResponse
-    let location: ServerLocationResponse
+    let origin: ServerOriginResponse?
+    let location: ServerLocationResponse?
     let image: String
     let url: String
     
@@ -28,8 +28,8 @@ struct ServerCharacterResponse: Codable {
                          species: species,
                          type: type ?? "",
                          gender: gender,
-                         origin: origin.name,
-                         location: location.name,
+                         origin: origin?.name ?? "",
+                         location: location?.name ?? "",
                          image: image,
                          url: url)
     }
