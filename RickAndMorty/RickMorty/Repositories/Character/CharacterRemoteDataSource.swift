@@ -19,12 +19,21 @@ class CharacterRemoteDataSource {
         self.baseURLString = baseURL
         self.session = session
     }
-        
+    
     func getAllCharacters() -> AnyPublisher<ServerBaseArrayResponse<ServerCharacterResponse>, Error> {
         
         let apiManager = ApiManager(baseURL: baseURLString, session: session)
         
         let urlRequest = getAllCharactersEndpoint()
+        
+        return apiManager.performRequest(urlRequest: urlRequest)
+    }
+    
+    func getCharacterDetail(id: Int) -> AnyPublisher<ServerResultResponse<ServerCharacterResponse>, Error> {
+        
+        let apiManager = ApiManager(baseURL: baseURLString, session: session)
+        
+        let urlRequest = getCharacterDetailEndpoint(id: id)
         
         return apiManager.performRequest(urlRequest: urlRequest)
     }
@@ -43,5 +52,16 @@ extension CharacterRemoteDataSource {
         
         return urlRequest
         
+    }
+    
+    func getCharacterDetailEndpoint(id: Int) -> URLRequest {
+        
+        let endpoint = "\(baseURLString)\(CharacterRemoteDataSource.getAllCharactersURL)\(id)"
+        
+        let components = URLComponents(string: endpoint)
+        
+        let urlRequest = URLRequest(url: (components?.url!)!)
+        
+        return urlRequest
     }
 }

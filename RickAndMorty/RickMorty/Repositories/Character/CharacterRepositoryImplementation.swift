@@ -35,4 +35,18 @@ class CharacterRepositoryImplementation: CharacterRepository {
         .mapError({ $0 })
         .eraseToAnyPublisher()
     }
+    
+    func getCharacterDetail(id: Int) -> AnyPublisher<Character, Error> {
+        
+        return remoteDataSource.getCharacterDetail(id: id).map { serverCharacter -> Character in
+
+            // convert to entity
+            let character = serverCharacter.results.converToEntity()
+            
+            // Return
+            return character
+        }
+        .mapError({ $0 })
+        .eraseToAnyPublisher()
+    }
 }

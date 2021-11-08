@@ -29,6 +29,7 @@
 		A7CE2B9A27352BFB001B5491 /* LocationCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE2B9927352BFB001B5491 /* LocationCellView.swift */; };
 		A7CE2B9E27352C23001B5491 /* EpisodeCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE2B9D27352C23001B5491 /* EpisodeCellView.swift */; };
 		A7CE2BA427357521001B5491 /* CharacterListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE2BA327357521001B5491 /* CharacterListViewModel.swift */; };
+		A7CE2BCF27393741001B5491 /* CharacterDetailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE2BCE27393741001B5491 /* CharacterDetailUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		A7CE2B9927352BFB001B5491 /* LocationCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCellView.swift; sourceTree = "<group>"; };
 		A7CE2B9D27352C23001B5491 /* EpisodeCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCellView.swift; sourceTree = "<group>"; };
 		A7CE2BA327357521001B5491 /* CharacterListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewModel.swift; sourceTree = "<group>"; };
+		A7CE2BCE27393741001B5491 /* CharacterDetailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				A7CE2B8D273526B5001B5491 /* GetAllCharactersUseCase.swift */,
+				A7CE2BCE27393741001B5491 /* CharacterDetailUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				A7CE2B7027341ED8001B5491 /* APIManager.swift in Sources */,
 				A7CE2B762734342B001B5491 /* CharacterRemoteDataSource.swift in Sources */,
 				A7CE2B87273440EE001B5491 /* ServerEpisodeResponse.swift in Sources */,
+				A7CE2BCF27393741001B5491 /* CharacterDetailUseCase.swift in Sources */,
 				A7CE2B7A27343B15001B5491 /* ServerBaseArrayResponse.swift in Sources */,
 				A7CE2B9E27352C23001B5491 /* EpisodeCellView.swift in Sources */,
 				A7CE2BA427357521001B5491 /* CharacterListViewModel.swift in Sources */,
