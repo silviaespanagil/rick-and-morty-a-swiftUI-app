@@ -76,9 +76,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A7AF767E2739823C009A410C /* RickMoryTest */ = {
+			isa = PBXGroup;
+			children = (
+				A7AF767F273983E1009A410C /* Entities */,
+			);
+			path = RickMoryTest;
+			sourceTree = "<group>";
+		};
+		A7AF767F273983E1009A410C /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				A7AF7681273983F8009A410C /* ServerEntities */,
+				A7AF7680273983F2009A410C /* Entities */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		A7AF7680273983F2009A410C /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		A7AF7681273983F8009A410C /* ServerEntities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ServerEntities;
+			sourceTree = "<group>";
+		};
 		A7CE2B4F27340B65001B5491 = {
 			isa = PBXGroup;
 			children = (
+				A7AF767E2739823C009A410C /* RickMoryTest */,
 				A7CE2B5A27340B65001B5491 /* RickMorty */,
 				A7CE2B5927340B65001B5491 /* Products */,
 			);
