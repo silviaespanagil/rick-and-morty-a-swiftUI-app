@@ -12,38 +12,45 @@ struct CharacterCellView: View {
     @StateObject var viewModel: CharacterListViewModel
     
     var body: some View {
-        
-        VStack {
-            
-            ScrollView {
+       
+            NavigationView {
                 
-                ForEach(viewModel.characters) { character in
+                ScrollView {
                     
-                    HStack {
+                    ForEach(viewModel.characters) { character in
+                    
                         
-                        Image("")
-                            .renderImage(url: URL(string:character.image)!)
-                            .frame(width: 90, height: 90)
-                        
-                        VStack {
+                        NavigationLink(destination: CharacterDetailView(viewModel: CharacterDetailViewModel(character: character))){
                             
-                            Text(character.name)
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                            Text(character.status)
-                                .frame(maxWidth: .infinity, alignment: .leading)
+                            HStack {
+                                
+                                Image("")
+                                    .renderImage(url: URL(string:character.image)!)
+                                    .frame(width: 90, height: 90)
+                                
+                                VStack {
+                                    
+                                    Text(character.name)
+                                        .frame(maxWidth: .infinity, alignment: .leading)
+                                    Text(character.status)
+                                        .frame(maxWidth: .infinity, alignment: .leading)
+                                }
+                                .padding()
+                            } .buttonStyle(PlainButtonStyle())
+                            
                         }
+                        .buttonStyle(PlainButtonStyle())
                         .padding()
+                        .background(
+                            Rectangle()
+                                .fill(Color.white)
+                                .shadow(color: Color("DeepBlue"), radius: 2, x: 0, y: 2)
+                        )
+                        Spacer()
+                        
                     }
-                    .padding()
-                    .background(
-                        Rectangle()
-                            .fill(Color.white)
-                            .shadow(color: Color("DeepBlue"), radius: 2, x: 0, y: 2)
-                    )
-                    Spacer()
-                    
                 }
-            }
+                
             
         }
     }
@@ -53,20 +60,4 @@ struct CharacterCellView_Previews: PreviewProvider {
     static var previews: some View {
         CharacterCellView(viewModel: CharacterListViewModel())
     }
-}
-
-extension Image {
-    
-    func renderImage(url:URL) -> Self {
-        
-        if let image = try? Data(contentsOf: url) {
-            
-            return Image(uiImage: UIImage(data: image)!)
-                .resizable()
-        }
-        
-        return self
-            .resizable()
-    }
-}
-
+} 
