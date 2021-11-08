@@ -20,7 +20,7 @@ class CharacterRemoteDataSource {
         self.session = session
     }
         
-    func getAllCharacters() -> AnyPublisher<ServerResultResponse<ServerCharacterResponse>, Error> {
+    func getAllCharacters() -> AnyPublisher<ServerBaseArrayResponse<ServerCharacterResponse>, Error> {
         
         let apiManager = ApiManager(baseURL: baseURLString, session: session)
         
