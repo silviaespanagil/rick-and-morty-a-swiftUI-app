@@ -14,26 +14,41 @@ struct CharacterDetailView: View {
     @StateObject var viewModel: CharacterDetailViewModel
     
     var body: some View {
+        
+        
         VStack{
             
             HStack{
                 Image("")
                     .renderImage(url: URL(string:viewModel.character.image)!)
                     .frame(width: 250, height: 250)
+                    .clipShape(RoundedRectangle(cornerRadius: 25))
                 
             }
-            Text(viewModel.character.name)
-            Text(viewModel.character.status)
-            Text(viewModel.character.species)
-            Text(viewModel.character.type)
-            Text(viewModel.character.gender)
-            Text(viewModel.character.origin)
-            Text(viewModel.character.location)
+            
+            VStack(alignment: .leading, spacing:10){
+                
+                Text(viewModel.character.name)
+                    .font(.title)
+                Divider().frame(maxWidth: 240)
+                Text("Last known location: \(viewModel.character.location)")
+                Text("Gender: \(viewModel.character.gender)")
+                Text("Status: \(viewModel.character.status)")
+                Text("Origin: \(viewModel.character.origin)")
+                Text("Species: \(viewModel.character.species)")
+                Text(viewModel.character.type)
+            }
             
         }.padding()
-          
+            .background(
+                RoundedRectangle(cornerRadius: 25)
+                    .fill(Color.white)
+                    .shadow(color: Color("DeepBlue"), radius: 2, x: 0, y: 2)
+            )
+        
     }
 }
+
 
 struct CharacterDetailView_Previews: PreviewProvider {
     static var previews: some View {
