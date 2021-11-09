@@ -20,6 +20,9 @@
 		A7AF76AE273AA587009A410C /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF76AD273AA587009A410C /* LocationView.swift */; };
 		A7AF76B0273AA5F7009A410C /* GetLocationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF76AF273AA5F7009A410C /* GetLocationUseCase.swift */; };
 		A7AF76B2273AAFFD009A410C /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF76B1273AAFFD009A410C /* LocationViewModel.swift */; };
+		A7AF76B4273ABD5E009A410C /* ServerLocationResponseUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF76B3273ABD5E009A410C /* ServerLocationResponseUnitTest.swift */; };
+		A7AF76B6273ABFA9009A410C /* MockLocationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF76B5273ABFA9009A410C /* MockLocationRepository.swift */; };
+		A7AF76B8273AC103009A410C /* GetLocationUseCaseUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF76B7273AC103009A410C /* GetLocationUseCaseUnitTest.swift */; };
 		A7CE2B5C27340B65001B5491 /* RickMortyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE2B5B27340B65001B5491 /* RickMortyApp.swift */; };
 		A7CE2B6327340B67001B5491 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7CE2B6227340B67001B5491 /* Preview Assets.xcassets */; };
 		A7CE2B6A27340E3A001B5491 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7CE2B6927340E3A001B5491 /* Assets.xcassets */; };
@@ -70,6 +73,9 @@
 		A7AF76AD273AA587009A410C /* LocationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
 		A7AF76AF273AA5F7009A410C /* GetLocationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLocationUseCase.swift; sourceTree = "<group>"; };
 		A7AF76B1273AAFFD009A410C /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
+		A7AF76B3273ABD5E009A410C /* ServerLocationResponseUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerLocationResponseUnitTest.swift; sourceTree = "<group>"; };
+		A7AF76B5273ABFA9009A410C /* MockLocationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLocationRepository.swift; sourceTree = "<group>"; };
+		A7AF76B7273AC103009A410C /* GetLocationUseCaseUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLocationUseCaseUnitTest.swift; sourceTree = "<group>"; };
 		A7CE2B5827340B65001B5491 /* RickMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7CE2B5B27340B65001B5491 /* RickMortyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickMortyApp.swift; sourceTree = "<group>"; };
 		A7CE2B6227340B67001B5491 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -137,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				A7AF769327398A50009A410C /* ServerCharacterResponseUnitTests.swift */,
+				A7AF76B3273ABD5E009A410C /* ServerLocationResponseUnitTest.swift */,
 			);
 			path = ServerEntities;
 			sourceTree = "<group>";
@@ -145,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				A7AF7696273A6A45009A410C /* GetAllCharactersUseCaseUnitTest.swift */,
+				A7AF76B7273AC103009A410C /* GetLocationUseCaseUnitTest.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -153,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				A7AF7699273A6C43009A410C /* MockCharacterRepository.swift */,
+				A7AF76B5273ABFA9009A410C /* MockLocationRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -459,9 +468,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7AF76B8273AC103009A410C /* GetLocationUseCaseUnitTest.swift in Sources */,
+				A7AF76B4273ABD5E009A410C /* ServerLocationResponseUnitTest.swift in Sources */,
 				A7AF7697273A6A45009A410C /* GetAllCharactersUseCaseUnitTest.swift in Sources */,
 				A7AF769A273A6C43009A410C /* MockCharacterRepository.swift in Sources */,
 				A7AF769427398A50009A410C /* ServerCharacterResponseUnitTests.swift in Sources */,
+				A7AF76B6273ABFA9009A410C /* MockLocationRepository.swift in Sources */,
 				A7AF769E273A86C9009A410C /* (null) in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

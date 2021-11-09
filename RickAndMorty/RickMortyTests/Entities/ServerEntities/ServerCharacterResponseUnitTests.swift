@@ -35,7 +35,7 @@ class ServerCharacterResponseUnitTests: XCTestCase {
                                                               image: "image",
                                                               url: "")
         
-        //When
+        // When
         let character = serverCharacterResponse.converToEntity()
         
         // Then
