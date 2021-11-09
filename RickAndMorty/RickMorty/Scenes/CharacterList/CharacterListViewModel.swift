@@ -28,7 +28,7 @@ class CharacterListViewModel: ObservableObject {
        
         showProgressView = true
         
-        cancellable = GetAllCharactesUseCase().execute()
+        cancellable = GetAllCharactersUseCase().execute()
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { completion in
                 
