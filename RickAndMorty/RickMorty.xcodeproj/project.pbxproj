@@ -31,6 +31,7 @@
 		A7AF76C5273ACA60009A410C /* GetEpisodeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF76C4273ACA60009A410C /* GetEpisodeUseCase.swift */; };
 		A7AF76C7273ACB8C009A410C /* EpisodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF76C6273ACB8C009A410C /* EpisodeView.swift */; };
 		A7AF76C9273ACB9A009A410C /* EpisodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF76C8273ACB9A009A410C /* EpisodeViewModel.swift */; };
+		A7AF76CD273AD17A009A410C /* CharacterDetailUseCaseUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF76CC273AD17A009A410C /* CharacterDetailUseCaseUnitTest.swift */; };
 		A7CE2B5C27340B65001B5491 /* RickMortyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE2B5B27340B65001B5491 /* RickMortyApp.swift */; };
 		A7CE2B6327340B67001B5491 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7CE2B6227340B67001B5491 /* Preview Assets.xcassets */; };
 		A7CE2B6A27340E3A001B5491 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7CE2B6927340E3A001B5491 /* Assets.xcassets */; };
@@ -91,6 +92,7 @@
 		A7AF76C4273ACA60009A410C /* GetEpisodeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEpisodeUseCase.swift; sourceTree = "<group>"; };
 		A7AF76C6273ACB8C009A410C /* EpisodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeView.swift; sourceTree = "<group>"; };
 		A7AF76C8273ACB9A009A410C /* EpisodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeViewModel.swift; sourceTree = "<group>"; };
+		A7AF76CC273AD17A009A410C /* CharacterDetailUseCaseUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailUseCaseUnitTest.swift; sourceTree = "<group>"; };
 		A7CE2B5827340B65001B5491 /* RickMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7CE2B5B27340B65001B5491 /* RickMortyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickMortyApp.swift; sourceTree = "<group>"; };
 		A7CE2B6227340B67001B5491 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 			children = (
 				A7AF7696273A6A45009A410C /* GetAllCharactersUseCaseUnitTest.swift */,
 				A7AF76B7273AC103009A410C /* GetLocationUseCaseUnitTest.swift */,
+				A7AF76CC273AD17A009A410C /* CharacterDetailUseCaseUnitTest.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -497,6 +500,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7AF76CD273AD17A009A410C /* CharacterDetailUseCaseUnitTest.swift in Sources */,
 				A7AF76B8273AC103009A410C /* GetLocationUseCaseUnitTest.swift in Sources */,
 				A7AF76B4273ABD5E009A410C /* ServerLocationResponseUnitTest.swift in Sources */,
 				A7AF7697273A6A45009A410C /* GetAllCharactersUseCaseUnitTest.swift in Sources */,
