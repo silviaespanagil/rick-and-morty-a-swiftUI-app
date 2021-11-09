@@ -24,13 +24,13 @@ struct TabBar: View {
                     Text("Characters")
                 }
             
-            LocationCellView(viewModel: LocationViewModel())
+            LocationView(viewModel: LocationViewModel())
                 .tabItem{
                     Image(systemName: "map")
                     Text("Locations")
                 }
             
-            EpisodeCellView()
+            EpisodeView(viewModel: EpisodeViewModel())
                 .tabItem{
                     Image(systemName: "tv")
                     Text("Episodes")

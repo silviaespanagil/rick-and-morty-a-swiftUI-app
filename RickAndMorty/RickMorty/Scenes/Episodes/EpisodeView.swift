@@ -1,5 +1,5 @@
 //
-//  LocationCellView.swift
+//  EpisodeCellView.swift
 //  RickMorty
 //
 //  Created by Silvia España on 5/11/21.
@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct LocationView: View {
+struct EpisodeView: View {
     
-    @StateObject var viewModel: LocationViewModel
+    @StateObject var viewModel: EpisodeViewModel
     
     var body: some View {
         
@@ -17,17 +17,17 @@ struct LocationView: View {
             
             List {
                 
-                ForEach(viewModel.locations) { location in
+                ForEach(viewModel.episodes) { episode in
                     
                     VStack(alignment: .leading, spacing:10) {
                         
                         Spacer()
-                        Text(location.name)
+                        Text(episode.name)
                         
                         VStack(alignment: .leading) {
                             
-                            Text(location.type)
-                            Text("\(viewModel.dimension)\(location.dimension)")
+                            Text(episode.episode)
+                            Text(episode.airDate)
                             
                         }
                         .font(.footnote)
@@ -39,8 +39,9 @@ struct LocationView: View {
     }
 }
 
-struct LocationView_Previews: PreviewProvider {
+
+struct EpisodeCellView_Previews: PreviewProvider {
     static var previews: some View {
-        LocationView(viewModel: LocationViewModel())
+        EpisodeView(viewModel: EpisodeViewModel())
     }
 }
