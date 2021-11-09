@@ -9,6 +9,6 @@ import Foundation
 
 struct ServerLocationResponse: Codable {
     
-    let name: String
+    let name: String?
     let url: String
 }

@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class GetAllCharactesUseCase {
+class GetAllCharactersUseCase {
     
     private let repository: CharacterRepository
     
