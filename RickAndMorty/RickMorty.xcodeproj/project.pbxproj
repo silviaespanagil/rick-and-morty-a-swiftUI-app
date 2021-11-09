@@ -13,6 +13,10 @@
 		A7AF769A273A6C43009A410C /* MockCharacterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF7699273A6C43009A410C /* MockCharacterRepository.swift */; };
 		A7AF769C273A7FA5009A410C /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF769B273A7FA5009A410C /* Location.swift */; };
 		A7AF769E273A86C9009A410C /* (null) in Sources */ = {isa = PBXBuildFile; };
+		A7AF76A4273A9646009A410C /* LocationRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF76A3273A9646009A410C /* LocationRemoteDataSource.swift */; };
+		A7AF76A6273A97A2009A410C /* LocationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF76A5273A97A2009A410C /* LocationRepository.swift */; };
+		A7AF76A8273A97F9009A410C /* LocationRepositoryImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF76A7273A97F9009A410C /* LocationRepositoryImplementation.swift */; };
+		A7AF76AC273A9997009A410C /* ServerGetLocationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF76AB273A9997009A410C /* ServerGetLocationResponse.swift */; };
 		A7CE2B5C27340B65001B5491 /* RickMortyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE2B5B27340B65001B5491 /* RickMortyApp.swift */; };
 		A7CE2B6327340B67001B5491 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7CE2B6227340B67001B5491 /* Preview Assets.xcassets */; };
 		A7CE2B6A27340E3A001B5491 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7CE2B6927340E3A001B5491 /* Assets.xcassets */; };
@@ -57,6 +61,10 @@
 		A7AF7696273A6A45009A410C /* GetAllCharactersUseCaseUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllCharactersUseCaseUnitTest.swift; sourceTree = "<group>"; };
 		A7AF7699273A6C43009A410C /* MockCharacterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCharacterRepository.swift; sourceTree = "<group>"; };
 		A7AF769B273A7FA5009A410C /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		A7AF76A3273A9646009A410C /* LocationRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRemoteDataSource.swift; sourceTree = "<group>"; };
+		A7AF76A5273A97A2009A410C /* LocationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRepository.swift; sourceTree = "<group>"; };
+		A7AF76A7273A97F9009A410C /* LocationRepositoryImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRepositoryImplementation.swift; sourceTree = "<group>"; };
+		A7AF76AB273A9997009A410C /* ServerGetLocationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerGetLocationResponse.swift; sourceTree = "<group>"; };
 		A7CE2B5827340B65001B5491 /* RickMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7CE2B5B27340B65001B5491 /* RickMortyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickMortyApp.swift; sourceTree = "<group>"; };
 		A7CE2B6227340B67001B5491 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -148,6 +156,9 @@
 		A7AF76A2273A95BA009A410C /* Location */ = {
 			isa = PBXGroup;
 			children = (
+				A7AF76A3273A9646009A410C /* LocationRemoteDataSource.swift */,
+				A7AF76A5273A97A2009A410C /* LocationRepository.swift */,
+				A7AF76A7273A97F9009A410C /* LocationRepositoryImplementation.swift */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -249,6 +260,7 @@
 				A7CE2B8227343ED1001B5491 /* ServerOriginResponse.swift */,
 				A7CE2B842734407C001B5491 /* ServerLocationResponse.swift */,
 				A7CE2B86273440EE001B5491 /* ServerEpisodeResponse.swift */,
+				A7AF76AB273A9997009A410C /* ServerGetLocationResponse.swift */,
 			);
 			path = ServerEntities;
 			sourceTree = "<group>";
@@ -460,9 +472,12 @@
 				A7CE2B87273440EE001B5491 /* ServerEpisodeResponse.swift in Sources */,
 				A7CE2BCF27393741001B5491 /* CharacterDetailUseCase.swift in Sources */,
 				A7AF769C273A7FA5009A410C /* Location.swift in Sources */,
+				A7AF76A8273A97F9009A410C /* LocationRepositoryImplementation.swift in Sources */,
 				A7CE2BD527394A57001B5491 /* CharacterDetailViewModel.swift in Sources */,
 				A7CE2B7A27343B15001B5491 /* ServerBaseArrayResponse.swift in Sources */,
 				A7CE2B9E27352C23001B5491 /* EpisodeCellView.swift in Sources */,
+				A7AF76A4273A9646009A410C /* LocationRemoteDataSource.swift in Sources */,
+				A7AF76A6273A97A2009A410C /* LocationRepository.swift in Sources */,
 				A7CE2BA427357521001B5491 /* CharacterListViewModel.swift in Sources */,
 				A7CE2B9327352A63001B5491 /* TabBar.swift in Sources */,
 				A7CE2B852734407C001B5491 /* ServerLocationResponse.swift in Sources */,
@@ -475,6 +490,7 @@
 				A7CE2B8927344A5F001B5491 /* CharacterRepository.swift in Sources */,
 				A7CE2B5C27340B65001B5491 /* RickMortyApp.swift in Sources */,
 				A7CE2B9A27352BFB001B5491 /* LocationCellView.swift in Sources */,
+				A7AF76AC273A9997009A410C /* ServerGetLocationResponse.swift in Sources */,
 				A7CE2B8327343ED1001B5491 /* ServerOriginResponse.swift in Sources */,
 				A7CE2BDD27396072001B5491 /* RenderImage.swift in Sources */,
 			);
