@@ -24,7 +24,7 @@ struct TabBar: View {
                     Text("Characters")
                 }
             
-            LocationCellView()
+            LocationCellView(viewModel: LocationViewModel())
                 .tabItem{
                     Image(systemName: "map")
                     Text("Locations")
