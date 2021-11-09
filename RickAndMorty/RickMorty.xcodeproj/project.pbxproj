@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A743A9A127396983008A5CA0 /* CharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A743A9A027396983008A5CA0 /* CharacterDetailView.swift */; };
+		A7AF769C273A7FA5009A410C /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF769B273A7FA5009A410C /* Location.swift */; };
 		A7CE2B5C27340B65001B5491 /* RickMortyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE2B5B27340B65001B5491 /* RickMortyApp.swift */; };
 		A7CE2B6327340B67001B5491 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7CE2B6227340B67001B5491 /* Preview Assets.xcassets */; };
 		A7CE2B6A27340E3A001B5491 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7CE2B6927340E3A001B5491 /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		A743A9A027396983008A5CA0 /* CharacterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailView.swift; sourceTree = "<group>"; };
+		A7AF769B273A7FA5009A410C /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		A7CE2B5827340B65001B5491 /* RickMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7CE2B5B27340B65001B5491 /* RickMortyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickMortyApp.swift; sourceTree = "<group>"; };
 		A7CE2B6227340B67001B5491 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				A7CE2B8027343DB2001B5491 /* Character.swift */,
+				A7AF769B273A7FA5009A410C /* Location.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				A7CE2B762734342B001B5491 /* CharacterRemoteDataSource.swift in Sources */,
 				A7CE2B87273440EE001B5491 /* ServerEpisodeResponse.swift in Sources */,
 				A7CE2BCF27393741001B5491 /* CharacterDetailUseCase.swift in Sources */,
+				A7AF769C273A7FA5009A410C /* Location.swift in Sources */,
 				A7CE2BD527394A57001B5491 /* CharacterDetailViewModel.swift in Sources */,
 				A7CE2B7A27343B15001B5491 /* ServerBaseArrayResponse.swift in Sources */,
 				A7CE2B9E27352C23001B5491 /* EpisodeCellView.swift in Sources */,
