@@ -9,7 +9,7 @@ import SwiftUI
 
 extension Image {
     
-    func renderImage(url:URL) -> Self {
+    func renderImage(url: URL) -> Self {
         
         if let image = try? Data(contentsOf: url) {
             

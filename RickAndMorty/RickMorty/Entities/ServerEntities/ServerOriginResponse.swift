@@ -9,6 +9,6 @@ import Foundation
 
 struct ServerOriginResponse: Codable {
     
-    let name: String
+    let name: String?
     let url: String
 }
