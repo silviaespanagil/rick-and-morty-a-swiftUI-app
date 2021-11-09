@@ -18,6 +18,7 @@
 		A7AF76A8273A97F9009A410C /* LocationRepositoryImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF76A7273A97F9009A410C /* LocationRepositoryImplementation.swift */; };
 		A7AF76AC273A9997009A410C /* ServerGetLocationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF76AB273A9997009A410C /* ServerGetLocationResponse.swift */; };
 		A7AF76AE273AA587009A410C /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF76AD273AA587009A410C /* LocationView.swift */; };
+		A7AF76B0273AA5F7009A410C /* GetLocationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF76AF273AA5F7009A410C /* GetLocationUseCase.swift */; };
 		A7CE2B5C27340B65001B5491 /* RickMortyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE2B5B27340B65001B5491 /* RickMortyApp.swift */; };
 		A7CE2B6327340B67001B5491 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7CE2B6227340B67001B5491 /* Preview Assets.xcassets */; };
 		A7CE2B6A27340E3A001B5491 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7CE2B6927340E3A001B5491 /* Assets.xcassets */; };
@@ -66,6 +67,7 @@
 		A7AF76A7273A97F9009A410C /* LocationRepositoryImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRepositoryImplementation.swift; sourceTree = "<group>"; };
 		A7AF76AB273A9997009A410C /* ServerGetLocationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerGetLocationResponse.swift; sourceTree = "<group>"; };
 		A7AF76AD273AA587009A410C /* LocationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
+		A7AF76AF273AA5F7009A410C /* GetLocationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLocationUseCase.swift; sourceTree = "<group>"; };
 		A7CE2B5827340B65001B5491 /* RickMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7CE2B5B27340B65001B5491 /* RickMortyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickMortyApp.swift; sourceTree = "<group>"; };
 		A7CE2B6227340B67001B5491 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -279,6 +281,7 @@
 			children = (
 				A7CE2B8D273526B5001B5491 /* GetAllCharactersUseCase.swift */,
 				A7CE2BCE27393741001B5491 /* CharacterDetailUseCase.swift */,
+				A7AF76AF273AA5F7009A410C /* GetLocationUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -489,6 +492,7 @@
 				A7CE2B8127343DB2001B5491 /* Character.swift in Sources */,
 				A7CE2B7C27343B3B001B5491 /* ServerResultsResponse.swift in Sources */,
 				A7CE2B8927344A5F001B5491 /* CharacterRepository.swift in Sources */,
+				A7AF76B0273AA5F7009A410C /* GetLocationUseCase.swift in Sources */,
 				A7CE2B5C27340B65001B5491 /* RickMortyApp.swift in Sources */,
 				A7AF76AC273A9997009A410C /* ServerGetLocationResponse.swift in Sources */,
 				A7CE2B8327343ED1001B5491 /* ServerOriginResponse.swift in Sources */,
