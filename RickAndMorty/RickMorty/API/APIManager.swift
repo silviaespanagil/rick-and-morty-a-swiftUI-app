@@ -41,6 +41,7 @@ class ApiManager {
             .flatMap { data -> AnyPublisher<T, Error> in
                 
                 let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
                 
                 return Result.Publisher(data)
                     .setFailureType(to: Error.self)
