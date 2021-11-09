@@ -34,6 +34,7 @@
 		A7AF76CD273AD17A009A410C /* CharacterDetailUseCaseUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF76CC273AD17A009A410C /* CharacterDetailUseCaseUnitTest.swift */; };
 		A7AF76D1273AD4D0009A410C /* GetEpisodeUseCaseUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF76D0273AD4D0009A410C /* GetEpisodeUseCaseUnitTest.swift */; };
 		A7AF76D3273AD510009A410C /* MockEpisodeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF76D2273AD510009A410C /* MockEpisodeRepository.swift */; };
+		A7AF76D5273AD6C6009A410C /* EpisodeRemoteDataSourceUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF76D4273AD6C6009A410C /* EpisodeRemoteDataSourceUnitTest.swift */; };
 		A7CE2B5C27340B65001B5491 /* RickMortyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE2B5B27340B65001B5491 /* RickMortyApp.swift */; };
 		A7CE2B6327340B67001B5491 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7CE2B6227340B67001B5491 /* Preview Assets.xcassets */; };
 		A7CE2B6A27340E3A001B5491 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7CE2B6927340E3A001B5491 /* Assets.xcassets */; };
@@ -97,6 +98,7 @@
 		A7AF76CC273AD17A009A410C /* CharacterDetailUseCaseUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailUseCaseUnitTest.swift; sourceTree = "<group>"; };
 		A7AF76D0273AD4D0009A410C /* GetEpisodeUseCaseUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEpisodeUseCaseUnitTest.swift; sourceTree = "<group>"; };
 		A7AF76D2273AD510009A410C /* MockEpisodeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockEpisodeRepository.swift; sourceTree = "<group>"; };
+		A7AF76D4273AD6C6009A410C /* EpisodeRemoteDataSourceUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeRemoteDataSourceUnitTest.swift; sourceTree = "<group>"; };
 		A7CE2B5827340B65001B5491 /* RickMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7CE2B5B27340B65001B5491 /* RickMortyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickMortyApp.swift; sourceTree = "<group>"; };
 		A7CE2B6227340B67001B5491 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 				A7AF7699273A6C43009A410C /* MockCharacterRepository.swift */,
 				A7AF76B5273ABFA9009A410C /* MockLocationRepository.swift */,
 				A7AF76D2273AD510009A410C /* MockEpisodeRepository.swift */,
+				A7AF76D4273AD6C6009A410C /* EpisodeRemoteDataSourceUnitTest.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -515,6 +518,7 @@
 				A7AF76B6273ABFA9009A410C /* MockLocationRepository.swift in Sources */,
 				A7AF769E273A86C9009A410C /* (null) in Sources */,
 				A7AF76D1273AD4D0009A410C /* GetEpisodeUseCaseUnitTest.swift in Sources */,
+				A7AF76D5273AD6C6009A410C /* EpisodeRemoteDataSourceUnitTest.swift in Sources */,
 				A7AF76D3273AD510009A410C /* MockEpisodeRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
