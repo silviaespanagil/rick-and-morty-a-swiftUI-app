@@ -19,8 +19,9 @@ class CharacterRepositoryImplementation: CharacterRepository {
     
     func getAllCharacters() -> AnyPublisher<[Character], Error> {
         
-        return remoteDataSource.getAllCharacters().map { serverCharacter -> [Character] in
+        return remoteDataSource.getAllCharacters().map {
             
+            serverCharacter -> [Character] in
             
             var characters: [Character] = []
             
