@@ -10,7 +10,7 @@ import XCTest
 
 class GetAllCharactersUseCaseUnitTest: XCTestCase {
     
-  //  var sut = GetAllCharactersUseCase?
+    var sut: GetAllCharactersUseCase?
     
     override func setUpWithError() throws {
         
@@ -18,12 +18,24 @@ class GetAllCharactersUseCaseUnitTest: XCTestCase {
     }
     
     override func tearDownWithError() throws {
-       // sut = nil
+        sut = nil
         try super.tearDownWithError()
     }
     
     func testGetAllCharactersIsCalled() throws {
         
+        // Given
+        
+        let repository = MockCharacterRepository()
+        sut = GetAllCharactersUseCase(repository: repository)
+        
+        // When
+        
+        _ = sut!.execute()
+        
+        // Then
+        
+        XCTAssertTrue(repository.isGetAllCharactersCalled)
         
     }
     
