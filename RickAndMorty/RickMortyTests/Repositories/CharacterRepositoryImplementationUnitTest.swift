@@ -58,9 +58,14 @@ class CharacterRepositoryImplementationUnitTest: XCTestCase {
             }, receiveValue: { character in
                 
                 XCTAssertEqual(character.count, 1)
-                /*XCTAssertEqual(character.first?.id, 1)
-                XCTAssertEqual(character.first?.name, "name")
-                XCTAssertEqual(character.first?.status, "status")*/
+                XCTAssertEqual(character.first?.id, 1)
+                XCTAssertEqual(character.first?.name, "Rick")
+                XCTAssertEqual(character.first?.status, "Alive")
+                XCTAssertEqual(character.first?.species, "Human")
+                XCTAssertEqual(character.first?.type, "Genetic experiment")
+                XCTAssertEqual(character.first?.gender, "Male")
+                XCTAssertEqual(character.first?.image, "character image")
+                XCTAssertEqual(character.first?.url, "character url")
             })
         
         wait(for: [exp], timeout: timeoutTime)
@@ -100,7 +105,30 @@ extension CharacterRepositoryImplementationUnitTest {
     func getCharacterData() -> Data {
         
         let dataString = """
-                    {"results": [{"id": 1,"name": "Rick","status": "Alive","species": "Human","type": "Genetic experiment","gender": "Male","image": "character image","origin": {"name": "Earth (C-137)", "url": "origin url"},"location": {"name": "Citadel of Ricks", "url": "location url"},"url": "character url"}]}
+                    
+                    {
+                        "results":[
+                            {
+                                "id": 1,
+                                "name": "Rick",
+                                "status": "Alive",
+                                "species": "Human",
+                                "type": "Genetic experiment",
+                                "gender": "Male",
+                                "image": "character image",
+                                "origin": {
+                                    "name": "Earth (C-137)",
+                                    "url": "origin url"
+                                },
+                                "location": {
+                                    "name": "Citadel of Ricks",
+                                    "url": "location url"
+                                },
+                                "url": "character url"
+                            }
+                        ]
+                    }
+                    
                     """
 
         return Data(dataString.utf8)
