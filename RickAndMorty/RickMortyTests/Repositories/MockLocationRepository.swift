@@ -21,7 +21,4 @@ class MockLocationRepository: LocationRepository {
             .setFailureType(to: Error.self)
             .eraseToAnyPublisher()
     }
-    
 }
-
-

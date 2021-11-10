@@ -21,7 +21,6 @@ class CharacterRepositoryImplementationUnitTest: XCTestCase {
     let failureStatusCode = 401
     let timeoutTime: TimeInterval = 2
     
-
     override func setUpWithError() throws {
         
         try super.setUpWithError()
@@ -37,7 +36,6 @@ class CharacterRepositoryImplementationUnitTest: XCTestCase {
     func testGetAllCharacterOK() throws {
         
         // Given
-        
         let endpoint = "character"
         let session = getCharacterSession(statusCode: sucessStatusCode, endpoint: endpoint)
         
@@ -50,30 +48,28 @@ class CharacterRepositoryImplementationUnitTest: XCTestCase {
         // When
         cancellable = sut!.getAllCharacters()
             .sink(receiveCompletion: { completion in
-                            
-                            switch completion {
-                            case .finished:
-                                exp.fulfill()
-                            case .failure:
-                                break
-                            }
-                            
-                        }, receiveValue: { character in
-                            
-                            XCTAssertEqual(character.count, 1)
-                            XCTAssertEqual(character.first?.id, 1)
-                            XCTAssertEqual(character.first?.name, "name")
-                            XCTAssertEqual(character.first?.status, "status")
-                        })
-                    
+                
+                switch completion {
+                case .finished:
+                    exp.fulfill()
+                case .failure:
+                    break
+                }
+                
+            }, receiveValue: { character in
+                
+                XCTAssertEqual(character.count, 1)
+                XCTAssertEqual(character.first?.id, 1)
+                XCTAssertEqual(character.first?.name, "name")
+                XCTAssertEqual(character.first?.status, "status")
+            })
+        
         wait(for: [exp], timeout: 300)
-                    
-                    // Then
-                    XCTAssertNotNil(cancellable)
+        
+        // Then
+        XCTAssertNotNil(cancellable)
         
     }
-
-
 }
 
 extension CharacterRepositoryImplementationUnitTest {

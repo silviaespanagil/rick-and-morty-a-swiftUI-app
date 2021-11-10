@@ -19,6 +19,4 @@ struct Character: Identifiable {
     let location: String
     let image: String
     let url: String
-    
 }
-

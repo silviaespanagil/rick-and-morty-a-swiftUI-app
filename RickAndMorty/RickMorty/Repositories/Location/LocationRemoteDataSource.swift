@@ -28,9 +28,7 @@ class LocationRemoteDataSource {
         
         return apiManager.performRequest(urlRequest: urlRequest)
     }
-    
 }
-
 
 extension LocationRemoteDataSource {
     
@@ -43,7 +41,5 @@ extension LocationRemoteDataSource {
         let urlRequest = URLRequest(url: (components?.url!)!)
         
         return urlRequest
-        
     }
-    
 }
