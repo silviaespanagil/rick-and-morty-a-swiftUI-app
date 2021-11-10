@@ -35,8 +35,11 @@
 		A7AF76D1273AD4D0009A410C /* GetEpisodeUseCaseUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF76D0273AD4D0009A410C /* GetEpisodeUseCaseUnitTest.swift */; };
 		A7AF76D3273AD510009A410C /* MockEpisodeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF76D2273AD510009A410C /* MockEpisodeRepository.swift */; };
 		A7AF76D5273AD6C6009A410C /* EpisodeRemoteDataSourceUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF76D4273AD6C6009A410C /* EpisodeRemoteDataSourceUnitTest.swift */; };
-		A7AF76D7273ADB91009A410C /* CharacterRepositoryImplementationUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF76D6273ADB91009A410C /* CharacterRepositoryImplementationUnitTest.swift */; };
 		A7AF76D9273ADD4E009A410C /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF76D8273ADD4E009A410C /* MockURLProtocol.swift */; };
+		A7AF76DE273BC981009A410C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7AF76DB273BC980009A410C /* Assets.xcassets */; };
+		A7AF76DF273BC981009A410C /* appstore.png in Resources */ = {isa = PBXBuildFile; fileRef = A7AF76DC273BC980009A410C /* appstore.png */; };
+		A7AF76E0273BC981009A410C /* playstore.png in Resources */ = {isa = PBXBuildFile; fileRef = A7AF76DD273BC980009A410C /* playstore.png */; };
+		A7AF76E2273BD0C3009A410C /* CharacterRepositoryImplentationUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF76E1273BD0C3009A410C /* CharacterRepositoryImplentationUnitTest.swift */; };
 		A7CE2B5C27340B65001B5491 /* RickMortyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE2B5B27340B65001B5491 /* RickMortyApp.swift */; };
 		A7CE2B6327340B67001B5491 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7CE2B6227340B67001B5491 /* Preview Assets.xcassets */; };
 		A7CE2B6A27340E3A001B5491 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7CE2B6927340E3A001B5491 /* Assets.xcassets */; };
@@ -101,8 +104,11 @@
 		A7AF76D0273AD4D0009A410C /* GetEpisodeUseCaseUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEpisodeUseCaseUnitTest.swift; sourceTree = "<group>"; };
 		A7AF76D2273AD510009A410C /* MockEpisodeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockEpisodeRepository.swift; sourceTree = "<group>"; };
 		A7AF76D4273AD6C6009A410C /* EpisodeRemoteDataSourceUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeRemoteDataSourceUnitTest.swift; sourceTree = "<group>"; };
-		A7AF76D6273ADB91009A410C /* CharacterRepositoryImplementationUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterRepositoryImplementationUnitTest.swift; sourceTree = "<group>"; };
 		A7AF76D8273ADD4E009A410C /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
+		A7AF76DB273BC980009A410C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A7AF76DC273BC980009A410C /* appstore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appstore.png; sourceTree = "<group>"; };
+		A7AF76DD273BC980009A410C /* playstore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playstore.png; sourceTree = "<group>"; };
+		A7AF76E1273BD0C3009A410C /* CharacterRepositoryImplentationUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterRepositoryImplentationUnitTest.swift; sourceTree = "<group>"; };
 		A7CE2B5827340B65001B5491 /* RickMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7CE2B5B27340B65001B5491 /* RickMortyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickMortyApp.swift; sourceTree = "<group>"; };
 		A7CE2B6227340B67001B5491 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -192,8 +198,8 @@
 				A7AF76B5273ABFA9009A410C /* MockLocationRepository.swift */,
 				A7AF76D2273AD510009A410C /* MockEpisodeRepository.swift */,
 				A7AF76D4273AD6C6009A410C /* EpisodeRemoteDataSourceUnitTest.swift */,
-				A7AF76D6273ADB91009A410C /* CharacterRepositoryImplementationUnitTest.swift */,
 				A7AF76D8273ADD4E009A410C /* MockURLProtocol.swift */,
+				A7AF76E1273BD0C3009A410C /* CharacterRepositoryImplentationUnitTest.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -216,6 +222,16 @@
 				A7AF76C2273AC851009A410C /* EpisodeRepositoryImplementation.swift */,
 			);
 			path = Episode;
+			sourceTree = "<group>";
+		};
+		A7AF76DA273BC980009A410C /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				A7AF76DB273BC980009A410C /* Assets.xcassets */,
+				A7AF76DC273BC980009A410C /* appstore.png */,
+				A7AF76DD273BC980009A410C /* playstore.png */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		A7CE2B4F27340B65001B5491 = {
@@ -243,6 +259,7 @@
 				A7CE2B8F27352A2B001B5491 /* Scenes */,
 				A7CE2B8C2735269F001B5491 /* UseCases */,
 				A7CE2B7727343AE7001B5491 /* Entities */,
+				A7AF76DA273BC980009A410C /* Assets */,
 				A7CE2B73273433E8001B5491 /* Repositories */,
 				A7CE2B6E27341EC0001B5491 /* API */,
 				A7CE2B6B27341088001B5491 /* Enumerations */,
@@ -504,7 +521,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7CE2B6327340B67001B5491 /* Preview Assets.xcassets in Resources */,
+				A7AF76DF273BC981009A410C /* appstore.png in Resources */,
+				A7AF76DE273BC981009A410C /* Assets.xcassets in Resources */,
 				A7CE2B6A27340E3A001B5491 /* Assets.xcassets in Resources */,
+				A7AF76E0273BC981009A410C /* playstore.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,10 +536,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7AF76CD273AD17A009A410C /* CharacterDetailUseCaseUnitTest.swift in Sources */,
-				A7AF76D7273ADB91009A410C /* CharacterRepositoryImplementationUnitTest.swift in Sources */,
 				A7AF76B8273AC103009A410C /* GetLocationUseCaseUnitTest.swift in Sources */,
 				A7AF76B4273ABD5E009A410C /* ServerLocationResponseUnitTest.swift in Sources */,
 				A7AF7697273A6A45009A410C /* GetAllCharactersUseCaseUnitTest.swift in Sources */,
+				A7AF76E2273BD0C3009A410C /* CharacterRepositoryImplentationUnitTest.swift in Sources */,
 				A7AF769A273A6C43009A410C /* MockCharacterRepository.swift in Sources */,
 				A7AF769427398A50009A410C /* ServerCharacterResponseUnitTests.swift in Sources */,
 				A7AF76D9273ADD4E009A410C /* MockURLProtocol.swift in Sources */,
