@@ -21,6 +21,4 @@ class MockEpisodeRepository: EpisodeRepository {
             .setFailureType(to: Error.self)
             .eraseToAnyPublisher()
     }
-    
 }
-

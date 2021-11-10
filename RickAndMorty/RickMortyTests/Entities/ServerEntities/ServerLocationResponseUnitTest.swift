@@ -36,6 +36,5 @@ class ServerLocationResponseUnitTest: XCTestCase {
         XCTAssertEqual(location.name, serverLocationResponse.name)
         XCTAssertEqual(location.type, serverLocationResponse.type)
         XCTAssertEqual(location.dimension, serverLocationResponse.dimension)
-        
     }
 }

@@ -25,17 +25,13 @@ class CharacterDetailUseCaseUnitTest: XCTestCase {
     func testGetCharacterDetailIsCalled() throws {
         
         // Given
-        
         let repository = MockCharacterRepository()
         sut = GetCharacterDetailUseCase(repository: repository)
         
         // When
-        
         _ = sut!.execute(id: 1)
         
         // Then
-        
         XCTAssertTrue(repository.isGetCharacterDetailCalled)
-        
     }
 }

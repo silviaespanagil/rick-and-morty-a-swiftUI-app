@@ -42,4 +42,3 @@ class MockCharacterRepository: CharacterRepository {
             .eraseToAnyPublisher()
     }
 }
-

@@ -25,20 +25,13 @@ class GetAllCharactersUseCaseUnitTest: XCTestCase {
     func testGetAllCharactersIsCalled() throws {
         
         // Given
-        
         let repository = MockCharacterRepository()
         sut = GetAllCharactersUseCase(repository: repository)
         
         // When
-        
         _ = sut!.execute()
         
         // Then
-        
         XCTAssertTrue(repository.isGetAllCharactersCalled)
-        
     }
-    
 }
-
-
