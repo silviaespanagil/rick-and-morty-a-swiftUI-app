@@ -12,6 +12,7 @@
 		A743A9A127396983008A5CA0 /* CharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A743A9A027396983008A5CA0 /* CharacterDetailView.swift */; };
 		A794FF24273BF060003E8043 /* LocationRepositoryImplementationUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794FF23273BF060003E8043 /* LocationRepositoryImplementationUnitTest.swift */; };
 		A794FF26273C0049003E8043 /* LocationRemoteDataSourceUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794FF25273C0049003E8043 /* LocationRemoteDataSourceUnitTest.swift */; };
+		A794FF2C273C0A70003E8043 /* CharacterRemoteDataSourceUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794FF2B273C0A70003E8043 /* CharacterRemoteDataSourceUnitTest.swift */; };
 		A7AF769427398A50009A410C /* ServerCharacterResponseUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF769327398A50009A410C /* ServerCharacterResponseUnitTests.swift */; };
 		A7AF7697273A6A45009A410C /* GetAllCharactersUseCaseUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF7696273A6A45009A410C /* GetAllCharactersUseCaseUnitTest.swift */; };
 		A7AF769A273A6C43009A410C /* MockCharacterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF7699273A6C43009A410C /* MockCharacterRepository.swift */; };
@@ -81,6 +82,7 @@
 		A743A9A027396983008A5CA0 /* CharacterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailView.swift; sourceTree = "<group>"; };
 		A794FF23273BF060003E8043 /* LocationRepositoryImplementationUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRepositoryImplementationUnitTest.swift; sourceTree = "<group>"; };
 		A794FF25273C0049003E8043 /* LocationRemoteDataSourceUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRemoteDataSourceUnitTest.swift; sourceTree = "<group>"; };
+		A794FF2B273C0A70003E8043 /* CharacterRemoteDataSourceUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterRemoteDataSourceUnitTest.swift; sourceTree = "<group>"; };
 		A7AF7688273987D7009A410C /* RickMortyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RickMortyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7AF769327398A50009A410C /* ServerCharacterResponseUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerCharacterResponseUnitTests.swift; sourceTree = "<group>"; };
 		A7AF7696273A6A45009A410C /* GetAllCharactersUseCaseUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllCharactersUseCaseUnitTest.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 			children = (
 				A7AF76D6273ADB91009A410C /* CharacterRepositoryImplementationUnitTest.swift */,
 				A7AF7699273A6C43009A410C /* MockCharacterRepository.swift */,
+				A794FF2B273C0A70003E8043 /* CharacterRemoteDataSourceUnitTest.swift */,
 			);
 			path = CharacterTest;
 			sourceTree = "<group>";
@@ -563,6 +566,7 @@
 				A7AF769E273A86C9009A410C /* (null) in Sources */,
 				A7AF76D1273AD4D0009A410C /* GetEpisodeUseCaseUnitTest.swift in Sources */,
 				A7AF76D5273AD6C6009A410C /* EpisodeRemoteDataSourceUnitTest.swift in Sources */,
+				A794FF2C273C0A70003E8043 /* CharacterRemoteDataSourceUnitTest.swift in Sources */,
 				A7AF76D3273AD510009A410C /* MockEpisodeRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
