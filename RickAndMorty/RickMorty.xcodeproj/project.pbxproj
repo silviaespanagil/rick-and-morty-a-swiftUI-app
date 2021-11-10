@@ -161,6 +161,35 @@
 			path = Enumerations;
 			sourceTree = "<group>";
 		};
+		A794FF27273C097F003E8043 /* CharacterTest */ = {
+			isa = PBXGroup;
+			children = (
+				A7AF76D6273ADB91009A410C /* CharacterRepositoryImplementationUnitTest.swift */,
+				A7AF7699273A6C43009A410C /* MockCharacterRepository.swift */,
+			);
+			path = CharacterTest;
+			sourceTree = "<group>";
+		};
+		A794FF28273C09A9003E8043 /* EpisodeTest */ = {
+			isa = PBXGroup;
+			children = (
+				A7AF76E3273BE7C4009A410C /* EpisodesRepositoryImplementationUnitTest.swift */,
+				A7AF76D4273AD6C6009A410C /* EpisodeRemoteDataSourceUnitTest.swift */,
+				A7AF76D2273AD510009A410C /* MockEpisodeRepository.swift */,
+			);
+			path = EpisodeTest;
+			sourceTree = "<group>";
+		};
+		A794FF2A273C09CE003E8043 /* LocationTest */ = {
+			isa = PBXGroup;
+			children = (
+				A794FF25273C0049003E8043 /* LocationRemoteDataSourceUnitTest.swift */,
+				A794FF23273BF060003E8043 /* LocationRepositoryImplementationUnitTest.swift */,
+				A7AF76B5273ABFA9009A410C /* MockLocationRepository.swift */,
+			);
+			path = LocationTest;
+			sourceTree = "<group>";
+		};
 		A7AF7689273987D7009A410C /* RickMortyTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,15 +231,10 @@
 		A7AF7698273A6C0B009A410C /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				A7AF7699273A6C43009A410C /* MockCharacterRepository.swift */,
-				A7AF76B5273ABFA9009A410C /* MockLocationRepository.swift */,
-				A7AF76D2273AD510009A410C /* MockEpisodeRepository.swift */,
-				A7AF76D4273AD6C6009A410C /* EpisodeRemoteDataSourceUnitTest.swift */,
-				A7AF76D6273ADB91009A410C /* CharacterRepositoryImplementationUnitTest.swift */,
+				A794FF2A273C09CE003E8043 /* LocationTest */,
+				A794FF28273C09A9003E8043 /* EpisodeTest */,
+				A794FF27273C097F003E8043 /* CharacterTest */,
 				A7AF76D8273ADD4E009A410C /* MockURLProtocol.swift */,
-				A7AF76E3273BE7C4009A410C /* EpisodesRepositoryImplementationUnitTest.swift */,
-				A794FF23273BF060003E8043 /* LocationRepositoryImplementationUnitTest.swift */,
-				A794FF25273C0049003E8043 /* LocationRemoteDataSourceUnitTest.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
