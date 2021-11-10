@@ -39,7 +39,6 @@ class CharacterRemoteDataSource {
     }
 }
 
-
 extension CharacterRemoteDataSource {
     
     func getAllCharactersEndpoint() -> URLRequest {

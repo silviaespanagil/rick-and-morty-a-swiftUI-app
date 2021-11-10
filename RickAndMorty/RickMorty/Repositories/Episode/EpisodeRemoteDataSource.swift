@@ -28,9 +28,7 @@ class EpisodeRemoteDataSource {
         
         return apiManager.performRequest(urlRequest: urlRequest)
     }
-    
 }
-
 
 extension EpisodeRemoteDataSource {
     
@@ -43,7 +41,5 @@ extension EpisodeRemoteDataSource {
         let urlRequest = URLRequest(url: (components?.url!)!)
         
         return urlRequest
-        
     }
-    
 }

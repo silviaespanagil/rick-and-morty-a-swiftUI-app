@@ -13,7 +13,6 @@ class ServerCharacterResponseUnitTests: XCTestCase {
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         try super.setUpWithError()
-        
     }
     
     override func tearDownWithError() throws {
@@ -47,6 +46,5 @@ class ServerCharacterResponseUnitTests: XCTestCase {
         XCTAssertEqual(character.gender, serverCharacterResponse.gender)
         XCTAssertEqual(character.image, serverCharacterResponse.image)
         XCTAssertEqual(character.url, serverCharacterResponse.url)
-        
     }
 }

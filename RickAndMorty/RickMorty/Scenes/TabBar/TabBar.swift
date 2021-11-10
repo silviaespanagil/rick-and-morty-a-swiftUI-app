@@ -36,12 +36,13 @@ struct TabBar: View {
                     Text("Episodes")
                 }
         }.accentColor(Color("NeonGreen"))
-        
     }
 }
 
 struct TabBar_Previews: PreviewProvider {
+    
     static var previews: some View {
+        
         TabBar()
     }
 }
