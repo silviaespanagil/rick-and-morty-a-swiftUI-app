@@ -62,9 +62,16 @@ class CharacterRepositoryImplementationUnitTest: XCTestCase {
                 XCTAssertEqual(character.first?.id, 1)
                 XCTAssertEqual(character.first?.name, "name")
                 XCTAssertEqual(character.first?.status, "status")
+                XCTAssertEqual(character.first?.species, "species")
+                XCTAssertEqual(character.first?.type, "type")
+                XCTAssertEqual(character.first?.gender, "gender")
+                XCTAssertEqual(character.first?.origin, "origin")
+                XCTAssertEqual(character.first?.location, "location")
+                XCTAssertEqual(character.first?.image, "image")
+                XCTAssertEqual(character.first?.url, "url")
             })
         
-        wait(for: [exp], timeout: 300)
+        wait(for: [exp], timeout: 30)
         
         // Then
         XCTAssertNotNil(cancellable)
@@ -103,7 +110,7 @@ extension CharacterRepositoryImplementationUnitTest {
         
         let dataString = """
                                 {
-                                "results": {
+                                "results": [{
                                     "id": 1 ,
                                     "name": "name",
                                     "status": "status",
@@ -114,7 +121,7 @@ extension CharacterRepositoryImplementationUnitTest {
                                     "location": "location",
                                     "image": "image",
                                     "url": "url"
-                                }
+                                }]
                                 }
                     """
 
