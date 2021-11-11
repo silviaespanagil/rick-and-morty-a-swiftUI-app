@@ -35,9 +35,6 @@ class CharacterDetailViewModel: ObservableObject {
         species = "Species:"
     }
     
-    
-    
-    
     func getCharacterDetail() {
         
         showProgressView = true
@@ -60,7 +57,4 @@ class CharacterDetailViewModel: ObservableObject {
                 self.character = character
             })
     }
-    
 }
-
-

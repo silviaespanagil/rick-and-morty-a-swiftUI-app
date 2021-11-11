@@ -11,7 +11,6 @@ import Combine
 
 class EpisodeViewModel: ObservableObject {
     
- 
     @Published public private(set) var episodes: [Episode] = []
     
     @Published public private(set) var showProgressView = false
