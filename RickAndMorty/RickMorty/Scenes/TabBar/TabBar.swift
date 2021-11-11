@@ -4,10 +4,11 @@
 //
 //  Created by Silvia España on 5/11/21.
 //
-
 import SwiftUI
 
 struct TabBar: View {
+    
+    @State var activeTab: Tabs = Tabs.characters
     
     init() {
         
@@ -16,34 +17,49 @@ struct TabBar: View {
     
     var body: some View {
         
-        TabView(){
+        NavigationView {
             
-            CharacterCellView(viewModel: CharacterListViewModel())
-                .tabItem{
-                    Image(systemName: "person.2")
-                    Text("Characters")
-                }
-            
-            LocationView(viewModel: LocationViewModel())
-                .tabItem{
-                    Image(systemName: "map")
-                    Text("Locations")
-                }
-            
-            EpisodeView(viewModel: EpisodeViewModel())
-                .tabItem{
-                    Image(systemName: "tv")
-                    Text("Episodes")
-                }
-        }.accentColor(Color("NeonGreen"))
-    }
-}
-
-struct TabBar_Previews: PreviewProvider {
-    
-    static var previews: some View {
+            TabView(selection: $activeTab){
+                
+                CharacterCellView(viewModel: CharacterListViewModel())
+                    .tabItem{
+                        Image(systemName: "person.2")
+                        Text("Characters")
+                    }
+                    .tag(Tabs.characters)
+                
+                LocationView(viewModel: LocationViewModel())
+                    .tabItem{
+                        Image(systemName: "map")
+                        Text("Locations")
+                    }
+                    .tag(Tabs.locations)
+                
+                EpisodeView(viewModel: EpisodeViewModel())
+                    .tabItem{
+                        Image(systemName: "tv")
+                        Text("Episodes")
+                    }
+                    .tag(Tabs.episodes)
+                
+            }
+            .navigationTitle(getTabBarTitle(for: activeTab))
+            .navigationBarTitleDisplayMode(.large)
+            .accentColor(Color("NeonGreen"))
+        }
         
-        TabBar()
+    }
+    
+    func getTabBarTitle(for tabItem: Tabs) -> String {
+        
+        switch tabItem {
+        case .characters:
+            return "Characters"
+        case .locations:
+            return "Locations"
+        case .episodes:
+            return "Episodes"
+        }
     }
 }
 
@@ -57,5 +73,12 @@ extension TabBar {
         tabBarAppearance.backgroundColor = UIColor.init(named: "NoBlack")
         appearance.standardAppearance = tabBarAppearance
         appearance.unselectedItemTintColor = UIColor.init(named: "DeepBlue")
+    }
+}
+
+struct TabBar_Previews: PreviewProvider {
+    
+    static var previews: some View {
+        TabBar()
     }
 }

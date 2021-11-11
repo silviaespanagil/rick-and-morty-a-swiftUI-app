@@ -13,7 +13,7 @@ struct EpisodeView: View {
     
     var body: some View {
         
-        NavigationView{
+        VStack{
             
             List {
                 
@@ -38,7 +38,6 @@ struct EpisodeView: View {
         }
     }
 }
-
 
 struct EpisodeCellView_Previews: PreviewProvider {
     static var previews: some View {
