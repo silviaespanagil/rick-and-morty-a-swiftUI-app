@@ -13,6 +13,11 @@ struct CharacterCellView: View {
     
     var body: some View {
         
+        if viewModel.showProgressView {
+            
+            ProgressViewView()
+        }
+        
         ScrollView {
             
             ForEach(viewModel.characters) { character in

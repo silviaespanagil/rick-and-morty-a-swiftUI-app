@@ -11,7 +11,6 @@ import Combine
 
 class LocationViewModel: ObservableObject {
     
- 
     @Published public private(set) var locations: [Location] = []
     
     @Published public private(set) var showProgressView = false
@@ -25,7 +24,7 @@ class LocationViewModel: ObservableObject {
     }
     
     func getLocation() {
-       
+        
         showProgressView = true
         
         cancellable = GetLocationUseCase().execute()
@@ -44,8 +43,6 @@ class LocationViewModel: ObservableObject {
             }, receiveValue: {(locations: [Location]) in
                 
                 self.locations = locations
-            })
-        
+            })        
     }
-    
 }

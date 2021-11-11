@@ -13,6 +13,11 @@ struct LocationView: View {
     
     var body: some View {
         
+        if viewModel.showProgressView {
+            
+            ProgressViewView()
+        }
+        
         VStack{
             
             List {
