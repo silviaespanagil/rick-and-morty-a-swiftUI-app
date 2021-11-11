@@ -13,6 +13,11 @@ struct CharacterDetailView: View {
     
     var body: some View {
         
+        if viewModel.showProgressView {
+            
+            ProgressViewView()
+        }
+        
         VStack{
             
             HStack{
@@ -46,7 +51,6 @@ struct CharacterDetailView: View {
         
     }
 }
-
 
 struct CharacterDetailView_Previews: PreviewProvider {
     static var previews: some View {
