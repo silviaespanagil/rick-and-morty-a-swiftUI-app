@@ -17,9 +17,9 @@ class CharacterRepositoryImplementation: CharacterRepository {
         self.remoteDataSource = remoteDataSource
     }
     
-    func getAllCharacters() -> AnyPublisher<[Character], Error> {
+    func getAllCharacters(page: Int) -> AnyPublisher<[Character], Error> {
         
-        return remoteDataSource.getAllCharacters().map {
+        return remoteDataSource.getAllCharacters(page: page).map {
             
             serverCharacter -> [Character] in
             

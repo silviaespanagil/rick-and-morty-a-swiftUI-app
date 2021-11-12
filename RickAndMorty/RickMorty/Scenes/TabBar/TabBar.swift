@@ -21,7 +21,7 @@ struct TabBar: View {
             
             TabView(selection: $activeTab){
                 
-                CharacterCellView(viewModel: CharacterListViewModel())
+                CharacterCellView(viewModel: CharacterListViewModel(page: 1))
                     .tabItem{
                         Image(systemName: "person.2")
                         Text("Characters")

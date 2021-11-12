@@ -26,10 +26,11 @@ class GetAllCharactersUseCaseUnitTest: XCTestCase {
         
         // Given
         let repository = MockCharacterRepository()
+        let page = 1
         sut = GetAllCharactersUseCase(repository: repository)
         
         // When
-        _ = sut!.execute()
+        _ = sut!.execute(page: page)
         
         // Then
         XCTAssertTrue(repository.isGetAllCharactersCalled)

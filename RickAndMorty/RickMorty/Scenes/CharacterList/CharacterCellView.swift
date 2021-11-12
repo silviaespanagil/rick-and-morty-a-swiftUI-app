@@ -18,7 +18,7 @@ struct CharacterCellView: View {
             ProgressViewView()
         }
         
-        ScrollView {
+        List {
             
             ForEach(viewModel.characters) { character in
                 
@@ -40,13 +40,15 @@ struct CharacterCellView: View {
                         .padding()
                     } .buttonStyle(PlainButtonStyle())
                 }
+                .onAppear {
+                    if character == viewModel.characters.last {
+                        viewModel.getAllCharacters(page: viewModel.currentPage)
+                    }
+                }
             }
             .buttonStyle(PlainButtonStyle())
             .padding()
-            .background(
-                Rectangle()
-                    .fill(Color.white)
-                    .shadow(color: Color("DeepBlue"), radius: 2, x: 0, y: 2)
+            .foregroundColor(Color("DeepBlue")
             )
             Spacer()
         }
@@ -54,7 +56,8 @@ struct CharacterCellView: View {
 }
 
 struct CharacterCellView_Previews: PreviewProvider {
+    
     static var previews: some View {
-        CharacterCellView(viewModel: CharacterListViewModel())
+        CharacterCellView(viewModel: CharacterListViewModel(page: 1))
     }
 } 

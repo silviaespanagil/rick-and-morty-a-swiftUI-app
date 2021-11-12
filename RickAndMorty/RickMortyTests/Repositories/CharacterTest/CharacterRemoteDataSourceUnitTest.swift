@@ -9,7 +9,7 @@ import XCTest
 @testable import RickMorty
 
 class CharacterRemoteDataSourceUnitTest: XCTestCase {
-
+    
     var sut: CharacterRemoteDataSource?
     
     override func setUpWithError() throws {
@@ -18,21 +18,22 @@ class CharacterRemoteDataSourceUnitTest: XCTestCase {
         
         sut = CharacterRemoteDataSource(baseURL: "http://jsonplaceholder.typicode.com/")
     }
-
+    
     override func tearDownWithError() throws {
-
+        
         sut = nil
         
         try super.tearDownWithError()
     }
-
+    
     func testGetAllCharactersEndpoint() {
         
         // Given
-        let character = "character"
+        let character = "character/"
+        let page = 2
         
         // When
-        let response = sut!.getAllCharactersEndpoint()
+        let response = sut!.getAllCharactersEndpoint(page: page)
         
         // Then
         XCTAssertNotNil(response)
@@ -42,7 +43,7 @@ class CharacterRemoteDataSourceUnitTest: XCTestCase {
     func testGetCharacterDetailEndpoint() {
         
         // Given
-        let character = "character"
+        let character = "character/"
         let id = 1
         
         // When
