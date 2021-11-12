@@ -48,10 +48,7 @@ struct CharacterCellView: View {
             }
             .buttonStyle(PlainButtonStyle())
             .padding()
-            .background(
-                Rectangle()
-                    .fill(Color.white)
-                    .shadow(color: Color("DeepBlue"), radius: 2, x: 0, y: 2)
+            .foregroundColor(Color("DeepBlue")
             )
             Spacer()
         }
