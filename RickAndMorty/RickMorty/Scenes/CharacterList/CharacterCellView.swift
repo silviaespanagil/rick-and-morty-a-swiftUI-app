@@ -20,37 +20,40 @@ struct CharacterCellView: View {
         
         List {
             
-            ForEach(viewModel.characters) { character in
+            Section(header: ListHeaderView()) {
                 
-                NavigationLink(destination: CharacterDetailView(viewModel: CharacterDetailViewModel(character: character))){
+                ForEach(viewModel.characters) { character in
                     
-                    HStack {
+                    NavigationLink(destination: CharacterDetailView(viewModel: CharacterDetailViewModel(character: character))){
                         
-                        Image("")
-                            .renderImage(url: URL(string:character.image)!)
-                            .frame(width: viewModel.imageSize, height: viewModel.imageSize)
-                        
-                        VStack {
+                        HStack {
                             
-                            Text(character.name)
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                            Text(character.status)
-                                .frame(maxWidth: .infinity, alignment: .leading)
+                            Image("")
+                                .renderImage(url: URL(string:character.image)!)
+                                .frame(width: viewModel.imageSize, height: viewModel.imageSize)
+                            
+                            VStack {
+                                
+                                Text(character.name)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                Text(character.status)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                            }
+                            .padding()
+                        } .buttonStyle(PlainButtonStyle())
+                    }
+                    .onAppear {
+                        if character == viewModel.characters.last {
+                            viewModel.getAllCharacters(page: viewModel.currentPage)
                         }
-                        .padding()
-                    } .buttonStyle(PlainButtonStyle())
-                }
-                .onAppear {
-                    if character == viewModel.characters.last {
-                        viewModel.getAllCharacters(page: viewModel.currentPage)
                     }
                 }
+                .buttonStyle(PlainButtonStyle())
+                .padding()
+                .foregroundColor(Color("DeepBlue")
+                )
+                Spacer()
             }
-            .buttonStyle(PlainButtonStyle())
-            .padding()
-            .foregroundColor(Color("DeepBlue")
-            )
-            Spacer()
         }
     }
 }
