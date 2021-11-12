@@ -10,10 +10,11 @@ import Foundation
 //TODO: TEST THE SERVER RESPONSE
 struct ServerResidentResponse: Codable {
     
-    let residents: String
+    let residents: String?
     
     func convertToEntity() -> Resident {
         
-        return Resident( resident: residents)
+        return Resident( residents: residents ?? "")
     }
 }
+

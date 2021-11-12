@@ -9,5 +9,6 @@ import Foundation
 
 struct Resident {
     
-    let resident: String
+    let residents: String?
 }
+

@@ -14,4 +14,16 @@ struct Location: Identifiable {
     let type: String
     let residents: [Resident]
     let dimension: String
+    
+    func getResidents() -> String {
+        
+        var result = ""
+        
+        for resident in residents {
+            
+            result = "\(resident.residents ?? "")"
+        }
+        
+        return result
+    }
 }

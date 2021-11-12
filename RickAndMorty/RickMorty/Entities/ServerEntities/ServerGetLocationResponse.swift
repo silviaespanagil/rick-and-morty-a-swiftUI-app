@@ -23,9 +23,10 @@ struct ServerGetLocationResponse: Codable {
         }
         
         return Location(id: id,
-                         name: name,
-                         type: type,
+                        name: name,
+                        type: type,
                         residents: res,
-                         dimension: dimension)
+                        dimension: dimension)
     }
 }
+
