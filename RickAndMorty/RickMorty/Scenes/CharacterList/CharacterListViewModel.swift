@@ -41,6 +41,7 @@ class CharacterListViewModel: ObservableObject {
                 case .finished:
                     
                     self.currentPage += 1
+                    
                     break
                     
                 case .failure:
@@ -49,7 +50,7 @@ class CharacterListViewModel: ObservableObject {
                 
             }, receiveValue: {(characters: [Character]) in
                 
-                self.characters = characters
+                self.characters.append(contentsOf: characters)
             })
     }
 }
