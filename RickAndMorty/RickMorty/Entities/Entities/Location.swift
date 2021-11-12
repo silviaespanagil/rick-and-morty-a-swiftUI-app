@@ -12,18 +12,7 @@ struct Location: Identifiable {
     let id: Int
     let name: String
     let type: String
-    let residents: [Resident]
+    let residents: [String]
     let dimension: String
     
-    func getResidents() -> String {
-        
-        var result = ""
-        
-        for resident in residents {
-            
-            result = "\(resident.residents ?? "")"
-        }
-        
-        return result
-    }
 }
