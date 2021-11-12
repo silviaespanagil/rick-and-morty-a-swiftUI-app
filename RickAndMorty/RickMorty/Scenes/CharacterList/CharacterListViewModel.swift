@@ -41,7 +41,7 @@ class CharacterListViewModel: ObservableObject {
                 case .finished:
                     
                     self.currentPage += 1
-
+                    
                     break
                     
                 case .failure:
