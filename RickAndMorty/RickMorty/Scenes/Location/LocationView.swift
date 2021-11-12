@@ -22,24 +22,26 @@ struct LocationView: View {
             
             List {
                 
-                ForEach(viewModel.locations) { location in
-                    
-                    VStack(alignment: .leading, spacing:10) {
-                        
-                        Spacer()
-                        Text(location.name)
-                        
-                        VStack(alignment: .leading) {
-                            
-                            Text(location.type)
-                            Text("\(viewModel.dimension)\(location.dimension)")
-                            
-                        }
-                        .font(.footnote)
-                        Spacer()
-                    }
-                }
-            }
+                Section(header:ListHeaderView()){
+                   
+                        ForEach(viewModel.locations) { location in
+                            NavigationLink(destination:LocationDetailView()){
+                            VStack(alignment: .leading, spacing:10) {
+                                
+                                Spacer()
+                                Text(location.name)
+                                
+                                VStack(alignment: .leading) {
+                                    
+                                    Text(location.type)
+                                    Text("\(viewModel.dimension)\(location.dimension)")
+                                    
+                                }
+                                .font(.footnote)
+                                Spacer()
+                            }
+                        }}
+                }}
         }
     }
 }

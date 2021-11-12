@@ -17,8 +17,6 @@
 		A794FF30273C1EA0003E8043 /* Tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794FF2F273C1EA0003E8043 /* Tabs.swift */; };
 		A794FF3B273D3513003E8043 /* ProgressViewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794FF3A273D3513003E8043 /* ProgressViewView.swift */; };
 		A794FF3E273E753B003E8043 /* ListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794FF3D273E753B003E8043 /* ListHeaderView.swift */; };
-		A794FF42273E8395003E8043 /* ServerResidentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794FF41273E8395003E8043 /* ServerResidentResponse.swift */; };
-		A794FF44273E842F003E8043 /* Resident.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794FF43273E842F003E8043 /* Resident.swift */; };
 		A794FF47273E88D9003E8043 /* LocationDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794FF46273E88D9003E8043 /* LocationDetailViewModel.swift */; };
 		A794FF49273E88EA003E8043 /* LocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794FF48273E88EA003E8043 /* LocationDetailView.swift */; };
 		A7AF769427398A50009A410C /* ServerCharacterResponseUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF769327398A50009A410C /* ServerCharacterResponseUnitTests.swift */; };
@@ -95,8 +93,6 @@
 		A794FF2F273C1EA0003E8043 /* Tabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabs.swift; sourceTree = "<group>"; };
 		A794FF3A273D3513003E8043 /* ProgressViewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewView.swift; sourceTree = "<group>"; };
 		A794FF3D273E753B003E8043 /* ListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHeaderView.swift; sourceTree = "<group>"; };
-		A794FF41273E8395003E8043 /* ServerResidentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerResidentResponse.swift; sourceTree = "<group>"; };
-		A794FF43273E842F003E8043 /* Resident.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resident.swift; sourceTree = "<group>"; };
 		A794FF46273E88D9003E8043 /* LocationDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailViewModel.swift; sourceTree = "<group>"; };
 		A794FF48273E88EA003E8043 /* LocationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailView.swift; sourceTree = "<group>"; };
 		A7AF7688273987D7009A410C /* RickMortyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RickMortyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -397,7 +393,6 @@
 				A7CE2B86273440EE001B5491 /* ServerEpisodeResponse.swift */,
 				A7AF76AB273A9997009A410C /* ServerGetLocationResponse.swift */,
 				A7AF76BB273AC665009A410C /* ServerGetEpisodeResponse.swift */,
-				A794FF41273E8395003E8043 /* ServerResidentResponse.swift */,
 			);
 			path = ServerEntities;
 			sourceTree = "<group>";
@@ -408,7 +403,6 @@
 				A7CE2B8027343DB2001B5491 /* Character.swift */,
 				A7AF769B273A7FA5009A410C /* Location.swift */,
 				A7AF76B9273AC474009A410C /* Episode.swift */,
-				A794FF43273E842F003E8043 /* Resident.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -624,13 +618,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A794FF44273E842F003E8043 /* Resident.swift in Sources */,
 				A7CE2B7E27343B7B001B5491 /* ServerCharacterResponse.swift in Sources */,
 				A7CE2B7227342F2A001B5491 /* Constants.swift in Sources */,
 				A7CE2B9627352BD2001B5491 /* CharacterCellView.swift in Sources */,
 				A7CE2B7027341ED8001B5491 /* APIManager.swift in Sources */,
 				A794FF3B273D3513003E8043 /* ProgressViewView.swift in Sources */,
-				A794FF42273E8395003E8043 /* ServerResidentResponse.swift in Sources */,
 				A7CE2B762734342B001B5491 /* CharacterRemoteDataSource.swift in Sources */,
 				A7CE2B87273440EE001B5491 /* ServerEpisodeResponse.swift in Sources */,
 				A7CE2BCF27393741001B5491 /* CharacterDetailUseCase.swift in Sources */,
