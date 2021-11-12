@@ -26,6 +26,7 @@ class ServerLocationResponseUnitTest: XCTestCase {
         let serverLocationResponse = ServerGetLocationResponse(id: 1,
                                                                name: "name",
                                                                type: "type",
+                                                               residents: [],
                                                                dimension: "dimension")
         
         // When
