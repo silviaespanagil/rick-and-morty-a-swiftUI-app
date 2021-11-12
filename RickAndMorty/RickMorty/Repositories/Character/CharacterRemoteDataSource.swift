@@ -10,7 +10,8 @@ import Combine
 
 class CharacterRemoteDataSource {
     
-    static let getAllCharactersURL: String = "character"
+    static let getAllCharactersURL: String = "character/"
+    static let getPage: String = "?page="
     private let baseURLString: String
     private let session: URLSession
     
@@ -20,11 +21,11 @@ class CharacterRemoteDataSource {
         self.session = session
     }
     
-    func getAllCharacters() -> AnyPublisher<ServerBaseArrayResponse<ServerCharacterResponse>, Error> {
+    func getAllCharacters(page: Int) -> AnyPublisher<ServerBaseArrayResponse<ServerCharacterResponse>, Error> {
         
         let apiManager = ApiManager(baseURL: baseURLString, session: session)
         
-        let urlRequest = getAllCharactersEndpoint()
+        let urlRequest = getAllCharactersEndpoint(page: page)
         
         return apiManager.performRequest(urlRequest: urlRequest)
     }
@@ -41,9 +42,9 @@ class CharacterRemoteDataSource {
 
 extension CharacterRemoteDataSource {
     
-    func getAllCharactersEndpoint() -> URLRequest {
+    func getAllCharactersEndpoint(page: Int) -> URLRequest {
         
-        let endpoint = "\(baseURLString)\(CharacterRemoteDataSource.getAllCharactersURL)"
+        let endpoint = "\(baseURLString)\(CharacterRemoteDataSource.getAllCharactersURL)\(CharacterRemoteDataSource.getPage)\(page)"
         
         let components = URLComponents(string: endpoint)
         

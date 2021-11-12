@@ -10,7 +10,7 @@ import Combine
 
 protocol CharacterRepository {
     
-    func getAllCharacters()  -> AnyPublisher<[Character], Error>
+    func getAllCharacters(page: Int)  -> AnyPublisher<[Character], Error>
     
     func getCharacterDetail(id: Int) -> AnyPublisher<Character, Error>
 }
