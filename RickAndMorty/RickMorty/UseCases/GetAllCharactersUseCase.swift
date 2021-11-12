@@ -17,8 +17,8 @@ class GetAllCharactersUseCase {
         self.repository = repository
     }
     
-    func execute() -> AnyPublisher<[Character], Error> {
+    func execute(page: Int) -> AnyPublisher<[Character], Error> {
         
-        repository.getAllCharacters()
+        repository.getAllCharacters(page: page)
     }
 }
