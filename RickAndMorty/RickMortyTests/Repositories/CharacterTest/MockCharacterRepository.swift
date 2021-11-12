@@ -14,7 +14,7 @@ class MockCharacterRepository: CharacterRepository {
     var isGetAllCharactersCalled = false
     var isGetCharacterDetailCalled = false
     
-    func getAllCharacters() -> AnyPublisher<[Character], Error> {
+    func getAllCharacters(page: Int) -> AnyPublisher<[Character], Error> {
         
         self.isGetAllCharactersCalled = true
         

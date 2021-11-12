@@ -36,7 +36,8 @@ class CharacterRepositoryImplementationUnitTest: XCTestCase {
         
         // Given
         let endpoint = "character"
-        let session = getCharacterSession(statusCode: sucessStatusCode, endpoint: endpoint)
+        let page = 1
+        let session = getCharacterSession(statusCode: sucessStatusCode, endpoint: endpoint, page: page)
         
         let remote = CharacterRemoteDataSource(baseURL: baseUrlString, session: session)
         
@@ -45,7 +46,7 @@ class CharacterRepositoryImplementationUnitTest: XCTestCase {
         let exp = self.expectation(description: "expected values")
         
         // When
-        cancellable = sut!.getAllCharacters()
+        cancellable = sut!.getAllCharacters(page: page)
             .sink(receiveCompletion: { completion in
                 
                 switch completion {
@@ -77,10 +78,10 @@ class CharacterRepositoryImplementationUnitTest: XCTestCase {
 
 extension CharacterRepositoryImplementationUnitTest {
     
-    func getCharacterSession(statusCode: Int, endpoint: String) -> URLSession {
+    func getCharacterSession(statusCode: Int, endpoint: String, page: Int) -> URLSession {
         
         // URL we expect to call
-        let url = URL(string: "http://jsonplaceholder.typicode.com/\(endpoint)")
+        let url = URL(string: "http://jsonplaceholder.typicode.com/\(endpoint)/?page=\(page)")
         
         // data we expect to receive
         let data = getCharacterData()
