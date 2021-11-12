@@ -11,32 +11,38 @@ import Combine
 
 class CharacterListViewModel: ObservableObject {
     
- 
     @Published public private(set) var characters: [Character] = []
     
     @Published public private(set) var showProgressView = false
     
     let imageSize: CGFloat = 90
     
+    var areCharactersLoaded = false
+    var currentPage = 1
+    
     private var cancellable: AnyCancellable?
     
-    init() {
-        getAllCharacters()
+    init(page: Int) {
+        
+        getAllCharacters(page: page)
     }
     
-    func getAllCharacters() {
-       
+    func getAllCharacters(page: Int) {
+        
         showProgressView = true
         
-        cancellable = GetAllCharactersUseCase().execute()
+        cancellable = GetAllCharactersUseCase().execute(page: page)
             .receive(on: DispatchQueue.main)
-            .sink(receiveCompletion: { completion in
+            .sink(receiveCompletion: { [self] completion in
                 
                 self.showProgressView = false
                 
                 switch completion {
                 case .finished:
+                    
+                    self.currentPage += 1
                     break
+                    
                 case .failure:
                     break
                 }
@@ -45,7 +51,5 @@ class CharacterListViewModel: ObservableObject {
                 
                 self.characters = characters
             })
-        
     }
-    
 }
