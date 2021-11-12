@@ -35,7 +35,6 @@ class LocationViewModel: ObservableObject {
                 
                 switch completion {
                 case .finished:
-                    
                     break
                 case .failure:
                     break
