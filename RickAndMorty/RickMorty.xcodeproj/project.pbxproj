@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		47670E632742AF020071B3CF /* GetAllCharactersByIdUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47670E622742AF020071B3CF /* GetAllCharactersByIdUseCase.swift */; };
 		47B665DA273BC6860086E96F /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B665D9273BC6850086E96F /* HTTPError.swift */; };
 		47B665DC273BC74D0086E96F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47B665DB273BC74D0086E96F /* Assets.xcassets */; };
 		A743A9A127396983008A5CA0 /* CharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A743A9A027396983008A5CA0 /* CharacterDetailView.swift */; };
@@ -84,6 +85,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		47670E622742AF020071B3CF /* GetAllCharactersByIdUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllCharactersByIdUseCase.swift; sourceTree = "<group>"; };
 		47B665D9273BC6850086E96F /* HTTPError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPError.swift; sourceTree = "<group>"; };
 		47B665DB273BC74D0086E96F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A743A9A027396983008A5CA0 /* CharacterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailView.swift; sourceTree = "<group>"; };
@@ -417,6 +419,7 @@
 				A7AF76AF273AA5F7009A410C /* GetLocationUseCase.swift */,
 				A7AF76C4273ACA60009A410C /* GetEpisodeUseCase.swift */,
 				A794FF4F27427079003E8043 /* LocationDetailUseCase.swift */,
+				47670E622742AF020071B3CF /* GetAllCharactersByIdUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -627,6 +630,7 @@
 				A7CE2B7027341ED8001B5491 /* APIManager.swift in Sources */,
 				A794FF3B273D3513003E8043 /* ProgressViewView.swift in Sources */,
 				A7CE2B762734342B001B5491 /* CharacterRemoteDataSource.swift in Sources */,
+				47670E632742AF020071B3CF /* GetAllCharactersByIdUseCase.swift in Sources */,
 				A7CE2B87273440EE001B5491 /* ServerEpisodeResponse.swift in Sources */,
 				A7CE2BCF27393741001B5491 /* CharacterDetailUseCase.swift in Sources */,
 				A7AF76AE273AA587009A410C /* LocationView.swift in Sources */,

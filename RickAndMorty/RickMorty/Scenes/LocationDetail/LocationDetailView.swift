@@ -12,12 +12,19 @@ struct LocationDetailView: View {
     @StateObject var viewModel: LocationDetailViewModel
     
     var body: some View {
-        Text(viewModel.location.name)
         
-        ForEach(viewModel.residents, id: \.self){ resident in
+        VStack {
             
-            Text(resident)
+            Text(viewModel.location.name)
             
+            ForEach(viewModel.characters, id: \.self){ character in
+                
+                Text(character.name)
+            }
+            
+        }.onAppear {
+            
+            viewModel.getAllCharactersById()
         }
     }
 }

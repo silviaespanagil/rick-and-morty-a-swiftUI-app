@@ -30,7 +30,7 @@ class CharacterRemoteDataSource {
         return apiManager.performRequest(urlRequest: urlRequest)
     }
     
-    func getCharacterDetail(id: Int) -> AnyPublisher<ServerResultResponse<ServerCharacterResponse>, Error> {
+    func getCharacterDetail(id: Int) -> AnyPublisher<ServerCharacterResponse, Error> {
         
         let apiManager = ApiManager(baseURL: baseURLString, session: session)
         

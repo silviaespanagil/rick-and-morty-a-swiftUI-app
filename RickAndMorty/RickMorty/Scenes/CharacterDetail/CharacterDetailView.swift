@@ -48,7 +48,10 @@ struct CharacterDetailView: View {
                     .fill(Color.white)
                     .shadow(color: Color("DeepBlue"), radius: 2, x: 0, y: 2)
             )
-        
+            .onAppear {
+                
+                viewModel.getCharacterDetail()
+            }
     }
 }
 
