@@ -26,7 +26,7 @@ struct LocationView: View {
                     
                     ForEach(viewModel.locations) { location in
                         
-                        NavigationLink(destination:LocationDetailView(viewModel:LocationDetailViewModel())){
+                        NavigationLink(destination:LocationDetailView(viewModel:LocationDetailViewModel(location: location))){
                             
                             VStack(alignment: .leading, spacing:10) {
                                 
