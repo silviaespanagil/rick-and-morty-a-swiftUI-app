@@ -43,6 +43,6 @@ class LocationViewModel: ObservableObject {
             }, receiveValue: {(locations: [Location]) in
                 
                 self.locations = locations
-            })        
+            })
     }
 }

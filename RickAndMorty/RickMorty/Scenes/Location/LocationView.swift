@@ -23,9 +23,11 @@ struct LocationView: View {
             List {
                 
                 Section(header:ListHeaderView()){
-                   
-                        ForEach(viewModel.locations) { location in
-                            NavigationLink(destination:LocationDetailView()){
+                    
+                    ForEach(viewModel.locations) { location in
+                        
+                        NavigationLink(destination:LocationDetailView(viewModel:LocationDetailViewModel())){
+                            
                             VStack(alignment: .leading, spacing:10) {
                                 
                                 Spacer()
@@ -40,8 +42,10 @@ struct LocationView: View {
                                 .font(.footnote)
                                 Spacer()
                             }
-                        }}
-                }}
+                        }
+                    }
+                }
+            }
         }
     }
 }

@@ -17,7 +17,6 @@ struct ServerGetLocationResponse: Codable {
     
     func converToEntity() -> Location {
         
-        
         return Location(id: id,
                         name: name,
                         type: type,
