@@ -11,6 +11,40 @@ import SwiftUI
 
 class LocationDetailViewModel: ObservableObject {
     
+    @Published public private(set) var location: Location
+    @Published public private(set) var showProgressView = false
+    
+    private var cancellable: AnyCancellable?
+    
+    init(location: Location) {
+        
+        self.location = location
+    }
+    
+    func getLocationDetail() {
+        
+        showProgressView = true
+        
+        cancellable = GetLocationDetailUseCase().execute(id: location.id)
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { completion in
+                
+                self.showProgressView = false
+                
+                switch completion {
+                case .finished:
+                    break
+                case .failure:
+                    break
+                }
+                
+            }, receiveValue: { (location: Location) in
+                
+                self.location = location
+            })
+    }
+    
+/*
     @Published public private(set) var locations: [Location] = []
     
     @Published public private(set) var residents: [String] = []
@@ -26,7 +60,6 @@ class LocationDetailViewModel: ObservableObject {
         getResidents()
     }
     
-    //Get all locations
     func getLocation() {
         
         showProgressView = true
@@ -58,5 +91,5 @@ class LocationDetailViewModel: ObservableObject {
             print (residents)
             
         }
-    }
+    }*/
 }
