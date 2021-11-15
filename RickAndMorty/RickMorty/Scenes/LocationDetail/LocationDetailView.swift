@@ -13,23 +13,25 @@ struct LocationDetailView: View {
     
     var body: some View {
         Text(viewModel.location.name)
-        /*Button(action: {
-            viewModel.getResidents()
-                }){
-                    Text(":D")
-                }*/
+        
+        ForEach(viewModel.residents, id: \.self){ resident in
+            
+            Text(resident)
+            
+        }
     }
 }
 
 struct LocationDetailView_Previews: PreviewProvider {
+    
     static var previews: some View {
-        
+    
         let location = Location(id: 1,
                                 name: "Earth",
                                 type: "Type",
                                 residents: ["1","2"],
                                 dimension: "dimension")
-        
+       
         LocationDetailView(viewModel:LocationDetailViewModel(location: location))
     }
 }
