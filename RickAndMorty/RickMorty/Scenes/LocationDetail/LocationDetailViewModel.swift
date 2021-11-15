@@ -12,6 +12,7 @@ import SwiftUI
 class LocationDetailViewModel: ObservableObject {
     
     @Published public private(set) var location: Location
+    @Published public private(set) var residents: [String] = []
     @Published public private(set) var showProgressView = false
     
     private var cancellable: AnyCancellable?
@@ -19,6 +20,7 @@ class LocationDetailViewModel: ObservableObject {
     init(location: Location) {
         
         self.location = location
+        getResidentsID()
     }
     
     func getLocationDetail() {
@@ -41,55 +43,24 @@ class LocationDetailViewModel: ObservableObject {
             }, receiveValue: { (location: Location) in
                 
                 self.location = location
+                
             })
     }
     
-/*
-    @Published public private(set) var locations: [Location] = []
-    
-    @Published public private(set) var residents: [String] = []
-    
-    @Published public private(set) var residentID: Int = 0
-    
-    @Published public private(set) var showProgressView = false
-    
-    private var cancellable: AnyCancellable?
-    
-    init() {
-        getLocation()
-        getResidents()
-    }
-    
-    func getLocation() {
+    func getResidentsID() {
         
-        showProgressView = true
+        residents.append(contentsOf: location.residents)
+        print (residents)
         
-        cancellable = GetLocationUseCase().execute()
-            .receive(on: DispatchQueue.main)
-            .sink(receiveCompletion: { completion in
-                
-                self.showProgressView = false
-                
-                switch completion {
-                case .finished:
-                    break
-                case .failure:
-                    break
-                }
-                
-            }, receiveValue: {(locations: [Location]) in
-                
-                self.locations = locations
-            })
-    }
-    
-    func getResidents() {
-        
-        for location in locations {
+        for resident in residents {
             
-            residents.append(contentsOf: location.residents)
-            print (residents)
-            
+            let residentSplit = resident.split(separator: "/")
+            let residentID = (residentSplit[4] as NSString).integerValue
+            print(residentID)
         }
-    }*/
+    }
+    
 }
+
+
+
