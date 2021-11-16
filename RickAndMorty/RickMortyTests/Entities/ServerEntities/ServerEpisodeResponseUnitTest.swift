@@ -9,7 +9,7 @@ import XCTest
 @testable import RickMorty
 
 class ServerEpisodeResponseUnitTest: XCTestCase {
-
+    
     override func setUpWithError() throws {
         
         try super.setUpWithError()
@@ -24,9 +24,10 @@ class ServerEpisodeResponseUnitTest: XCTestCase {
         
         // Given
         let serverEpisodeResponse = ServerGetEpisodeResponse(id: 1,
-                                                               name: "name",
-                                                               episode: "episode",
-                                                               airDate: "airDate")
+                                                             name: "name",
+                                                             episode: "episode",
+                                                             airDate: "airDate",
+                                                             characters: [""])
         
         // When
         let episode = serverEpisodeResponse.converToEntity()

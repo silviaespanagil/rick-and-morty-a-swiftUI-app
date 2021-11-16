@@ -22,15 +22,16 @@ struct LocationView: View {
             
             List {
                 
-                Section(header:ListHeaderView()){
+                Section(header:ListHeaderView()) {
                     
                     ForEach(viewModel.locations) { location in
                         
-                        NavigationLink(destination:LocationDetailView(viewModel:LocationDetailViewModel(location: location))){
+                        NavigationLink(destination: LocationDetailView(viewModel: LocationDetailViewModel(location: location))) {
                             
                             VStack(alignment: .leading, spacing:10) {
                                 
                                 Spacer()
+                                
                                 Text(location.name)
                                 
                                 VStack(alignment: .leading) {

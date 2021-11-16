@@ -13,12 +13,14 @@ struct ServerGetEpisodeResponse: Codable {
     let name: String
     let episode: String
     let airDate: String
+    let characters: [String]
     
     func converToEntity() -> Episode {
         
         return Episode(id: id,
-                         name: name,
-                         episode: episode,
-                         airDate: airDate)
+                       name: name,
+                       episode: episode,
+                       airDate: airDate,
+                       characters: characters)
     }
 }

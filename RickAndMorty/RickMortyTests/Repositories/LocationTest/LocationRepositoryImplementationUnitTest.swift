@@ -110,7 +110,7 @@ class LocationRepositoryImplementationUnitTest: XCTestCase {
         // Given
         let endpoint = "location"
         let id = 1
-        let session = getLocationDetailSession(statusCode: sucessStatusCode, endpoint: endpoint, id: id)
+        let session = getLocationDetail(statusCode: sucessStatusCode, endpoint: endpoint, id: id)
         
         let remote = LocationRemoteDataSource(baseURL: baseUrlString, session: session)
         
@@ -172,7 +172,7 @@ extension LocationRepositoryImplementationUnitTest {
         return session
     }
     
-    func getLocationDetailSession(statusCode: Int, endpoint: String, id: Int) -> URLSession {
+    func getLocationDetail(statusCode: Int, endpoint: String, id: Int) -> URLSession {
         
         // URL we expect to call
         let url = URL(string: "http://jsonplaceholder.typicode.com/\(endpoint)/\(id)")
@@ -195,7 +195,6 @@ extension LocationRepositoryImplementationUnitTest {
         let session = URLSession(configuration: config)
         
         return session
-        
     }
     
     func getLocationData() -> Data {
@@ -227,6 +226,7 @@ extension LocationRepositoryImplementationUnitTest {
     func getLocationDetailData() -> Data {
         
         let dataString = """
+                    
                     {
                        "id":1,
                        "name":"Earth (C-137)",
@@ -239,8 +239,10 @@ extension LocationRepositoryImplementationUnitTest {
                        "url":"https://rickandmortyapi.com/api/location/1",
                        "created":"2017-11-10T12:42:04.162Z"
                     }
+                    
                     """
         
         return Data(dataString.utf8)
     }
 }
+

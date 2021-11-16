@@ -32,7 +32,8 @@ class ServerCharacterResponseUnitTests: XCTestCase {
                                                               origin: nil,
                                                               location: nil,
                                                               image: "image",
-                                                              url: "")
+                                                              url: "",
+                                                              episode: [""])
         
         // When
         let character = serverCharacterResponse.converToEntity()

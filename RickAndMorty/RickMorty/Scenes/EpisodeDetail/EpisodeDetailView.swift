@@ -1,21 +1,21 @@
 //
-//  LocationDetailView.swift
+//  EpisodeDetailView.swift
 //  RickMorty
 //
-//  Created by Silvia España on 12/11/21.
+//  Created by Silvia España on 16/11/21.
 //
 
 import SwiftUI
 
-struct LocationDetailView: View {
+struct EpisodeDetailView: View {
     
-    @StateObject var viewModel: LocationDetailViewModel
+    @StateObject var viewModel: EpisodeDetailViewModel
     
     var body: some View {
         
         VStack {
             
-            Text(viewModel.location.name)
+            Text(viewModel.episode.name)
                 .font(.title)
                 .foregroundColor(Color("NoBlack"))
             
@@ -27,9 +27,9 @@ struct LocationDetailView: View {
                 
                 HStack {
                     
-                    Text("🪐")
+                    Text("📺")
                         .font(.footnote)
-                    Text("Type")
+                    Text("Episode")
                         .foregroundColor(Color("LightBlue"))
                         .font(.footnote)
                     
@@ -37,16 +37,16 @@ struct LocationDetailView: View {
                     
                     VStack {
                         
-                        Text("\(viewModel.location.type)")
+                        Text("\(viewModel.episode.episode)")
                             .foregroundColor(Color("DeepBlue"))
                     }
                 }.frame(maxWidth:.infinity)
                 
                 HStack {
                     
-                    Text("🚀")
+                    Text("📆")
                         .font(.footnote)
-                    Text("Dimension")
+                    Text("Air Date")
                         .foregroundColor(Color("LightBlue"))
                         .font(.footnote)
                     
@@ -54,7 +54,24 @@ struct LocationDetailView: View {
                     
                     VStack {
                         
-                        Text("\(viewModel.location.dimension)")
+                        Text("\(viewModel.episode.airDate)")
+                            .foregroundColor(Color("DeepBlue"))
+                    }
+                }.frame(maxWidth:.infinity)
+                
+                HStack {
+                    
+                    Text("🛸")
+                        .font(.footnote)
+                    Text("# characters starring")
+                        .foregroundColor(Color("LightBlue"))
+                        .font(.footnote)
+                    
+                    Spacer()
+                    
+                    VStack {
+                        
+                        Text("\(viewModel.characters.count)")
                             .foregroundColor(Color("DeepBlue"))
                     }
                 }.frame(maxWidth:.infinity)
@@ -62,7 +79,7 @@ struct LocationDetailView: View {
             
             List {
                 
-                Section(header: Text("Residents")) {
+                Section(header: Text("Characters")) {
                     
                     if viewModel.showProgressView {
                         
@@ -71,7 +88,7 @@ struct LocationDetailView: View {
                     
                     ForEach(viewModel.characters, id: \.self){ character in
                         
-                        HStack {
+                        HStack{
                             
                             Image("")
                                 .renderImage(url: URL(string: character.image)!)
@@ -86,12 +103,12 @@ struct LocationDetailView: View {
                             
                             VStack(alignment: .trailing) {
                                 
-                                Text("Born in \(character.origin)")
+                                Text("Been in \(character.episode.count) episodes")
                                 
                                 Divider().frame(maxWidth: 40)
                                 
-                                Text("Last seen in")
-                                Text("\(character.location)")}.font(.footnote)
+                                Text("Current status \(character.status)")
+                            }.font(.footnote)
                                 .foregroundColor(Color("DeepBlue")).multilineTextAlignment(.trailing)
                         }.frame(maxWidth:.infinity)
                             .padding(5)
@@ -99,24 +116,22 @@ struct LocationDetailView: View {
                 }
             }.frame(maxWidth:.infinity)
                 .listStyle(.grouped)
-            
         }.onAppear {
             
-            viewModel.getAllCharactersById()
+            viewModel.getAllEpisodeCharactersById()
         }
     }
 }
 
-struct LocationDetailView_Previews: PreviewProvider {
-    
+struct EpisodeDetailView_Previews: PreviewProvider {
     static var previews: some View {
         
-        let location = Location(id: 1,
-                                name: "Earth",
-                                type: "Planet",
-                                residents: ["1","2"],
-                                dimension: "Dimension")
+        let episode = Episode(id: 1,
+                              name: "Pilot",
+                              episode: "S01E01",
+                              airDate: "December 2, 2013",
+                              characters: ["2", "35"])
         
-        LocationDetailView(viewModel:LocationDetailViewModel(location: location))
+        EpisodeDetailView(viewModel: EpisodeDetailViewModel(episode: episode))
     }
 }
