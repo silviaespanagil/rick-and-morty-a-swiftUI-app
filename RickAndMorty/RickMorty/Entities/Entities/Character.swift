@@ -19,4 +19,5 @@ struct Character: Identifiable, Equatable, Hashable {
     let location: String
     let image: String
     let url: String
+    let episode: [String]
 }

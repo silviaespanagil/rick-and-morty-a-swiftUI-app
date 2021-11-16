@@ -67,7 +67,8 @@ struct CharacterDetailView_Previews: PreviewProvider {
                                   origin: "No se",
                                   location: "Earth",
                                   image: "https://pbs.twimg.com/profile_banners/729468343/1620046601/1500x500",
-                                  url:"")
+                                  url:"",
+                                  episode:[""])
         
         
         CharacterDetailView(viewModel: CharacterDetailViewModel(character: character))

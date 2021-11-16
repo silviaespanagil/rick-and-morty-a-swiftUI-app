@@ -37,7 +37,8 @@ class MockCharacterRepository: CharacterRepository {
                               origin: "",
                               location: "",
                               image: "",
-                              url: ""))
+                              url: "",
+                              episode: [""]))
         
             .setFailureType(to: Error.self)
             .eraseToAnyPublisher()

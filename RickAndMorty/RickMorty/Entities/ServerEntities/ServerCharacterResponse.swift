@@ -19,6 +19,7 @@ struct ServerCharacterResponse: Codable {
     let location: ServerLocationResponse?
     let image: String
     let url: String
+    let episode: [String]
     
     func converToEntity() -> Character {
         
@@ -31,6 +32,7 @@ struct ServerCharacterResponse: Codable {
                          origin: origin?.name ?? "",
                          location: location?.name ?? "",
                          image: image,
-                         url: url)
+                         url: url,
+                         episode: episode)
     }
 }
