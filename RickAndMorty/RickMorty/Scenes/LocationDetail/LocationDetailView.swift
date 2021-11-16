@@ -15,11 +15,6 @@ struct LocationDetailView: View {
         
         VStack {
             
-            if viewModel.showProgressView {
-                
-                ProgressViewView()
-            }
-            
             Text(viewModel.location.name)
                 .font(.title)
                 .foregroundColor(Color("NoBlack"))
@@ -68,6 +63,11 @@ struct LocationDetailView: View {
             List {
                 
                 Section(header: Text("Residents")) {
+                    
+                    if viewModel.showProgressView {
+                        
+                        ProgressViewView()
+                    }
                     
                     ForEach(viewModel.characters, id: \.self){ character in
                         
