@@ -12,13 +12,13 @@ struct CharacterDetailView: View {
     @StateObject var viewModel: CharacterDetailViewModel
     
     var body: some View {
-        
-        if viewModel.showProgressView {
-            
-            ProgressViewView()
-        }
-        
+       
         VStack{
+            
+            if viewModel.showProgressView {
+                
+                ProgressViewView()
+            }
             
             HStack{
                 

@@ -35,8 +35,10 @@ struct CharacterCellView: View {
                             VStack {
                                 
                                 Text(character.name)
+                                    .foregroundColor(Color("NoBlack"))
                                     .frame(maxWidth: .infinity, alignment: .leading)
                                 Text(character.status)
+                                    .font(.footnote)
                                     .frame(maxWidth: .infinity, alignment: .leading)
                             }
                             .padding()
