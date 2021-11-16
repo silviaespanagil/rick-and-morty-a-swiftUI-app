@@ -36,4 +36,18 @@ class EpisodeRepositoryImplementation: EpisodeRepository {
         .mapError({ $0 })
         .eraseToAnyPublisher()
     }
+    
+    func getEpisodeDetail(id: Int) -> AnyPublisher<Episode, Error> {
+        
+        return remoteDataSource.getEpisodeDetail(id: id).map { serverEpisode -> Episode in
+
+            // convert to entity
+            let episode = serverEpisode.results.converToEntity()
+            
+            // Return
+            return episode
+        }
+        .mapError({ $0 })
+        .eraseToAnyPublisher()
+    }
 }

@@ -28,6 +28,15 @@ class EpisodeRemoteDataSource {
         
         return apiManager.performRequest(urlRequest: urlRequest)
     }
+    
+    func getEpisodeDetail(id: Int) -> AnyPublisher<ServerResultResponse<ServerGetEpisodeResponse>, Error> {
+        
+        let apiManager = ApiManager(baseURL: baseURLString, session: session)
+        
+        let urlRequest = getEpisodeDetailEndpoint(id: id)
+        
+        return apiManager.performRequest(urlRequest: urlRequest)
+    }
 }
 
 extension EpisodeRemoteDataSource {
@@ -35,6 +44,17 @@ extension EpisodeRemoteDataSource {
     func getEpisodeEndpoint() -> URLRequest {
         
         let endpoint = "\(baseURLString)\(EpisodeRemoteDataSource.getEpisodeURL)"
+        
+        let components = URLComponents(string: endpoint)
+        
+        let urlRequest = URLRequest(url: (components?.url!)!)
+        
+        return urlRequest
+    }
+    
+    func getEpisodeDetailEndpoint(id: Int) -> URLRequest {
+        
+        let endpoint = "\(baseURLString)\(EpisodeRemoteDataSource.getEpisodeURL)\(id)"
         
         let components = URLComponents(string: endpoint)
         
