@@ -54,7 +54,7 @@ extension EpisodeRemoteDataSource {
     
     func getEpisodeDetailEndpoint(id: Int) -> URLRequest {
         
-        let endpoint = "\(baseURLString)\(EpisodeRemoteDataSource.getEpisodeURL)\(id)"
+        let endpoint = "\(baseURLString)\(EpisodeRemoteDataSource.getEpisodeURL)/\(id)"
         
         let components = URLComponents(string: endpoint)
         
