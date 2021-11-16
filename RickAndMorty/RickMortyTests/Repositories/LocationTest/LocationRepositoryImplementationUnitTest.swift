@@ -105,8 +105,7 @@ class LocationRepositoryImplementationUnitTest: XCTestCase {
     }
     
     func testGetLocationDetail() throws {
-        //TODO: Not passing
-        
+
         // Given
         let endpoint = "location"
         let id = 1
@@ -134,6 +133,10 @@ class LocationRepositoryImplementationUnitTest: XCTestCase {
                 XCTAssertEqual(location.id, 1)
                 XCTAssertEqual(location.name, "Earth (C-137)")
                 XCTAssertEqual(location.type, "Planet")
+                XCTAssertEqual(location.residents, [
+                    "https://rickandmortyapi.com/api/character/38",
+                    "https://rickandmortyapi.com/api/character/45",
+                 ])
                 XCTAssertEqual(location.dimension, "Dimension C-137")
             })
         
@@ -175,7 +178,7 @@ extension LocationRepositoryImplementationUnitTest {
     func getLocationDetail(statusCode: Int, endpoint: String, id: Int) -> URLSession {
         
         // URL we expect to call
-        let url = URL(string: "http://jsonplaceholder.typicode.com/\(endpoint)/\(id)")
+        let url = URL(string: "http://jsonplaceholder.typicode.com/\(endpoint)\(id)")
         
         // data we expect to receive
         let data = getLocationDetailData()
@@ -227,6 +230,7 @@ extension LocationRepositoryImplementationUnitTest {
         
         let dataString = """
                     
+                    { "results":
                     {
                        "id":1,
                        "name":"Earth (C-137)",
@@ -238,6 +242,7 @@ extension LocationRepositoryImplementationUnitTest {
                        ],
                        "url":"https://rickandmortyapi.com/api/location/1",
                        "created":"2017-11-10T12:42:04.162Z"
+                    }
                     }
                     
                     """

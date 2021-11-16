@@ -38,4 +38,18 @@ class EpisodeRemoteDataSourceUnitTest: XCTestCase {
         XCTAssertNotNil(response)
         XCTAssertEqual(response.url?.absoluteString.split(separator: "?").first, "http://jsonplaceholder.typicode.com/\(episode)")
     }
+    
+    func testEpisodeDetailEndpoint() {
+        
+        // Given
+        let endpoint = "episode/"
+        let id = 1
+        
+        // When
+        let response = sut!.getEpisodeDetailEndpoint(id: id)
+        
+        // Then
+        XCTAssertNotNil(response)
+        XCTAssertEqual(response.url?.absoluteString.split(separator: "?").first, "http://jsonplaceholder.typicode.com/\(endpoint)\(id)")
+    }
 }
