@@ -22,21 +22,28 @@ struct EpisodeView: View {
             
             List {
                 
-                ForEach(viewModel.episodes) { episode in
+                Section(header:ListHeaderView()) {
                     
-                    VStack(alignment: .leading, spacing:10) {
+                    ForEach(viewModel.episodes) { episode in
                         
-                        Spacer()
-                        Text(episode.name)
-                        
-                        VStack(alignment: .leading) {
+                        NavigationLink(destination: EpisodeDetailView(viewModel: EpisodeDetailViewModel(episode: episode))) {
                             
-                            Text(episode.episode)
-                            Text(episode.airDate)
-                            
+                            VStack(alignment: .leading, spacing:10) {
+                                
+                                Spacer()
+                                
+                                Text(episode.name)
+                                
+                                VStack(alignment: .leading) {
+                                    
+                                    Text(episode.episode)
+                                    Text(episode.airDate)
+                                    
+                                }
+                                .font(.footnote)
+                                Spacer()
+                            }
                         }
-                        .font(.footnote)
-                        Spacer()
                     }
                 }
             }
