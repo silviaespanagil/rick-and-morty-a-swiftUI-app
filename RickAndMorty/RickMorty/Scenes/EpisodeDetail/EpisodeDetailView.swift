@@ -13,7 +13,20 @@ struct EpisodeDetailView: View {
     
     var body: some View {
         
-        Text(viewModel.episode.name)
+        VStack {
+            
+            Text(viewModel.episode.name)
+            
+            ForEach(viewModel.characters, id: \.self){ character in
+                
+                Text(character.name)
+                
+            }
+            
+        }.onAppear {
+            
+            viewModel.getAllEpisodeCharactersById()
+        }
     }
 }
 
@@ -24,7 +37,7 @@ struct EpisodeDetailView_Previews: PreviewProvider {
                               name: "Pilot",
                               episode: "S01E01",
                               airDate: "December 2, 2013",
-                              characters: ["https://rickandmortyapi.com/api/character/1","https://rickandmortyapi.com/api/character/2","https://rickandmortyapi.com/api/character/35"])
+                              characters: ["2", "35"])
         
         EpisodeDetailView(viewModel: EpisodeDetailViewModel(episode: episode))
     }
