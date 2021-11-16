@@ -101,7 +101,7 @@ class CharacterRepositoryImplementationUnitTest: XCTestCase {
                 
             }, receiveValue: { character in
                 
-                //nothing
+                // nothing
             })
         
         wait(for: [exp], timeout: timeoutTime)
