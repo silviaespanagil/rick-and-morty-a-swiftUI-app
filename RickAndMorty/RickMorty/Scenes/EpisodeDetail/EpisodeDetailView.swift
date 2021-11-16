@@ -8,13 +8,24 @@
 import SwiftUI
 
 struct EpisodeDetailView: View {
+    
+    @StateObject var viewModel: EpisodeDetailViewModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        Text(viewModel.episode.name)
     }
 }
 
 struct EpisodeDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        EpisodeDetailView()
+        
+        let episode = Episode(id: 1,
+                              name: "Pilot",
+                              episode: "S01E01",
+                              airDate: "December 2, 2013",
+                              characters: ["https://rickandmortyapi.com/api/character/1","https://rickandmortyapi.com/api/character/2","https://rickandmortyapi.com/api/character/35"])
+        
+        EpisodeDetailView(viewModel: EpisodeDetailViewModel(episode: episode))
     }
 }
