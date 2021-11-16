@@ -13,4 +13,5 @@ struct Episode: Identifiable {
     let name: String
     let episode: String
     let airDate: String
+    let characters: [String]
 }
