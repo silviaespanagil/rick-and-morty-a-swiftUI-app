@@ -36,3 +36,4 @@ class GetLocationUseCaseUnitTest: XCTestCase {
         XCTAssertTrue(repository.isGetLocationCalled)
     }
 }
+

@@ -38,4 +38,18 @@ class LocationRemoteDataSourceUnitTest: XCTestCase {
         XCTAssertNotNil(response)
         XCTAssertEqual(response.url?.absoluteString.split(separator: "?").first, "http://jsonplaceholder.typicode.com/\(location)")
     }
+    
+    func testLocationDetailEndpoint() {
+        
+        // Given
+        let location = "location"
+        let id = 1
+        
+        // When
+        let response = sut!.getLocationDetailEndpoint(id: id)
+        
+        // Then
+        XCTAssertNotNil(response)
+        XCTAssertEqual(response.url?.absoluteString.split(separator: "?").first, "http://jsonplaceholder.typicode.com/\(location)\(id)")
+    }
 }
