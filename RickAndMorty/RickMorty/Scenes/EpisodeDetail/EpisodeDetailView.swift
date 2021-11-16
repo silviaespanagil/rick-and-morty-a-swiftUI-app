@@ -16,13 +16,106 @@ struct EpisodeDetailView: View {
         VStack {
             
             Text(viewModel.episode.name)
+                .font(.title)
+                .foregroundColor(Color("NoBlack"))
             
-            ForEach(viewModel.characters, id: \.self){ character in
-                
-                Text(character.name)
-                
-            }
+            Divider().frame(maxWidth: 240)
             
+            Spacer(minLength: 10)
+            
+            VStack(spacing: 20) {
+                
+                HStack {
+                    
+                    Text("📺")
+                        .font(.footnote)
+                    Text("Episode")
+                        .foregroundColor(Color("LightBlue"))
+                        .font(.footnote)
+                    
+                    Spacer()
+                    
+                    VStack {
+                        
+                        Text("\(viewModel.episode.episode)")
+                            .foregroundColor(Color("DeepBlue"))
+                    }
+                }.frame(maxWidth:.infinity)
+                
+                HStack {
+                    
+                    Text("📆")
+                        .font(.footnote)
+                    Text("Air Date")
+                        .foregroundColor(Color("LightBlue"))
+                        .font(.footnote)
+                    
+                    Spacer()
+                    
+                    VStack {
+                        
+                        Text("\(viewModel.episode.airDate)")
+                            .foregroundColor(Color("DeepBlue"))
+                    }
+                }.frame(maxWidth:.infinity)
+                
+                HStack {
+                    
+                    Text("🛸")
+                        .font(.footnote)
+                    Text("# characters starring")
+                        .foregroundColor(Color("LightBlue"))
+                        .font(.footnote)
+                    
+                    Spacer()
+                    
+                    VStack {
+                        
+                        Text("\(viewModel.characters.count)")
+                            .foregroundColor(Color("DeepBlue"))
+                    }
+                }.frame(maxWidth:.infinity)
+            }.padding()
+            
+            List {
+                
+                Section(header: Text("Characters")) {
+                    
+                    if viewModel.showProgressView {
+                        
+                        ProgressViewView()
+                    }
+                    
+                    ForEach(viewModel.characters, id: \.self){ character in
+                        
+                        HStack{
+                            
+                            Image("")
+                                .renderImage(url: URL(string: character.image)!)
+                                .frame(width: 50, height: 50)
+                                .clipShape(RoundedRectangle(cornerRadius: 50))
+                                .shadow(color: .gray, radius: 2, x: 0, y: 2)
+                            
+                            Text(character.name)
+                                .foregroundColor(Color("NoBlack"))
+                            
+                            Spacer()
+                            
+                            VStack(alignment: .trailing) {
+                                
+                                Text("Been in \(character.episode.count) episodes")
+                                
+                                Divider().frame(maxWidth: 40)
+                                
+                                Text("Current status \(character.status)")
+                            }.font(.footnote)
+                                .foregroundColor(Color("DeepBlue")).multilineTextAlignment(.trailing)
+                        }.frame(maxWidth:.infinity)
+                            .padding(5)
+                    }
+                }
+            }.frame(maxWidth:.infinity)
+                .listStyle(.grouped)
         }.onAppear {
             
             viewModel.getAllEpisodeCharactersById()
