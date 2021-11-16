@@ -36,3 +36,4 @@ class GetAllCharactersUseCaseUnitTest: XCTestCase {
         XCTAssertTrue(repository.isGetAllCharactersCalled)
     }
 }
+

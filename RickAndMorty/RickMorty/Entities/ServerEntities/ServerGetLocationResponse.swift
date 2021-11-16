@@ -12,13 +12,16 @@ struct ServerGetLocationResponse: Codable {
     let id: Int
     let name: String
     let type: String
+    let residents: [String]
     let dimension: String
     
     func converToEntity() -> Location {
         
         return Location(id: id,
-                         name: name,
-                         type: type,
-                         dimension: dimension)
+                        name: name,
+                        type: type,
+                        residents: residents,
+                        dimension: dimension)
     }
 }
+

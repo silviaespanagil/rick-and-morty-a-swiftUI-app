@@ -13,6 +13,7 @@ class MockCharacterRepository: CharacterRepository {
     
     var isGetAllCharactersCalled = false
     var isGetCharacterDetailCalled = false
+    var isgetAllCharactersByIdCalled = false
     
     func getAllCharacters(page: Int) -> AnyPublisher<[Character], Error> {
         
@@ -41,4 +42,14 @@ class MockCharacterRepository: CharacterRepository {
             .setFailureType(to: Error.self)
             .eraseToAnyPublisher()
     }
+    
+    func getAllCharactersById(ids: [Int]) -> AnyPublisher<[Character], Error> {
+        
+        self.isgetAllCharactersByIdCalled = true
+        
+        return Just([])
+            .setFailureType(to: Error.self)
+            .eraseToAnyPublisher()
+    }
 }
+

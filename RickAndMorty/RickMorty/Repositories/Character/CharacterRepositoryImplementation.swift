@@ -40,14 +40,22 @@ class CharacterRepositoryImplementation: CharacterRepository {
     func getCharacterDetail(id: Int) -> AnyPublisher<Character, Error> {
         
         return remoteDataSource.getCharacterDetail(id: id).map { serverCharacter -> Character in
-
-            // convert to entity
-            let character = serverCharacter.results.converToEntity()
             
-            // Return
+            let character = serverCharacter.converToEntity()
+            
             return character
         }
         .mapError({ $0 })
         .eraseToAnyPublisher()
+    }
+    
+    func getAllCharactersById(ids: [Int]) -> AnyPublisher<[Character], Error> {
+        
+        let publishers = ids.map(getCharacterDetail(id:))
+        
+        return Publishers.MergeMany(publishers)
+        
+            .collect()
+            .eraseToAnyPublisher()
     }
 }

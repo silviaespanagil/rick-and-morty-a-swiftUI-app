@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 class LocationRepositoryImplementation: LocationRepository {
-  
+   
     private let remoteDataSource: LocationRemoteDataSource
     
     init(remoteDataSource: LocationRemoteDataSource = LocationRemoteDataSource()) {
@@ -32,6 +32,20 @@ class LocationRepositoryImplementation: LocationRepository {
             }
             
             return locations
+        }
+        .mapError({ $0 })
+        .eraseToAnyPublisher()
+    }
+    
+    func getLocationDetail(id: Int) -> AnyPublisher<Location, Error> {
+        
+        return remoteDataSource.getLocationDetail(id: id).map { serverLocation -> Location in
+
+            // convert to entity
+            let location = serverLocation.results.converToEntity()
+            
+            // Return
+            return location
         }
         .mapError({ $0 })
         .eraseToAnyPublisher()

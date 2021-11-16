@@ -12,5 +12,7 @@ struct Location: Identifiable {
     let id: Int
     let name: String
     let type: String
+    let residents: [String]
     let dimension: String
+    
 }

@@ -13,4 +13,6 @@ protocol CharacterRepository {
     func getAllCharacters(page: Int)  -> AnyPublisher<[Character], Error>
     
     func getCharacterDetail(id: Int) -> AnyPublisher<Character, Error>
+    
+    func getAllCharactersById(ids: [Int]) -> AnyPublisher<[Character], Error>
 }

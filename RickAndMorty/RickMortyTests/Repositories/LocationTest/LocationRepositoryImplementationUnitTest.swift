@@ -25,14 +25,14 @@ class LocationRepositoryImplementationUnitTest: XCTestCase {
         
         try super.setUpWithError()
     }
-
+    
     override func tearDownWithError() throws {
         
         sut = nil
         try super.tearDownWithError()
     }
-
-    func testGetAllEpisodesOK() throws {
+    
+    func testGetAllLocationOK() throws {
         
         // Given
         let endpoint = "location"
@@ -69,7 +69,81 @@ class LocationRepositoryImplementationUnitTest: XCTestCase {
         // Then
         XCTAssertNotNil(cancellable)
     }
+    
+    func testGetAllLocationError() throws {
+        
+        // Given
+        let endpoint = "location"
+        let session = getLocationSession(statusCode: failureStatusCode, endpoint: endpoint)
+        
+        let remote = LocationRemoteDataSource(baseURL: baseUrlString, session: session)
+        
+        sut = LocationRepositoryImplementation(remoteDataSource: remote)
+        
+        let exp = self.expectation(description: "expected values")
+        
+        // When
+        cancellable = sut!.getLocation()
+            .sink(receiveCompletion: { completion in
+                
+                switch completion {
+                case .finished:
+                    break
+                case .failure:
+                    exp.fulfill()
+                }
+                
+            }, receiveValue: { location in
+                
+                // Nothing
+            })
+        
+        wait(for: [exp], timeout: timeoutTime)
+        
+        // Then
+        XCTAssertNotNil(cancellable)
+    }
+    
+    func testGetLocationDetail() throws {
+        //TODO: Not passing
+        
+        // Given
+        let endpoint = "location"
+        let id = 1
+        let session = getLocationDetailSession(statusCode: sucessStatusCode, endpoint: endpoint, id: id)
+        
+        let remote = LocationRemoteDataSource(baseURL: baseUrlString, session: session)
+        
+        sut = LocationRepositoryImplementation(remoteDataSource: remote)
+        
+        let exp = self.expectation(description: "expected values")
+        
+        // When
+        cancellable = sut!.getLocationDetail(id: id)
+            .sink(receiveCompletion: { completion in
+                
+                switch completion {
+                case .finished:
+                    exp.fulfill()
+                case .failure:
+                    break
+                }
+                
+            }, receiveValue: { location in
+                
+                XCTAssertEqual(location.id, 1)
+                XCTAssertEqual(location.name, "Earth (C-137)")
+                XCTAssertEqual(location.type, "Planet")
+                XCTAssertEqual(location.dimension, "Dimension C-137")
+            })
+        
+        wait(for: [exp], timeout: timeoutTime)
+        
+        // Then
+        XCTAssertNotNil(cancellable)
+    }
 }
+
 
 extension LocationRepositoryImplementationUnitTest {
     
@@ -98,6 +172,32 @@ extension LocationRepositoryImplementationUnitTest {
         return session
     }
     
+    func getLocationDetailSession(statusCode: Int, endpoint: String, id: Int) -> URLSession {
+        
+        // URL we expect to call
+        let url = URL(string: "http://jsonplaceholder.typicode.com/\(endpoint)/\(id)")
+        
+        // data we expect to receive
+        let data = getLocationDetailData()
+        
+        // attach that to some fixed data in our protocol handler
+        URLProtocolMock.testURLs = [url: data]
+        URLProtocolMock.response = HTTPURLResponse(url: URL(string: "http://jsonplaceholder.typicode.com:8080")!,
+                                                   statusCode: statusCode,
+                                                   httpVersion: nil,
+                                                   headerFields: nil)
+        
+        // now setup a configuration to use our mock
+        let config = URLSessionConfiguration.ephemeral
+        config.protocolClasses = [URLProtocolMock.self]
+        
+        // and ceate the URLSession form that
+        let session = URLSession(configuration: config)
+        
+        return session
+        
+    }
+    
     func getLocationData() -> Data {
         
         let dataString = """
@@ -112,31 +212,6 @@ extension LocationRepositoryImplementationUnitTest {
                                  "residents":[
                                     "https://rickandmortyapi.com/api/character/38",
                                     "https://rickandmortyapi.com/api/character/45",
-                                    "https://rickandmortyapi.com/api/character/71",
-                                    "https://rickandmortyapi.com/api/character/82",
-                                    "https://rickandmortyapi.com/api/character/83",
-                                    "https://rickandmortyapi.com/api/character/92",
-                                    "https://rickandmortyapi.com/api/character/112",
-                                    "https://rickandmortyapi.com/api/character/114",
-                                    "https://rickandmortyapi.com/api/character/116",
-                                    "https://rickandmortyapi.com/api/character/117",
-                                    "https://rickandmortyapi.com/api/character/120",
-                                    "https://rickandmortyapi.com/api/character/127",
-                                    "https://rickandmortyapi.com/api/character/155",
-                                    "https://rickandmortyapi.com/api/character/169",
-                                    "https://rickandmortyapi.com/api/character/175",
-                                    "https://rickandmortyapi.com/api/character/179",
-                                    "https://rickandmortyapi.com/api/character/186",
-                                    "https://rickandmortyapi.com/api/character/201",
-                                    "https://rickandmortyapi.com/api/character/216",
-                                    "https://rickandmortyapi.com/api/character/239",
-                                    "https://rickandmortyapi.com/api/character/271",
-                                    "https://rickandmortyapi.com/api/character/302",
-                                    "https://rickandmortyapi.com/api/character/303",
-                                    "https://rickandmortyapi.com/api/character/338",
-                                    "https://rickandmortyapi.com/api/character/343",
-                                    "https://rickandmortyapi.com/api/character/356",
-                                    "https://rickandmortyapi.com/api/character/394"
                                  ],
                                  "url":"https://rickandmortyapi.com/api/location/1",
                                  "created":"2017-11-10T12:42:04.162Z"
@@ -145,7 +220,27 @@ extension LocationRepositoryImplementationUnitTest {
                     }
                     
                     """
-
+        
+        return Data(dataString.utf8)
+    }
+    
+    func getLocationDetailData() -> Data {
+        
+        let dataString = """
+                    {
+                       "id":1,
+                       "name":"Earth (C-137)",
+                       "type":"Planet",
+                       "dimension":"Dimension C-137",
+                       "residents":[
+                          "https://rickandmortyapi.com/api/character/38",
+                          "https://rickandmortyapi.com/api/character/45",
+                       ],
+                       "url":"https://rickandmortyapi.com/api/location/1",
+                       "created":"2017-11-10T12:42:04.162Z"
+                    }
+                    """
+        
         return Data(dataString.utf8)
     }
 }

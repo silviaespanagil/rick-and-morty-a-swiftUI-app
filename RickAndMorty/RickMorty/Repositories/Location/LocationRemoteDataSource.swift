@@ -28,6 +28,15 @@ class LocationRemoteDataSource {
         
         return apiManager.performRequest(urlRequest: urlRequest)
     }
+    
+    func getLocationDetail(id: Int) -> AnyPublisher<ServerResultResponse<ServerGetLocationResponse>, Error> {
+        
+        let apiManager = ApiManager(baseURL: baseURLString, session: session)
+        
+        let urlRequest = getLocationDetailEndpoint(id: id)
+        
+        return apiManager.performRequest(urlRequest: urlRequest)
+    }
 }
 
 extension LocationRemoteDataSource {
@@ -35,6 +44,17 @@ extension LocationRemoteDataSource {
     func getLocationEndpoint() -> URLRequest {
         
         let endpoint = "\(baseURLString)\(LocationRemoteDataSource.getLocationURL)"
+        
+        let components = URLComponents(string: endpoint)
+        
+        let urlRequest = URLRequest(url: (components?.url!)!)
+        
+        return urlRequest
+    }
+    
+    func getLocationDetailEndpoint(id: Int) -> URLRequest {
+        
+        let endpoint = "\(baseURLString)\(LocationRemoteDataSource.getLocationURL)\(id)"
         
         let components = URLComponents(string: endpoint)
         
