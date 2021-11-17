@@ -36,7 +36,8 @@ class EpisodesRepositoryImplementationUnitTest: XCTestCase {
         
         // Given
         let endpoint = "episode"
-        let session = getEpisodeSession(statusCode: sucessStatusCode, endpoint: endpoint)
+        let page = 1
+        let session = getEpisodeSession(statusCode: sucessStatusCode, endpoint: endpoint, page: page)
         
         let remote = EpisodeRemoteDataSource(baseURL: baseUrlString, session: session)
         
@@ -45,7 +46,7 @@ class EpisodesRepositoryImplementationUnitTest: XCTestCase {
         let exp = self.expectation(description: "expected values")
         
         // When
-        cancellable = sut!.getEpisode()
+        cancellable = sut!.getEpisode(page: page)
             .sink(receiveCompletion: { completion in
                 
                 switch completion {
@@ -74,7 +75,8 @@ class EpisodesRepositoryImplementationUnitTest: XCTestCase {
         
         // Given
         let endpoint = "episode"
-        let session = getEpisodeSession(statusCode: failureStatusCode, endpoint: endpoint)
+        let page = 1
+        let session = getEpisodeSession(statusCode: failureStatusCode, endpoint: endpoint, page: page)
         
         let remote = EpisodeRemoteDataSource(baseURL: baseUrlString, session: session)
         
@@ -83,7 +85,7 @@ class EpisodesRepositoryImplementationUnitTest: XCTestCase {
         let exp = self.expectation(description: "expected values")
         
         // When
-        cancellable = sut!.getEpisode()
+        cancellable = sut!.getEpisode(page: page)
             .sink(receiveCompletion: { completion in
                 
                 switch completion {
@@ -150,10 +152,10 @@ class EpisodesRepositoryImplementationUnitTest: XCTestCase {
 
 extension EpisodesRepositoryImplementationUnitTest {
     
-    func getEpisodeSession(statusCode: Int, endpoint: String) -> URLSession {
+    func getEpisodeSession(statusCode: Int, endpoint: String, page: Int) -> URLSession {
         
         // URL we expect to call
-        let url = URL(string: "http://jsonplaceholder.typicode.com/\(endpoint)")
+        let url = URL(string: "http://jsonplaceholder.typicode.com/\(endpoint)?page=\(page)")
         
         // data we expect to receive
         let data = getEpisodeData()

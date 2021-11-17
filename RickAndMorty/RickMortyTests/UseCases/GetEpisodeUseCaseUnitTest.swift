@@ -27,10 +27,11 @@ class GetEpisodeUseCaseUnitTest: XCTestCase {
         
         // Given
         let repository = MockEpisodeRepository()
+        let page = 1
         sut = GetEpisodeUseCase(repository: repository)
         
         // When
-        _ = sut!.execute()
+        _ = sut!.execute(page: page)
         
         // Then
         XCTAssertTrue(repository.isGetEpisodeCalled)

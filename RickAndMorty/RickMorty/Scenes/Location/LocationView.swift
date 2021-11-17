@@ -43,12 +43,12 @@ struct LocationView: View {
                                 .font(.footnote)
                                 Spacer()
                             }
-                        }.onAppear {
+                        }
+                        .onAppear {
                             if location == viewModel.locations.last {
                                 viewModel.getLocation(page: viewModel.currentPage)
                             }
                         }
-
                     }
                 }
             }

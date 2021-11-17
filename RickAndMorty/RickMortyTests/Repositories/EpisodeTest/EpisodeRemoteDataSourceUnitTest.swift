@@ -30,9 +30,10 @@ class EpisodeRemoteDataSourceUnitTest: XCTestCase {
         
         // Given
         let episode = "episode"
+        let page = 1
         
         // When
-        let response = sut!.getEpisodeEndpoint()
+        let response = sut!.getEpisodeEndpoint(page: page)
         
         // Then
         XCTAssertNotNil(response)

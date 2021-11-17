@@ -17,9 +17,9 @@ class EpisodeRepositoryImplementation: EpisodeRepository {
         self.remoteDataSource = remoteDataSource
     }
     
-    func getEpisode() -> AnyPublisher<[Episode], Error> {
+    func getEpisode(page: Int) -> AnyPublisher<[Episode], Error> {
         
-        return remoteDataSource.getEpisode().map {
+        return remoteDataSource.getEpisode(page: page).map {
             
             serverEpisode -> [Episode] in
             
