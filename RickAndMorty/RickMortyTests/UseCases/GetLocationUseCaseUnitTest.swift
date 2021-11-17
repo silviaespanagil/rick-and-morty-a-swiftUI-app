@@ -27,10 +27,11 @@ class GetLocationUseCaseUnitTest: XCTestCase {
         
         // Given
         let repository = MockLocationRepository()
+        let page = 1
         sut = GetLocationUseCase(repository: repository)
         
         // When
-        _ = sut!.execute()
+        _ = sut!.execute(page: page)
         
         // Then
         XCTAssertTrue(repository.isGetLocationCalled)

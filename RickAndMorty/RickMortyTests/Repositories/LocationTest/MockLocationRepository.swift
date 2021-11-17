@@ -13,8 +13,8 @@ class MockLocationRepository: LocationRepository {
      
     var isGetLocationCalled = false
     var isGetLocationDetailCalled = false
-    
-    func getLocation() -> AnyPublisher<[Location], Error> {
+      
+    func getLocation(page: Int) -> AnyPublisher<[Location], Error> {
         
         self.isGetLocationCalled = true
         

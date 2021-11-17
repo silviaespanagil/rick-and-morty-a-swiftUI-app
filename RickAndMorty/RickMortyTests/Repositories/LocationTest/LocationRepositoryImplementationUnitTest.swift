@@ -36,7 +36,8 @@ class LocationRepositoryImplementationUnitTest: XCTestCase {
         
         // Given
         let endpoint = "location"
-        let session = getLocationSession(statusCode: sucessStatusCode, endpoint: endpoint)
+        let page = 1
+        let session = getLocationSession(statusCode: sucessStatusCode, endpoint: endpoint, page: page)
         
         let remote = LocationRemoteDataSource(baseURL: baseUrlString, session: session)
         
@@ -45,7 +46,7 @@ class LocationRepositoryImplementationUnitTest: XCTestCase {
         let exp = self.expectation(description: "expected values")
         
         // When
-        cancellable = sut!.getLocation()
+        cancellable = sut!.getLocation(page: page)
             .sink(receiveCompletion: { completion in
                 
                 switch completion {
@@ -74,7 +75,8 @@ class LocationRepositoryImplementationUnitTest: XCTestCase {
         
         // Given
         let endpoint = "location"
-        let session = getLocationSession(statusCode: failureStatusCode, endpoint: endpoint)
+        let page = 1
+        let session = getLocationSession(statusCode: failureStatusCode, endpoint: endpoint, page: page)
         
         let remote = LocationRemoteDataSource(baseURL: baseUrlString, session: session)
         
@@ -83,7 +85,7 @@ class LocationRepositoryImplementationUnitTest: XCTestCase {
         let exp = self.expectation(description: "expected values")
         
         // When
-        cancellable = sut!.getLocation()
+        cancellable = sut!.getLocation(page: page)
             .sink(receiveCompletion: { completion in
                 
                 switch completion {
@@ -150,10 +152,10 @@ class LocationRepositoryImplementationUnitTest: XCTestCase {
 
 extension LocationRepositoryImplementationUnitTest {
     
-    func getLocationSession(statusCode: Int, endpoint: String) -> URLSession {
+    func getLocationSession(statusCode: Int, endpoint: String, page: Int) -> URLSession {
         
         // URL we expect to call
-        let url = URL(string: "http://jsonplaceholder.typicode.com/\(endpoint)")
+        let url = URL(string: "http://jsonplaceholder.typicode.com/\(endpoint)?page=\(page)")
         
         // data we expect to receive
         let data = getLocationData()

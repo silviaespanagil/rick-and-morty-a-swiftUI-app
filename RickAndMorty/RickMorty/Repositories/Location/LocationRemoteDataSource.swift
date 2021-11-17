@@ -11,6 +11,7 @@ import Combine
 class LocationRemoteDataSource {
     
     static let getLocationURL: String = "location"
+    static let getPage: String = "?page="
     private let baseURLString: String
     private let session: URLSession
     
@@ -20,11 +21,11 @@ class LocationRemoteDataSource {
         self.session = session
     }
     
-    func getLocation() -> AnyPublisher<ServerBaseArrayResponse<ServerGetLocationResponse>, Error> {
+    func getLocation(page: Int) -> AnyPublisher<ServerBaseArrayResponse<ServerGetLocationResponse>, Error> {
         
         let apiManager = ApiManager(baseURL: baseURLString, session: session)
         
-        let urlRequest = getLocationEndpoint()
+        let urlRequest = getLocationEndpoint(page: page)
         
         return apiManager.performRequest(urlRequest: urlRequest)
     }
@@ -41,9 +42,9 @@ class LocationRemoteDataSource {
 
 extension LocationRemoteDataSource {
     
-    func getLocationEndpoint() -> URLRequest {
+    func getLocationEndpoint(page: Int) -> URLRequest {
         
-        let endpoint = "\(baseURLString)\(LocationRemoteDataSource.getLocationURL)"
+        let endpoint = "\(baseURLString)\(LocationRemoteDataSource.getLocationURL)\(LocationRemoteDataSource.getPage)\(page)"
         
         let components = URLComponents(string: endpoint)
         

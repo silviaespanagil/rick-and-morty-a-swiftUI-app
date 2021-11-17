@@ -30,9 +30,10 @@ class LocationRemoteDataSourceUnitTest: XCTestCase {
         
         // Given
         let location = "location"
+        let page = 1
         
         // When
-        let response = sut!.getLocationEndpoint()
+        let response = sut!.getLocationEndpoint(page: page)
         
         // Then
         XCTAssertNotNil(response)

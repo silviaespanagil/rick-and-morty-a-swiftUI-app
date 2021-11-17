@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Location: Identifiable {
+struct Location: Identifiable, Equatable {
     
     let id: Int
     let name: String
