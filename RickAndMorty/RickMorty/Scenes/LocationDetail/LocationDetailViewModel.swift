@@ -19,12 +19,29 @@ class LocationDetailViewModel: ObservableObject {
     
     private var cancellable: AnyCancellable?
     
+    let typeIcon: String
+    let type: String
+    let dimensionIcon: String
+    let dimension: String
+    let bornIn: String
+    let lastSeen: String
+    let residents: String
+    
+    let imageSize: CGFloat = 50
+    let cornerRadius: CGFloat = 50
+    
     init(location: Location) {
+
+        typeIcon = "🪐"
+        type = "Type"
+        dimensionIcon = "🚀"
+        dimension = "Dimension"
+        bornIn = "Born in"
+        lastSeen = "Last seen in"
+        residents = "Residents"
         
         self.location = location
-        
         residentIds = getResidentsID()
-        
         self.getLocationDetail()
     }
     

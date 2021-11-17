@@ -27,9 +27,9 @@ struct EpisodeDetailView: View {
                 
                 HStack {
                     
-                    Text("📺")
+                    Text(viewModel.episodeSeasonIcon)
                         .font(.footnote)
-                    Text("Episode")
+                    Text(viewModel.episodeSeason)
                         .foregroundColor(Color("LightBlue"))
                         .font(.footnote)
                     
@@ -44,9 +44,9 @@ struct EpisodeDetailView: View {
                 
                 HStack {
                     
-                    Text("📆")
+                    Text(viewModel.airDateIcon)
                         .font(.footnote)
-                    Text("Air Date")
+                    Text(viewModel.airDate)
                         .foregroundColor(Color("LightBlue"))
                         .font(.footnote)
                     
@@ -61,9 +61,9 @@ struct EpisodeDetailView: View {
                 
                 HStack {
                     
-                    Text("🛸")
+                    Text(viewModel.characterStarringIcon)
                         .font(.footnote)
-                    Text("# characters starring")
+                    Text(viewModel.characterStarring)
                         .foregroundColor(Color("LightBlue"))
                         .font(.footnote)
                     
@@ -79,7 +79,7 @@ struct EpisodeDetailView: View {
             
             List {
                 
-                Section(header: Text("Characters")) {
+                Section(header: Text(viewModel.charactersTitle)) {
                     
                     if viewModel.showProgressView {
                         
@@ -92,8 +92,8 @@ struct EpisodeDetailView: View {
                             
                             Image("")
                                 .renderImage(url: URL(string: character.image)!)
-                                .frame(width: 50, height: 50)
-                                .clipShape(RoundedRectangle(cornerRadius: 50))
+                                .frame(width: viewModel.imageSize, height: viewModel.imageSize)
+                                .clipShape(RoundedRectangle(cornerRadius: viewModel.cornerRadius))
                                 .shadow(color: .gray, radius: 2, x: 0, y: 2)
                             
                             Text(character.name)
@@ -103,11 +103,11 @@ struct EpisodeDetailView: View {
                             
                             VStack(alignment: .trailing) {
                                 
-                                Text("Been in \(character.episode.count) episodes")
+                                Text("\(viewModel.episodeDetail) \(character.episode.count) \(viewModel.episodeString)")
                                 
                                 Divider().frame(maxWidth: 40)
                                 
-                                Text("Current status \(character.status)")
+                                Text("\(viewModel.currentStatus) \(character.status)")
                             }.font(.footnote)
                                 .foregroundColor(Color("DeepBlue")).multilineTextAlignment(.trailing)
                         }.frame(maxWidth:.infinity)
