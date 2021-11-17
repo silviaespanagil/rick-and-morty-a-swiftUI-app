@@ -16,6 +16,9 @@ class CharacterListViewModel: ObservableObject {
     @Published public private(set) var showProgressView = false
     
     let imageSize: CGFloat = 90
+    let cornerRadius: CGFloat = 50
+    
+    let currentStatus: String = "Current status"
     
     var areCharactersLoaded = false
     var currentPage = 1
