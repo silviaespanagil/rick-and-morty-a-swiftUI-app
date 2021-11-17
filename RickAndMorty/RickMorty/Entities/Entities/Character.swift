@@ -11,7 +11,7 @@ struct Character: Identifiable, Equatable, Hashable {
     
     let id: Int
     let name: String
-    var status: String
+    let status: String
     let species: String
     let type: String
     let gender: String
