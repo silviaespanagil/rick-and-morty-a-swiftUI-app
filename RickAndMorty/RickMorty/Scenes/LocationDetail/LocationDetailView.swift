@@ -27,9 +27,9 @@ struct LocationDetailView: View {
                 
                 HStack {
                     
-                    Text("🪐")
+                    Text(viewModel.typeIcon)
                         .font(.footnote)
-                    Text("Type")
+                    Text(viewModel.type)
                         .foregroundColor(Color("LightBlue"))
                         .font(.footnote)
                     
@@ -44,9 +44,9 @@ struct LocationDetailView: View {
                 
                 HStack {
                     
-                    Text("🚀")
+                    Text(viewModel.dimensionIcon)
                         .font(.footnote)
-                    Text("Dimension")
+                    Text(viewModel.dimension)
                         .foregroundColor(Color("LightBlue"))
                         .font(.footnote)
                     
@@ -62,7 +62,7 @@ struct LocationDetailView: View {
             
             List {
                 
-                Section(header: Text("Residents")) {
+                Section(header: Text(viewModel.residents)) {
                     
                     if viewModel.showProgressView {
                         
@@ -75,8 +75,8 @@ struct LocationDetailView: View {
                             
                             Image("")
                                 .renderImage(url: URL(string: character.image)!)
-                                .frame(width: 50, height: 50)
-                                .clipShape(RoundedRectangle(cornerRadius: 50))
+                                .frame(width: viewModel.imageSize, height: viewModel.imageSize)
+                                .clipShape(RoundedRectangle(cornerRadius: viewModel.cornerRadius))
                                 .shadow(color: .gray, radius: 2, x: 0, y: 2)
                             
                             Text(character.name)
@@ -86,11 +86,11 @@ struct LocationDetailView: View {
                             
                             VStack(alignment: .trailing) {
                                 
-                                Text("Born in \(character.origin)")
+                                Text("\(viewModel.bornIn) \(character.origin)")
                                 
                                 Divider().frame(maxWidth: 40)
                                 
-                                Text("Last seen in")
+                                Text(viewModel.lastSeen)
                                 Text("\(character.location)")}.font(.footnote)
                                 .foregroundColor(Color("DeepBlue")).multilineTextAlignment(.trailing)
                         }.frame(maxWidth:.infinity)
