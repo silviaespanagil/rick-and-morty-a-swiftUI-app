@@ -25,51 +25,49 @@ struct TabBar: View {
     
     var body: some View {
         
-        NavigationView {
+        TabView(selection: $activeTab){
             
-            TabView(selection: $activeTab){
-                
-                CharacterCellView(viewModel: CharacterListViewModel(page: 1))
-                    .tabItem{
-                        Image(systemName: "person.2")
-                        Text(characterTab)
-                    }
-                    .tag(Tabs.characters)
-                
-                LocationView(viewModel: LocationViewModel(page: 1))
-                    .tabItem{
-                        Image(systemName: "map")
-                        Text(locationTab)
-                    }
-                    .tag(Tabs.locations)
-                
-                EpisodeView(viewModel: EpisodeViewModel(page: 1))
-                    .tabItem{
-                        Image(systemName: "tv")
-                        Text(episodeTab)
-                    }
-                    .tag(Tabs.episodes)
-                
-            }
-            .navigationBarTitle(getTabBarTitle(for: activeTab))
-            .navigationBarTitleDisplayMode(.inline)
-            .accentColor(Color("NeonGreen"))
+            CharacterCellView(viewModel: CharacterListViewModel(page: 1))
+                .tabItem {
+                    
+                    Label(characterTab, systemImage: "person.2")
+                }
+                .tag(Tabs.characters)
+            
+            LocationView(viewModel: LocationViewModel(page: 1))
+                .tabItem {
+                    
+                    Label(locationTab, systemImage: "map")
+                }
+                .tag(Tabs.locations)
+            
+            EpisodeView(viewModel: EpisodeViewModel(page: 1))
+                .tabItem {
+                    
+                    Label(episodeTab, systemImage: "tv")
+                }
+                .tag(Tabs.episodes)
+            
         }
-        
+        .navigationBarTitle(getTabBarTitle(for: activeTab))
+        .navigationBarTitleDisplayMode(.inline)
+        .accentColor(Color("NeonGreen"))
     }
     
-    func getTabBarTitle(for tabItem: Tabs) -> String {
-        
-        switch tabItem {
-        case .characters:
-            return "Characters"
-        case .locations:
-            return "Locations"
-        case .episodes:
-            return "Episodes"
-        }
+}
+
+func getTabBarTitle(for tabItem: Tabs) -> String {
+    
+    switch tabItem {
+    case .characters:
+        return "Characters"
+    case .locations:
+        return "Locations"
+    case .episodes:
+        return "Episodes"
     }
 }
+
 
 extension TabBar {
     
