@@ -15,11 +15,6 @@ struct CharacterDetailView: View {
         
         VStack {
             
-            if viewModel.showProgressView {
-                
-                ProgressViewView()
-            }
-            
             Image("")
                 .renderImage(url: URL(string:viewModel.character.image)!)
                 .frame(width: viewModel.imageSize, height: viewModel.imageSize)
@@ -36,6 +31,11 @@ struct CharacterDetailView: View {
             
             VStack(spacing: 10) {
                 
+                if viewModel.showProgressView {
+                    
+                    ProgressViewView()
+                }
+                
                 HStack {
                     
                     Text(viewModel.gender)
@@ -46,8 +46,15 @@ struct CharacterDetailView: View {
                     
                     VStack {
                         
-                        Text(viewModel.character.gender)
-                            .foregroundColor(Color("DeepBlue"))
+                        if viewModel.character.gender == viewModel.unknownInfo {
+                            
+                            Text(viewModel.unknownString)
+                                .foregroundColor(Color("DeepBlue"))
+                        } else {
+                            
+                            Text(viewModel.character.gender)
+                                .foregroundColor(Color("DeepBlue"))
+                        }
                     }
                 }.frame(maxWidth:.infinity)
                 
@@ -76,8 +83,15 @@ struct CharacterDetailView: View {
                     
                     VStack {
                         
-                        Text(viewModel.character.status)
-                            .foregroundColor(Color("DeepBlue"))
+                        if viewModel.character.status == viewModel.unknownInfo {
+                            
+                            Text(viewModel.unknownString)
+                                .foregroundColor(Color("DeepBlue"))
+                        } else {
+                            
+                            Text(viewModel.character.status)
+                                .foregroundColor(Color("DeepBlue"))
+                        }
                     }
                 }.frame(maxWidth:.infinity)
                 
@@ -91,8 +105,15 @@ struct CharacterDetailView: View {
                     
                     VStack {
                         
-                        Text(viewModel.character.origin)
-                            .foregroundColor(Color("DeepBlue"))
+                        if viewModel.character.origin == viewModel.unknownInfo {
+                            
+                            Text(viewModel.unknownString)
+                                .foregroundColor(Color("DeepBlue"))
+                        } else {
+                            
+                            Text(viewModel.character.origin)
+                                .foregroundColor(Color("DeepBlue"))
+                        }
                     }
                 }.frame(maxWidth:.infinity)
                 
@@ -106,14 +127,21 @@ struct CharacterDetailView: View {
                     
                     VStack {
                         
-                        Text(viewModel.character.location)
-                            .foregroundColor(Color("DeepBlue"))
+                        if viewModel.character.location == viewModel.unknownInfo {
+                            
+                            Text(viewModel.unknownString)
+                                .foregroundColor(Color("DeepBlue"))
+                        } else {
+                            Text(viewModel.character.location)
+                                .foregroundColor(Color("DeepBlue"))
+                        }
                     }
                 }.frame(maxWidth:.infinity)
-            
+                
                 Spacer()
                 
             }.padding()
+            
         }.onAppear {
             
             viewModel.getCharacterDetail()

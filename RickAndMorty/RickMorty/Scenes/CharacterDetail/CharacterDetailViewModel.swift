@@ -19,6 +19,8 @@ class CharacterDetailViewModel: ObservableObject {
     let status: String
     let origin: String
     let species: String
+    let unknownInfo: String
+    let unknownString: String
     
     let imageSize: CGFloat = 90
     let cornerRadius: CGFloat = 50
@@ -33,6 +35,8 @@ class CharacterDetailViewModel: ObservableObject {
         status = "Current status"
         origin = "Born in"
         species = "Species"
+        unknownInfo = "unknown"
+        unknownString = "Unknown"
     }
     
     func getCharacterDetail() {
