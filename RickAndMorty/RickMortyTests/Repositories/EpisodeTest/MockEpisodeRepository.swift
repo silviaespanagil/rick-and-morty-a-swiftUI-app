@@ -14,7 +14,7 @@ class MockEpisodeRepository: EpisodeRepository {
     var isGetEpisodeCalled = false
     var isGetEpisodeDetailCalled = false
     
-    func getEpisode() -> AnyPublisher<[Episode], Error> {
+    func getEpisode(page: Int) -> AnyPublisher<[Episode], Error> {
         
         self.isGetEpisodeCalled = true
         
