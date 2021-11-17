@@ -14,7 +14,10 @@ struct RickMortyApp: App {
         
         WindowGroup {
             
+            NavigationView {
+                
             TabBar()
+            }
         }
     }
 }
