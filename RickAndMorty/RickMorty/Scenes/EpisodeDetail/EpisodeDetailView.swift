@@ -79,7 +79,7 @@ struct EpisodeDetailView: View {
             
             List {
                 
-                Section(header: Text("Characters")) {
+                Section(header: Text(viewModel.charactersTitle)) {
                     
                     if viewModel.showProgressView {
                         

@@ -25,6 +25,7 @@ class EpisodeDetailViewModel: ObservableObject {
     let airDate: String
     let characterStarringIcon: String
     let characterStarring: String
+    let charactersTitle: String
     let episodeDetail: String
     let episodeString: String
     let currentStatus: String
@@ -40,8 +41,9 @@ class EpisodeDetailViewModel: ObservableObject {
         airDate = "Air Date"
         characterStarringIcon = "🛸"
         characterStarring = "# characters starring"
+        charactersTitle = "Characters"
         episodeDetail = "Been in"
-        episodeString = "String"
+        episodeString = "episodes"
         currentStatus = "Current status"
         
         self.episode = episode
