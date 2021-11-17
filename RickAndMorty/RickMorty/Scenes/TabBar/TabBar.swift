@@ -10,7 +10,15 @@ struct TabBar: View {
     
     @State var activeTab: Tabs = Tabs.characters
     
+    let characterTab: String
+    let locationTab: String
+    let episodeTab: String
+    
     init() {
+        
+        characterTab = "Characters"
+        locationTab = "Locations"
+        episodeTab = "Episodes"
         
         tabBarAppearance()
     }
@@ -24,27 +32,27 @@ struct TabBar: View {
                 CharacterCellView(viewModel: CharacterListViewModel(page: 1))
                     .tabItem{
                         Image(systemName: "person.2")
-                        Text("Characters")
+                        Text(characterTab)
                     }
                     .tag(Tabs.characters)
                 
                 LocationView(viewModel: LocationViewModel())
                     .tabItem{
                         Image(systemName: "map")
-                        Text("Locations")
+                        Text(locationTab)
                     }
                     .tag(Tabs.locations)
                 
                 EpisodeView(viewModel: EpisodeViewModel())
                     .tabItem{
                         Image(systemName: "tv")
-                        Text("Episodes")
+                        Text(episodeTab)
                     }
                     .tag(Tabs.episodes)
                 
             }
-            .navigationTitle(getTabBarTitle(for: activeTab))
-            .navigationBarTitleDisplayMode(.large)
+            .navigationBarTitle(getTabBarTitle(for: activeTab))
+            .navigationBarTitleDisplayMode(.inline)
             .accentColor(Color("NeonGreen"))
         }
         
