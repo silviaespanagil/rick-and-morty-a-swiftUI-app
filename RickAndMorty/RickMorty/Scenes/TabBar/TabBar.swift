@@ -43,7 +43,7 @@ struct TabBar: View {
                     }
                     .tag(Tabs.locations)
                 
-                EpisodeView(viewModel: EpisodeViewModel())
+                EpisodeView(viewModel: EpisodeViewModel(page: 1))
                     .tabItem{
                         Image(systemName: "tv")
                         Text(episodeTab)

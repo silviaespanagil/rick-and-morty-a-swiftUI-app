@@ -17,9 +17,9 @@ class GetEpisodeUseCase {
         self.repository = repository
     }
     
-    func execute() -> AnyPublisher<[Episode], Error> {
+    func execute(page: Int) -> AnyPublisher<[Episode], Error> {
         
-        repository.getEpisode()
+        repository.getEpisode(page: page)
     }
 }
 

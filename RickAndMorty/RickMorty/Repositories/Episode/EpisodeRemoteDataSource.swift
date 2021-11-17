@@ -11,6 +11,7 @@ import Combine
 class EpisodeRemoteDataSource {
     
     static let getEpisodeURL: String = "episode"
+    static let getPage: String = "?page="
     private let baseURLString: String
     private let session: URLSession
     
@@ -20,11 +21,11 @@ class EpisodeRemoteDataSource {
         self.session = session
     }
     
-    func getEpisode() -> AnyPublisher<ServerBaseArrayResponse<ServerGetEpisodeResponse>, Error> {
+    func getEpisode(page: Int) -> AnyPublisher<ServerBaseArrayResponse<ServerGetEpisodeResponse>, Error> {
         
         let apiManager = ApiManager(baseURL: baseURLString, session: session)
         
-        let urlRequest = getEpisodeEndpoint()
+        let urlRequest = getEpisodeEndpoint(page: page)
         
         return apiManager.performRequest(urlRequest: urlRequest)
     }
@@ -41,9 +42,9 @@ class EpisodeRemoteDataSource {
 
 extension EpisodeRemoteDataSource {
     
-    func getEpisodeEndpoint() -> URLRequest {
+    func getEpisodeEndpoint(page: Int) -> URLRequest {
         
-        let endpoint = "\(baseURLString)\(EpisodeRemoteDataSource.getEpisodeURL)"
+        let endpoint = "\(baseURLString)\(EpisodeRemoteDataSource.getEpisodeURL)\(EpisodeRemoteDataSource.getPage)\(page)"
         
         let components = URLComponents(string: endpoint)
         

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Episode: Identifiable {
+struct Episode: Identifiable, Equatable {
     
     let id: Int
     let name: String

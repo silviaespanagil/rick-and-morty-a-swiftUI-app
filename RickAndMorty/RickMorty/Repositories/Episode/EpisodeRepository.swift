@@ -10,7 +10,7 @@ import Combine
 
 protocol EpisodeRepository {
     
-    func getEpisode() -> AnyPublisher<[Episode], Error>
+    func getEpisode(page: Int) -> AnyPublisher<[Episode], Error>
     
     func getEpisodeDetail(id: Int) -> AnyPublisher<Episode, Error>
 }

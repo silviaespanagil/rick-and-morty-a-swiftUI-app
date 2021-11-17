@@ -44,6 +44,11 @@ struct EpisodeView: View {
                                 Spacer()
                             }
                         }
+                        .onAppear {
+                            if episode == viewModel.episodes.last {
+                                viewModel.getEpisode(page: viewModel.currentPage)
+                            }
+                        }
                     }
                 }
             }
@@ -53,6 +58,6 @@ struct EpisodeView: View {
 
 struct EpisodeCellView_Previews: PreviewProvider {
     static var previews: some View {
-        EpisodeView(viewModel: EpisodeViewModel())
+        EpisodeView(viewModel: EpisodeViewModel(page: 1))
     }
 }

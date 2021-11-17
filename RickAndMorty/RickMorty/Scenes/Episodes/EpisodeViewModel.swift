@@ -15,17 +15,20 @@ class EpisodeViewModel: ObservableObject {
     
     @Published public private(set) var showProgressView = false
     
+    var currentPage = 1
+    
     private var cancellable: AnyCancellable?
     
-    init() {
-        getEpisode()
+    init(page: Int) {
+        
+        getEpisode(page: page)
     }
     
-    func getEpisode() {
+    func getEpisode(page: Int) {
        
         showProgressView = true
         
-        cancellable = GetEpisodeUseCase().execute()
+        cancellable = GetEpisodeUseCase().execute(page: page)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { completion in
                 
@@ -33,7 +36,11 @@ class EpisodeViewModel: ObservableObject {
                 
                 switch completion {
                 case .finished:
+                    
+                    self.currentPage += 1
+                    
                     break
+                    
                 case .failure:
                     break
                 }
