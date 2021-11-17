@@ -19,20 +19,24 @@ class CharacterDetailViewModel: ObservableObject {
     let status: String
     let origin: String
     let species: String
+    let unknownInfo: String
+    let unknownString: String
     
-    let imageSize: CGFloat = 250
-    let cornerRadius: CGFloat = 24
+    let imageSize: CGFloat = 90
+    let cornerRadius: CGFloat = 50
     
     private var cancellable: AnyCancellable?
     
     init(character: Character) {
         
         self.character = character
-        location = "Last known location:"
-        gender = "Gender:"
-        status = "Status:"
-        origin = "Origin:"
-        species = "Species:"
+        location = "Currently living in"
+        gender = "Gender"
+        status = "Current status"
+        origin = "Born in"
+        species = "Species"
+        unknownInfo = "unknown"
+        unknownString = "Unknown"
     }
     
     func getCharacterDetail() {

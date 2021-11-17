@@ -12,46 +12,140 @@ struct CharacterDetailView: View {
     @StateObject var viewModel: CharacterDetailViewModel
     
     var body: some View {
-       
-        VStack{
+        
+        VStack {
             
-            if viewModel.showProgressView {
-                
-                ProgressViewView()
-            }
+            Image("")
+                .renderImage(url: URL(string:viewModel.character.image)!)
+                .frame(width: viewModel.imageSize, height: viewModel.imageSize)
+                .clipShape(RoundedRectangle(cornerRadius: viewModel.cornerRadius))
+                .shadow(color: .gray, radius: 2, x: 0, y: 2)
             
-            HStack{
-                
-                Image("")
-                    .renderImage(url: URL(string:viewModel.character.image)!)
-                    .frame(width: viewModel.imageSize, height: viewModel.imageSize)
-                    .clipShape(RoundedRectangle(cornerRadius: viewModel.cornerRadius))
-                
-            }
+            Text(viewModel.character.name)
+                .font(.title)
+                .foregroundColor(Color("NoBlack"))
             
-            VStack(alignment: .leading, spacing:10){
-                
-                Text(viewModel.character.name)
-                    .font(.title)
-                Divider().frame(maxWidth: 240)
-                Text("\(viewModel.location) \(viewModel.character.location)")
-                Text("\(viewModel.gender) \(viewModel.character.gender)")
-                Text("\(viewModel.status) \(viewModel.character.status)")
-                Text("\(viewModel.origin) \(viewModel.character.origin)")
-                Text("\(viewModel.species) \(viewModel.character.species)")
-                Text(viewModel.character.type)
-            }
+            Divider().frame(maxWidth: 240)
             
-        }.padding()
-            .background(
-                RoundedRectangle(cornerRadius: viewModel.cornerRadius)
-                    .fill(Color.white)
-                    .shadow(color: Color("DeepBlue"), radius: 2, x: 0, y: 2)
-            )
-            .onAppear {
+            Spacer(minLength: 10)
+            
+            VStack(spacing: 10) {
                 
-                viewModel.getCharacterDetail()
-            }
+                if viewModel.showProgressView {
+                    
+                    ProgressViewView()
+                }
+                
+                HStack {
+                    
+                    Text(viewModel.gender)
+                        .foregroundColor(Color("LightBlue"))
+                        .font(.footnote)
+                    
+                    Spacer()
+                    
+                    VStack {
+                        
+                        if viewModel.character.gender == viewModel.unknownInfo {
+                            
+                            Text(viewModel.unknownString)
+                                .foregroundColor(Color("DeepBlue"))
+                        } else {
+                            
+                            Text(viewModel.character.gender)
+                                .foregroundColor(Color("DeepBlue"))
+                        }
+                    }
+                }.frame(maxWidth:.infinity)
+                
+                HStack {
+                    
+                    Text(viewModel.species)
+                        .foregroundColor(Color("LightBlue"))
+                        .font(.footnote)
+                    
+                    Spacer()
+                    
+                    VStack {
+                        
+                        Text(viewModel.character.species)
+                            .foregroundColor(Color("DeepBlue"))
+                    }
+                }.frame(maxWidth:.infinity)
+                
+                HStack {
+                    
+                    Text(viewModel.status)
+                        .foregroundColor(Color("LightBlue"))
+                        .font(.footnote)
+                    
+                    Spacer()
+                    
+                    VStack {
+                        
+                        if viewModel.character.status == viewModel.unknownInfo {
+                            
+                            Text(viewModel.unknownString)
+                                .foregroundColor(Color("DeepBlue"))
+                        } else {
+                            
+                            Text(viewModel.character.status)
+                                .foregroundColor(Color("DeepBlue"))
+                        }
+                    }
+                }.frame(maxWidth:.infinity)
+                
+                HStack {
+                    
+                    Text(viewModel.origin)
+                        .foregroundColor(Color("LightBlue"))
+                        .font(.footnote)
+                    
+                    Spacer()
+                    
+                    VStack {
+                        
+                        if viewModel.character.origin == viewModel.unknownInfo {
+                            
+                            Text(viewModel.unknownString)
+                                .foregroundColor(Color("DeepBlue"))
+                        } else {
+                            
+                            Text(viewModel.character.origin)
+                                .foregroundColor(Color("DeepBlue"))
+                        }
+                    }
+                }.frame(maxWidth:.infinity)
+                
+                HStack {
+                    
+                    Text(viewModel.location)
+                        .foregroundColor(Color("LightBlue"))
+                        .font(.footnote)
+                    
+                    Spacer()
+                    
+                    VStack {
+                        
+                        if viewModel.character.location == viewModel.unknownInfo {
+                            
+                            Text(viewModel.unknownString)
+                                .foregroundColor(Color("DeepBlue"))
+                        } else {
+                            Text(viewModel.character.location)
+                                .foregroundColor(Color("DeepBlue"))
+                        }
+                    }
+                }.frame(maxWidth:.infinity)
+                
+                Spacer()
+                
+            }.padding()
+            
+        }.onAppear {
+            
+            viewModel.getCharacterDetail()
+        }
     }
 }
 

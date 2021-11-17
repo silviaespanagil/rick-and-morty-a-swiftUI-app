@@ -31,17 +31,27 @@ struct CharacterCellView: View {
                             Image("")
                                 .renderImage(url: URL(string:character.image)!)
                                 .frame(width: viewModel.imageSize, height: viewModel.imageSize)
+                                .clipShape(RoundedRectangle(cornerRadius: viewModel.cornerRadius))
+                                .shadow(color: .gray, radius: 2, x: 0, y: 2)
                             
-                            VStack {
+                            
+                            VStack(spacing:10) {
                                 
                                 Text(character.name)
                                     .foregroundColor(Color("NoBlack"))
                                     .frame(maxWidth: .infinity, alignment: .leading)
-                                Text(character.status)
-                                    .font(.footnote)
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-                            }
-                            .padding()
+                                
+                                if character.status == "unknown" {
+                                    Text("Unknown")
+                                        .font(.footnote)
+                                        .frame(maxWidth: .infinity, alignment: .leading)
+                                } else {
+                                    
+                                    Text(character.status)
+                                        .font(.footnote)
+                                        .frame(maxWidth: .infinity, alignment: .leading)
+                                }
+                            }.padding()
                         } .buttonStyle(PlainButtonStyle())
                     }
                     .onAppear {

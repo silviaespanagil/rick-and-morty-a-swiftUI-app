@@ -27,6 +27,8 @@
 		A794FF5927440943003E8043 /* GetAllCharactersByIdUseCaseUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794FF5827440943003E8043 /* GetAllCharactersByIdUseCaseUnitTest.swift */; };
 		A794FF5B27440B6E003E8043 /* LocationDetailUseCaseUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794FF5A27440B6E003E8043 /* LocationDetailUseCaseUnitTest.swift */; };
 		A794FF5D27440C1A003E8043 /* EpisodeDetailUseCaseUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794FF5C27440C1A003E8043 /* EpisodeDetailUseCaseUnitTest.swift */; };
+		A794FF622745362B003E8043 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A794FF612745362B003E8043 /* LaunchScreen.storyboard */; };
+		A794FF6727453936003E8043 /* kisspng-portal-morty-smith-rick-sanchez-t-shirt-hoodie-portal-5ac4b0cbe2bbd5.4984654015228397559287.png in Resources */ = {isa = PBXBuildFile; fileRef = A794FF6627453936003E8043 /* kisspng-portal-morty-smith-rick-sanchez-t-shirt-hoodie-portal-5ac4b0cbe2bbd5.4984654015228397559287.png */; };
 		A7AF769427398A50009A410C /* ServerCharacterResponseUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF769327398A50009A410C /* ServerCharacterResponseUnitTests.swift */; };
 		A7AF7697273A6A45009A410C /* GetAllCharactersUseCaseUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF7696273A6A45009A410C /* GetAllCharactersUseCaseUnitTest.swift */; };
 		A7AF769A273A6C43009A410C /* MockCharacterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF7699273A6C43009A410C /* MockCharacterRepository.swift */; };
@@ -111,6 +113,9 @@
 		A794FF5827440943003E8043 /* GetAllCharactersByIdUseCaseUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllCharactersByIdUseCaseUnitTest.swift; sourceTree = "<group>"; };
 		A794FF5A27440B6E003E8043 /* LocationDetailUseCaseUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailUseCaseUnitTest.swift; sourceTree = "<group>"; };
 		A794FF5C27440C1A003E8043 /* EpisodeDetailUseCaseUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailUseCaseUnitTest.swift; sourceTree = "<group>"; };
+		A794FF5E2745356B003E8043 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		A794FF612745362B003E8043 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A794FF6627453936003E8043 /* kisspng-portal-morty-smith-rick-sanchez-t-shirt-hoodie-portal-5ac4b0cbe2bbd5.4984654015228397559287.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "kisspng-portal-morty-smith-rick-sanchez-t-shirt-hoodie-portal-5ac4b0cbe2bbd5.4984654015228397559287.png"; sourceTree = "<group>"; };
 		A7AF7688273987D7009A410C /* RickMortyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RickMortyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7AF769327398A50009A410C /* ServerCharacterResponseUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerCharacterResponseUnitTests.swift; sourceTree = "<group>"; };
 		A7AF7696273A6A45009A410C /* GetAllCharactersUseCaseUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllCharactersUseCaseUnitTest.swift; sourceTree = "<group>"; };
@@ -256,6 +261,15 @@
 			path = EpisodeDetail;
 			sourceTree = "<group>";
 		};
+		A794FF63274538A3003E8043 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				A794FF6627453936003E8043 /* kisspng-portal-morty-smith-rick-sanchez-t-shirt-hoodie-portal-5ac4b0cbe2bbd5.4984654015228397559287.png */,
+				A794FF612745362B003E8043 /* LaunchScreen.storyboard */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
 		A7AF7689273987D7009A410C /* RickMortyTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -350,6 +364,7 @@
 		A7CE2B5A27340B65001B5491 /* RickMorty */ = {
 			isa = PBXGroup;
 			children = (
+				A794FF5E2745356B003E8043 /* Info.plist */,
 				A7CE2B6E27341EC0001B5491 /* API */,
 				A7CE2B7127342F2A001B5491 /* Constants.swift */,
 				A7CE2B7727343AE7001B5491 /* Entities */,
@@ -510,6 +525,7 @@
 		A7CE2BDB2739605A001B5491 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A794FF63274538A3003E8043 /* LaunchScreen */,
 				A794FF3C273E7526003E8043 /* ListHeader */,
 				A794FF37273D34EB003E8043 /* ProgressView */,
 				A7CE2BDE273960D0001B5491 /* Images */,
@@ -613,8 +629,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A794FF622745362B003E8043 /* LaunchScreen.storyboard in Resources */,
 				47B665DC273BC74D0086E96F /* Assets.xcassets in Resources */,
 				A7CE2B6327340B67001B5491 /* Preview Assets.xcassets in Resources */,
+				A794FF6727453936003E8043 /* kisspng-portal-morty-smith-rick-sanchez-t-shirt-hoodie-portal-5ac4b0cbe2bbd5.4984654015228397559287.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -812,6 +830,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -867,6 +886,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -887,9 +907,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"RickMorty/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RickMorty/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -916,9 +937,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"RickMorty/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RickMorty/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
