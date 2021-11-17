@@ -15,19 +15,22 @@ class LocationViewModel: ObservableObject {
     
     @Published public private(set) var showProgressView = false
     
+    var currentPage = 1
+    
     let dimension = "Dimension: "
     
     private var cancellable: AnyCancellable?
     
-    init() {
-        getLocation()
+    init(page: Int) {
+        
+        getLocation(page: page)
     }
     
-    func getLocation() {
+    func getLocation(page: Int) {
         
         showProgressView = true
         
-        cancellable = GetLocationUseCase().execute()
+        cancellable = GetLocationUseCase().execute(page: page)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { completion in
                 
@@ -35,7 +38,11 @@ class LocationViewModel: ObservableObject {
                 
                 switch completion {
                 case .finished:
+                    
+                    self.currentPage += 1
+                    
                     break
+                    
                 case .failure:
                     break
                 }

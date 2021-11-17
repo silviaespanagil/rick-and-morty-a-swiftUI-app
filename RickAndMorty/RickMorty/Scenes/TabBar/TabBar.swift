@@ -36,7 +36,7 @@ struct TabBar: View {
                     }
                     .tag(Tabs.characters)
                 
-                LocationView(viewModel: LocationViewModel())
+                LocationView(viewModel: LocationViewModel(page: 1))
                     .tabItem{
                         Image(systemName: "map")
                         Text(locationTab)

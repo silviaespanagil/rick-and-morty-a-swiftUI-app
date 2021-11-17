@@ -18,7 +18,6 @@ class CharacterListViewModel: ObservableObject {
     let imageSize: CGFloat = 90
     let cornerRadius: CGFloat = 50
     
-    var areCharactersLoaded = false
     var currentPage = 1
     
     private var cancellable: AnyCancellable?

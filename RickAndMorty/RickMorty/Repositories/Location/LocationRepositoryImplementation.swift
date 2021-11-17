@@ -17,9 +17,9 @@ class LocationRepositoryImplementation: LocationRepository {
         self.remoteDataSource = remoteDataSource
     }
     
-    func getLocation() -> AnyPublisher<[Location], Error> {
+    func getLocation(page: Int) -> AnyPublisher<[Location], Error> {
         
-        return remoteDataSource.getLocation().map {
+        return remoteDataSource.getLocation(page: page).map {
             
             serverLocation -> [Location] in
             

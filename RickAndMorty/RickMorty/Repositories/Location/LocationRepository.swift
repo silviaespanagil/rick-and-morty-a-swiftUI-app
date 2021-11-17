@@ -10,7 +10,7 @@ import Combine
 
 protocol LocationRepository {
     
-    func getLocation() -> AnyPublisher<[Location], Error>
+    func getLocation(page: Int) -> AnyPublisher<[Location], Error>
     
     func getLocationDetail(id: Int) -> AnyPublisher<Location, Error>
 }

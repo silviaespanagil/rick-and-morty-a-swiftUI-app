@@ -17,8 +17,8 @@ class GetLocationUseCase {
         self.repository = repository
     }
     
-    func execute() -> AnyPublisher<[Location], Error> {
+    func execute(page: Int) -> AnyPublisher<[Location], Error> {
         
-        repository.getLocation()
+        repository.getLocation(page: page)
     }
 }
