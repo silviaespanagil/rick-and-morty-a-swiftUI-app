@@ -19,11 +19,29 @@ class EpisodeDetailViewModel: ObservableObject {
     
     private var cancellable: AnyCancellable?
     
+    let episodeSeason: String
+    let airDate: String
+    let characterStarring: String
+    let episodeDetail: String
+    let episodeString: String
+    let currentStatus: String
+    
+    let imageSize: CGFloat = 50
+    let cornerRadius: CGFloat = 50
+    
     init(episode: Episode){
+        
+        episodeSeason = "Episode"
+        airDate = "Air Date"
+        characterStarring = "# characters starring"
+        episodeDetail = "Been in"
+        episodeString = "String"
+        currentStatus = "Current status"
         
         self.episode = episode
         charactersIds = getCharactersID()
         self.getEpisodeDetail()
+        
     }
     
     func getEpisodeDetail() {
