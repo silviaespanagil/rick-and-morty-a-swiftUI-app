@@ -27,7 +27,7 @@ struct EpisodeDetailView: View {
                 
                 HStack {
                     
-                    Text("📺")
+                    Text(viewModel.episodeSeasonIcon)
                         .font(.footnote)
                     Text(viewModel.episodeSeason)
                         .foregroundColor(Color("LightBlue"))
@@ -44,7 +44,7 @@ struct EpisodeDetailView: View {
                 
                 HStack {
                     
-                    Text("📆")
+                    Text(viewModel.airDateIcon)
                         .font(.footnote)
                     Text(viewModel.airDate)
                         .foregroundColor(Color("LightBlue"))
@@ -61,7 +61,7 @@ struct EpisodeDetailView: View {
                 
                 HStack {
                     
-                    Text("🛸")
+                    Text(viewModel.characterStarringIcon)
                         .font(.footnote)
                     Text(viewModel.characterStarring)
                         .foregroundColor(Color("LightBlue"))

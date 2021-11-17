@@ -19,8 +19,11 @@ class EpisodeDetailViewModel: ObservableObject {
     
     private var cancellable: AnyCancellable?
     
+    let episodeSeasonIcon: String
     let episodeSeason: String
+    let airDateIcon: String
     let airDate: String
+    let characterStarringIcon: String
     let characterStarring: String
     let episodeDetail: String
     let episodeString: String
@@ -31,8 +34,11 @@ class EpisodeDetailViewModel: ObservableObject {
     
     init(episode: Episode){
         
+        episodeSeasonIcon = "📺"
         episodeSeason = "Episode"
+        airDateIcon = "📆"
         airDate = "Air Date"
+        characterStarringIcon = "🛸"
         characterStarring = "# characters starring"
         episodeDetail = "Been in"
         episodeString = "String"
