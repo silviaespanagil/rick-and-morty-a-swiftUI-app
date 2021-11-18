@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CharacterCellView: View {
+struct CharacterListView: View {
     
     @StateObject var viewModel: CharacterListViewModel
     
@@ -30,32 +30,9 @@ struct CharacterCellView: View {
                         
                         NavigationLink(destination: CharacterDetailView(viewModel: CharacterDetailViewModel(character: character))){
                             
-                            HStack {
-                                
-                                Image("")
-                                    .renderImage(url: URL(string:character.image)!)
-                                    .frame(width: viewModel.imageSize, height: viewModel.imageSize)
-                                    .clipShape(RoundedRectangle(cornerRadius: viewModel.cornerRadius))
-                                    .shadow(color: .gray, radius: 2, x: 0, y: 2)
-                                
-                                VStack(spacing:10) {
-                                    
-                                    Text(character.name)
-                                        .foregroundColor(currentMode == .dark ? Color("LightBlue") : Color("NoBlack"))
-                                        .frame(maxWidth: .infinity, alignment: .leading)
-                                    
-                                    if character.status == "unknown" {
-                                        Text("Unknown")
-                                            .font(.footnote)
-                                            .frame(maxWidth: .infinity, alignment: .leading)
-                                    } else {
-                                        
-                                        Text(character.status)
-                                            .font(.footnote)
-                                            .frame(maxWidth: .infinity, alignment: .leading)
-                                    }
-                                }.padding()
-                            } .buttonStyle(PlainButtonStyle())
+                            CharacterCellView(image: character.image,
+                                              name: character.name,
+                                              status: character.status)
                         }
                         .onAppear {
                             if character == viewModel.characters.last {
@@ -64,6 +41,7 @@ struct CharacterCellView: View {
                         }
                     }.padding()
                         .foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue"))
+                    
                     Spacer()
                 }
                 .onAppear {
@@ -78,10 +56,11 @@ struct CharacterCellView: View {
     }
 }
 
-struct CharacterCellView_Previews: PreviewProvider {
+
+struct CharacterListView_Previews: PreviewProvider {
     
     static var previews: some View {
         
-        CharacterCellView(viewModel: CharacterListViewModel())
+        CharacterListView(viewModel: CharacterListViewModel())
     }
 } 

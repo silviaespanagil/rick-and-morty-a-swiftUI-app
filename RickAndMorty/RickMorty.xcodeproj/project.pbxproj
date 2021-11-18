@@ -12,6 +12,7 @@
 		47B665DC273BC74D0086E96F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47B665DB273BC74D0086E96F /* Assets.xcassets */; };
 		A743A9A127396983008A5CA0 /* CharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A743A9A027396983008A5CA0 /* CharacterDetailView.swift */; };
 		A75853852746ADA300EB40C5 /* CharacterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75853842746ADA300EB40C5 /* CharacterListView.swift */; };
+		A75853882746AE0A00EB40C5 /* CharacterCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75853872746AE0A00EB40C5 /* CharacterCellView.swift */; };
 		A794FF24273BF060003E8043 /* LocationRepositoryImplementationUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794FF23273BF060003E8043 /* LocationRepositoryImplementationUnitTest.swift */; };
 		A794FF26273C0049003E8043 /* LocationRemoteDataSourceUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794FF25273C0049003E8043 /* LocationRemoteDataSourceUnitTest.swift */; };
 		A794FF2C273C0A70003E8043 /* CharacterRemoteDataSourceUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794FF2B273C0A70003E8043 /* CharacterRemoteDataSourceUnitTest.swift */; };
@@ -112,6 +113,7 @@
 		47B665DB273BC74D0086E96F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A743A9A027396983008A5CA0 /* CharacterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailView.swift; sourceTree = "<group>"; };
 		A75853842746ADA300EB40C5 /* CharacterListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterListView.swift; sourceTree = "<group>"; };
+		A75853872746AE0A00EB40C5 /* CharacterCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCellView.swift; sourceTree = "<group>"; };
 		A794FF23273BF060003E8043 /* LocationRepositoryImplementationUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRepositoryImplementationUnitTest.swift; sourceTree = "<group>"; };
 		A794FF25273C0049003E8043 /* LocationRemoteDataSourceUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRemoteDataSourceUnitTest.swift; sourceTree = "<group>"; };
 		A794FF2B273C0A70003E8043 /* CharacterRemoteDataSourceUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterRemoteDataSourceUnitTest.swift; sourceTree = "<group>"; };
@@ -225,6 +227,14 @@
 				A794FF2F273C1EA0003E8043 /* Tabs.swift */,
 			);
 			path = Enumerations;
+			sourceTree = "<group>";
+		};
+		A75853862746ADF000EB40C5 /* ViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				A75853872746AE0A00EB40C5 /* CharacterCellView.swift */,
+			);
+			path = ViewCells;
 			sourceTree = "<group>";
 		};
 		A794FF27273C097F003E8043 /* CharacterTest */ = {
@@ -499,6 +509,7 @@
 		A7CE2B8F27352A2B001B5491 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				A75853862746ADF000EB40C5 /* ViewCells */,
 				A794FF512743CA06003E8043 /* EpisodeDetail */,
 				A794FF45273E88BE003E8043 /* LocationDetail */,
 				A7CE2BD127394A35001B5491 /* CharacterDetail */,
@@ -789,6 +800,7 @@
 				A7AF76AE273AA587009A410C /* LocationView.swift in Sources */,
 				A7AF769C273A7FA5009A410C /* Location.swift in Sources */,
 				A7AF76B2273AAFFD009A410C /* LocationViewModel.swift in Sources */,
+				A75853882746AE0A00EB40C5 /* CharacterCellView.swift in Sources */,
 				A7AF76A8273A97F9009A410C /* LocationRepositoryImplementation.swift in Sources */,
 				A7AF76BC273AC665009A410C /* ServerGetEpisodeResponse.swift in Sources */,
 				A7AF76BF273AC78E009A410C /* EpisodeRemoteDataSource.swift in Sources */,
