@@ -42,7 +42,7 @@ class EpisodeViewModel: ObservableObject {
                 
             }, receiveValue: {(episodes: [Episode]) in
                 
-                self.episodes = episodes
+                self.episodes.append(contentsOf: episodes)
             })
     }
 }
