@@ -11,6 +11,8 @@ struct CharacterDetailView: View {
     
     @StateObject var viewModel: CharacterDetailViewModel
     
+    @Environment(\.colorScheme) var currentMode
+    
     var body: some View {
         
         VStack {
@@ -23,7 +25,7 @@ struct CharacterDetailView: View {
             
             Text(viewModel.character.name)
                 .font(.title)
-                .foregroundColor(Color("NoBlack"))
+                .foregroundColor(currentMode == .dark ? Color("Silver") : Color("NoBlack"))
             
             Divider().frame(maxWidth: 240)
             
@@ -49,11 +51,11 @@ struct CharacterDetailView: View {
                         if viewModel.character.gender == viewModel.unknownInfo {
                             
                             Text(viewModel.unknownString)
-                                .foregroundColor(Color("DeepBlue"))
+                                .foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue"))
                         } else {
                             
                             Text(viewModel.character.gender)
-                                .foregroundColor(Color("DeepBlue"))
+                                .foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue"))
                         }
                     }
                 }.frame(maxWidth:.infinity)
@@ -69,7 +71,7 @@ struct CharacterDetailView: View {
                     VStack {
                         
                         Text(viewModel.character.species)
-                            .foregroundColor(Color("DeepBlue"))
+                            .foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue"))
                     }
                 }.frame(maxWidth:.infinity)
                 
@@ -86,11 +88,11 @@ struct CharacterDetailView: View {
                         if viewModel.character.status == viewModel.unknownInfo {
                             
                             Text(viewModel.unknownString)
-                                .foregroundColor(Color("DeepBlue"))
+                                .foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue"))
                         } else {
                             
                             Text(viewModel.character.status)
-                                .foregroundColor(Color("DeepBlue"))
+                                .foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue"))
                         }
                     }
                 }.frame(maxWidth:.infinity)
@@ -108,11 +110,11 @@ struct CharacterDetailView: View {
                         if viewModel.character.origin == viewModel.unknownInfo {
                             
                             Text(viewModel.unknownString)
-                                .foregroundColor(Color("DeepBlue"))
+                                .foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue"))
                         } else {
                             
                             Text(viewModel.character.origin)
-                                .foregroundColor(Color("DeepBlue"))
+                                .foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue"))
                         }
                     }
                 }.frame(maxWidth:.infinity)
@@ -130,10 +132,10 @@ struct CharacterDetailView: View {
                         if viewModel.character.location == viewModel.unknownInfo {
                             
                             Text(viewModel.unknownString)
-                                .foregroundColor(Color("DeepBlue"))
+                                .foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue"))
                         } else {
                             Text(viewModel.character.location)
-                                .foregroundColor(Color("DeepBlue"))
+                                .foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue"))
                         }
                     }
                 }.frame(maxWidth:.infinity)

@@ -27,6 +27,9 @@ class LocationDetailViewModel: ObservableObject {
     let lastSeen: String
     let residents: String
     
+    let unknownInfo: String
+    let unknownString: String
+    
     let imageSize: CGFloat = 50
     let cornerRadius: CGFloat = 50
     
@@ -39,6 +42,9 @@ class LocationDetailViewModel: ObservableObject {
         bornIn = "Born in"
         lastSeen = "Last seen in"
         residents = "Residents"
+        
+        unknownInfo = "unknown"
+        unknownString = "Unknown"
         
         self.location = location
         residentIds = getResidentsID()

@@ -11,6 +11,8 @@ struct EpisodeView: View {
     
     @StateObject var viewModel: EpisodeViewModel
     
+    @Environment(\.colorScheme) var currentMode
+    
     var body: some View {
         
         VStack{
@@ -34,6 +36,7 @@ struct EpisodeView: View {
                                 Spacer()
                                 
                                 Text(episode.name)
+                                    .foregroundColor(currentMode == .dark ? Color("LightBlue") : Color("NoBlack"))
                                 
                                 VStack(alignment: .leading) {
                                     
@@ -42,6 +45,7 @@ struct EpisodeView: View {
                                     
                                 }
                                 .font(.footnote)
+                                .foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue"))
                                 Spacer()
                             }
                         }
@@ -56,7 +60,7 @@ struct EpisodeView: View {
                     
                     if viewModel.episodes.count < 1 {
                         
-                        viewModel.getEpisode(page: viewModel.currentPage)
+                        viewModel.getEpisode(page: 1)
                     }
                 }
             }

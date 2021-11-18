@@ -39,7 +39,7 @@ struct CharacterCellView: View {
                             VStack(spacing:10) {
                                 
                                 Text(character.name)
-                                    .foregroundColor(currentMode == .dark ? Color("LightBlue") : Color("DeepBlue"))
+                                    .foregroundColor(currentMode == .dark ? Color("LightBlue") : Color("NoBlack"))
                                     .frame(maxWidth: .infinity, alignment: .leading)
                                 
                                 if character.status == "unknown" {
@@ -68,7 +68,7 @@ struct CharacterCellView: View {
                 
                 if viewModel.characters.count < 1 {
                     
-                    viewModel.getAllCharacters(page: viewModel.currentPage)
+                    viewModel.getAllCharacters(page: 1)
                 }
             }
         }
@@ -78,6 +78,7 @@ struct CharacterCellView: View {
 struct CharacterCellView_Previews: PreviewProvider {
     
     static var previews: some View {
+        
         CharacterCellView(viewModel: CharacterListViewModel())
     }
 } 
