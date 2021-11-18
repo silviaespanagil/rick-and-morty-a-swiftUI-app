@@ -8,9 +8,9 @@ New day new projects my mentor gave me a huge challenge and it was, of course, t
 The app has six main views with general information an each of them has a detail view with more information about it. Take a look! 👀 
 
 
-<img src="https://user-images.githubusercontent.com/81619759/142416919-7a0860b9-6a7a-48f1-86c9-5948c0b6897a.png" alt="App view with all of Rick and Morty characters" width="200"/> <img src="https://user-images.githubusercontent.com/81619759/142417024-6d78e00b-ac5e-4311-9d2c-026cf769a54f.png" alt="App view with all of Rick and Morty locations" width="200"/> <img src="https://user-images.githubusercontent.com/81619759/142417104-a28b54eb-d070-4ec6-acec-bc580b265622.png" alt="App view with all of Rick and Morty episodes" width="200"/>
+<img src="https://user-images.githubusercontent.com/81619759/142416919-7a0860b9-6a7a-48f1-86c9-5948c0b6897a.png" alt="App view with all of Rick and Morty characters" width="250"/> <img src="https://user-images.githubusercontent.com/81619759/142417024-6d78e00b-ac5e-4311-9d2c-026cf769a54f.png" alt="App view with all of Rick and Morty locations" width="250"/> <img src="https://user-images.githubusercontent.com/81619759/142417104-a28b54eb-d070-4ec6-acec-bc580b265622.png" alt="App view with all of Rick and Morty episodes" width="250"/>
 
-<img src="https://user-images.githubusercontent.com/81619759/142417263-6ba02f4c-25a8-49e4-a267-7a63297f6bc8.png" alt="App view of character detail" width="200"/> <img src="https://user-images.githubusercontent.com/81619759/142417293-0ca68397-04c1-43dd-9a03-5f61f31acfbc.png" alt="App view with location detail" width="200"/> <img src="https://user-images.githubusercontent.com/81619759/142417300-e2a16650-95c6-466f-9332-02f23ae12b85.png" alt="App view with episodes detail" width="200"/>
+<img src="https://user-images.githubusercontent.com/81619759/142417263-6ba02f4c-25a8-49e4-a267-7a63297f6bc8.png" alt="App view of character detail" width="250"/> <img src="https://user-images.githubusercontent.com/81619759/142417293-0ca68397-04c1-43dd-9a03-5f61f31acfbc.png" alt="App view with location detail" width="250"/> <img src="https://user-images.githubusercontent.com/81619759/142417300-e2a16650-95c6-466f-9332-02f23ae12b85.png" alt="App view with episodes detail" width="250"/>
 
 
 ## Initial Requirements 📋
