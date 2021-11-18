@@ -15,9 +15,6 @@ class CharacterListViewModel: ObservableObject {
     
     @Published public private(set) var showProgressView = false
     
-    let imageSize: CGFloat = 90
-    let cornerRadius: CGFloat = 50
-    
     var currentPage = 1
     
     private var cancellable: AnyCancellable?

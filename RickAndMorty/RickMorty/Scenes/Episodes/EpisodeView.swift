@@ -31,23 +31,7 @@ struct EpisodeView: View {
                         
                         NavigationLink(destination: EpisodeDetailView(viewModel: EpisodeDetailViewModel(episode: episode))) {
                             
-                            VStack(alignment: .leading, spacing:10) {
-                                
-                                Spacer()
-                                
-                                Text(episode.name)
-                                    .foregroundColor(currentMode == .dark ? Color("LightBlue") : Color("NoBlack"))
-                                
-                                VStack(alignment: .leading) {
-                                    
-                                    Text(episode.episode)
-                                    Text(episode.airDate)
-                                    
-                                }
-                                .font(.footnote)
-                                .foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue"))
-                                Spacer()
-                            }
+                            EpisodeCellView(name: episode.name, episode: episode.episode, airDate: episode.airDate)
                         }
                         .onAppear {
                             if episode == viewModel.episodes.last {
@@ -68,7 +52,7 @@ struct EpisodeView: View {
     }
 }
 
-struct EpisodeCellView_Previews: PreviewProvider {
+struct EpisodeView_Previews: PreviewProvider {
     
     static var previews: some View {
         

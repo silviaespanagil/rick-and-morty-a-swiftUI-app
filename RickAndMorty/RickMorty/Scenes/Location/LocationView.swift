@@ -14,7 +14,7 @@ struct LocationView: View {
     @Environment(\.colorScheme) var currentMode
     
     var body: some View {
-    
+        
         VStack{
             
             List {
@@ -30,29 +30,8 @@ struct LocationView: View {
                         
                         NavigationLink(destination: LocationDetailView(viewModel: LocationDetailViewModel(location: location))) {
                             
-                            VStack(alignment: .leading, spacing:10) {
-                                
-                                Spacer()
-                                
-                                Text(location.name)
-                                    .foregroundColor(currentMode == .dark ? Color("LightBlue") : Color("NoBlack"))
-                                
-                                VStack(alignment: .leading) {
-                                    
-                                    Text(location.type)
-                                    
-                                    if location.dimension == viewModel.unknownInfo {
-                                        
-                                        Text("\(viewModel.dimension)\(viewModel.unknownString)")
-                                        
-                                    } else {
-                                        
-                                        Text("\(viewModel.dimension)\(location.dimension)")
-                                    }
-                                }
-                                .font(.footnote).foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue"))
-                                Spacer()
-                            }
+                            LocationCellView(name: location.name, type: location.type, dimension: location.dimension)
+                            
                         }
                         .onAppear {
                             
@@ -63,7 +42,7 @@ struct LocationView: View {
                     }
                 }
                 .onAppear {
-                   
+                    
                     if viewModel.locations.count < 1 {
                         
                         viewModel.getLocation(page: 1)
