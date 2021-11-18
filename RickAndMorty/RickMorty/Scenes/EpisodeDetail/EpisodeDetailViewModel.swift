@@ -30,6 +30,9 @@ class EpisodeDetailViewModel: ObservableObject {
     let episodeString: String
     let currentStatus: String
     
+    let unknownInfo: String
+    let unknownString: String
+    
     let imageSize: CGFloat = 50
     let cornerRadius: CGFloat = 50
     
@@ -45,6 +48,9 @@ class EpisodeDetailViewModel: ObservableObject {
         episodeDetail = "Been in"
         episodeString = "episodes"
         currentStatus = "Current status"
+        
+        unknownInfo = "unknown"
+        unknownString = "Unknown"
         
         self.episode = episode
         charactersIds = getCharactersID()

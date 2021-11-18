@@ -11,6 +11,8 @@ struct CharacterCellView: View {
     
     @StateObject var viewModel: CharacterListViewModel
     
+    @Environment(\.colorScheme) var currentMode
+    
     var body: some View {
         
         List {
@@ -37,7 +39,7 @@ struct CharacterCellView: View {
                             VStack(spacing:10) {
                                 
                                 Text(character.name)
-                                    .foregroundColor(Color("NoBlack"))
+                                    .foregroundColor(currentMode == .dark ? Color("LightBlue") : Color("NoBlack"))
                                     .frame(maxWidth: .infinity, alignment: .leading)
                                 
                                 if character.status == "unknown" {
@@ -58,18 +60,15 @@ struct CharacterCellView: View {
                             viewModel.getAllCharacters(page: viewModel.currentPage)
                         }
                     }
-                }
-                .buttonStyle(PlainButtonStyle())
-                .padding()
-                .foregroundColor(Color("DeepBlue")
-                )
+                }.padding()
+                    .foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue"))
                 Spacer()
             }
             .onAppear {
                 
                 if viewModel.characters.count < 1 {
                     
-                    viewModel.getAllCharacters(page: viewModel.currentPage)
+                    viewModel.getAllCharacters(page: 1)
                 }
             }
         }
@@ -79,6 +78,7 @@ struct CharacterCellView: View {
 struct CharacterCellView_Previews: PreviewProvider {
     
     static var previews: some View {
+        
         CharacterCellView(viewModel: CharacterListViewModel())
     }
 } 

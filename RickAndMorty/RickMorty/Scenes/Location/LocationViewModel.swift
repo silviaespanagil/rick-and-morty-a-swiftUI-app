@@ -19,6 +19,9 @@ class LocationViewModel: ObservableObject {
     
     let dimension = "Dimension: "
     
+    let unknownInfo = "unknown"
+    let unknownString = "Unknown"
+    
     private var cancellable: AnyCancellable?
 
     func getLocation(page: Int) {

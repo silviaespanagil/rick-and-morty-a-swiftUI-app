@@ -19,6 +19,7 @@ class CharacterDetailViewModel: ObservableObject {
     let status: String
     let origin: String
     let species: String
+    
     let unknownInfo: String
     let unknownString: String
     

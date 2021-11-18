@@ -11,13 +11,15 @@ struct EpisodeDetailView: View {
     
     @StateObject var viewModel: EpisodeDetailViewModel
     
+    @Environment(\.colorScheme) var currentMode
+    
     var body: some View {
         
         VStack {
             
             Text(viewModel.episode.name)
                 .font(.title)
-                .foregroundColor(Color("NoBlack"))
+                .foregroundColor(currentMode == .dark ? Color("Silver") : Color("NoBlack"))
             
             Divider().frame(maxWidth: 240)
             
@@ -38,7 +40,7 @@ struct EpisodeDetailView: View {
                     VStack {
                         
                         Text("\(viewModel.episode.episode)")
-                            .foregroundColor(Color("DeepBlue"))
+                            .foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue"))
                     }
                 }.frame(maxWidth:.infinity)
                 
@@ -55,7 +57,7 @@ struct EpisodeDetailView: View {
                     VStack {
                         
                         Text("\(viewModel.episode.airDate)")
-                            .foregroundColor(Color("DeepBlue"))
+                            .foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue"))
                     }
                 }.frame(maxWidth:.infinity)
                 
@@ -72,7 +74,7 @@ struct EpisodeDetailView: View {
                     VStack {
                         
                         Text("\(viewModel.characters.count)")
-                            .foregroundColor(Color("DeepBlue"))
+                            .foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue"))
                     }
                 }.frame(maxWidth:.infinity)
             }.padding()
@@ -97,7 +99,7 @@ struct EpisodeDetailView: View {
                                 .shadow(color: .gray, radius: 2, x: 0, y: 2)
                             
                             Text(character.name)
-                                .foregroundColor(Color("NoBlack"))
+                                .foregroundColor(currentMode == .dark ? Color("LightBlue") : Color("NoBlack"))
                             
                             Spacer()
                             
@@ -107,9 +109,17 @@ struct EpisodeDetailView: View {
                                 
                                 Divider().frame(maxWidth: 40)
                                 
-                                Text("\(viewModel.currentStatus) \(character.status)")
+                                if character.status == viewModel.unknownInfo {
+                                    
+                                    Text("\(viewModel.currentStatus) \(viewModel.unknownString)")
+                                    
+                                } else {
+                                    
+                                    Text("\(viewModel.currentStatus) \(character.status)")
+                                }
+                                
                             }.font(.footnote)
-                                .foregroundColor(Color("DeepBlue")).multilineTextAlignment(.trailing)
+                                .foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue")).multilineTextAlignment(.trailing)
                         }.frame(maxWidth:.infinity)
                             .padding(5)
                     }

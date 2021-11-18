@@ -11,6 +11,8 @@ struct LocationView: View {
     
     @StateObject var viewModel: LocationViewModel
     
+    @Environment(\.colorScheme) var currentMode
+    
     var body: some View {
         
         VStack{
@@ -33,18 +35,27 @@ struct LocationView: View {
                                 Spacer()
                                 
                                 Text(location.name)
+                                    .foregroundColor(currentMode == .dark ? Color("LightBlue") : Color("NoBlack"))
                                 
                                 VStack(alignment: .leading) {
                                     
                                     Text(location.type)
-                                    Text("\(viewModel.dimension)\(location.dimension)")
                                     
+                                    if location.dimension == viewModel.unknownInfo {
+                                        
+                                        Text("\(viewModel.dimension)\(viewModel.unknownString)")
+                                        
+                                    } else {
+                                        
+                                        Text("\(viewModel.dimension)\(location.dimension)")
+                                    }
                                 }
-                                .font(.footnote)
+                                .font(.footnote).foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue"))
                                 Spacer()
                             }
                         }
                         .onAppear {
+                            
                             if location == viewModel.locations.last {
                                 viewModel.getLocation(page: viewModel.currentPage)
                             }
@@ -55,7 +66,7 @@ struct LocationView: View {
                     
                     if viewModel.locations.count < 1 {
                         
-                        viewModel.getLocation(page: viewModel.currentPage)
+                        viewModel.getLocation(page: 1)
                     }
                 }
             }

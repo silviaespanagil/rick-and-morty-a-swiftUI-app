@@ -11,13 +11,15 @@ struct LocationDetailView: View {
     
     @StateObject var viewModel: LocationDetailViewModel
     
+    @Environment(\.colorScheme) var currentMode
+    
     var body: some View {
         
         VStack {
             
             Text(viewModel.location.name)
                 .font(.title)
-                .foregroundColor(Color("NoBlack"))
+                .foregroundColor(currentMode == .dark ? Color("Silver") : Color("NoBlack"))
             
             Divider().frame(maxWidth: 240)
             
@@ -38,7 +40,7 @@ struct LocationDetailView: View {
                     VStack {
                         
                         Text("\(viewModel.location.type)")
-                            .foregroundColor(Color("DeepBlue"))
+                            .foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue"))
                     }
                 }.frame(maxWidth:.infinity)
                 
@@ -54,8 +56,15 @@ struct LocationDetailView: View {
                     
                     VStack {
                         
-                        Text("\(viewModel.location.dimension)")
-                            .foregroundColor(Color("DeepBlue"))
+                        if viewModel.location.dimension == viewModel.unknownInfo {
+                            
+                            Text(viewModel.unknownString)
+                                .foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue"))
+                        } else {
+                            
+                            Text("\(viewModel.location.dimension)")
+                                .foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue"))
+                        }
                     }
                 }.frame(maxWidth:.infinity)
             }.padding()
@@ -80,19 +89,33 @@ struct LocationDetailView: View {
                                 .shadow(color: .gray, radius: 2, x: 0, y: 2)
                             
                             Text(character.name)
-                                .foregroundColor(Color("NoBlack"))
+                                .foregroundColor(currentMode == .dark ? Color("LightBlue") : Color("NoBlack"))
                             
                             Spacer()
                             
                             VStack(alignment: .trailing) {
                                 
-                                Text("\(viewModel.bornIn) \(character.origin)")
+                                if character.origin == viewModel.unknownInfo {
+                                    
+                                    Text("\(viewModel.bornIn) \(viewModel.unknownString)")
+                                } else {
+                                    
+                                    Text("\(viewModel.bornIn) \(character.origin)")
+                                }
                                 
                                 Divider().frame(maxWidth: 40)
                                 
                                 Text(viewModel.lastSeen)
-                                Text("\(character.location)")}.font(.footnote)
-                                .foregroundColor(Color("DeepBlue")).multilineTextAlignment(.trailing)
+                                if character.location == viewModel.unknownInfo {
+                                    
+                                    Text("\(character.location)")
+                                } else {
+                                    
+                                Text("\(character.location)")
+                                }
+        
+                            }.font(.footnote)
+                                .foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue")).multilineTextAlignment(.trailing)
                         }.frame(maxWidth:.infinity)
                             .padding(5)
                     }
