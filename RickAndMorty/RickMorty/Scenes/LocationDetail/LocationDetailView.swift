@@ -125,7 +125,7 @@ struct LocationDetailView: View {
             
         }.onAppear {
             
-            viewModel.getAllCharactersById()
+            viewModel.getLocationDetail()
         }
     }
 }

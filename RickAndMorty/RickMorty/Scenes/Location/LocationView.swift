@@ -14,7 +14,7 @@ struct LocationView: View {
     @Environment(\.colorScheme) var currentMode
     
     var body: some View {
-        
+    
         VStack{
             
             List {
@@ -63,7 +63,7 @@ struct LocationView: View {
                     }
                 }
                 .onAppear {
-                    
+                   
                     if viewModel.locations.count < 1 {
                         
                         viewModel.getLocation(page: 1)

@@ -128,7 +128,7 @@ struct EpisodeDetailView: View {
                 .listStyle(.grouped)
         }.onAppear {
             
-            viewModel.getAllEpisodeCharactersById()
+            viewModel.getEpisodeDetail()
         }
     }
 }

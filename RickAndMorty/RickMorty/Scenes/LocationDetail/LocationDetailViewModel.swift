@@ -48,7 +48,6 @@ class LocationDetailViewModel: ObservableObject {
         
         self.location = location
         residentIds = getResidentsID()
-        self.getLocationDetail()
     }
     
     func getLocationDetail() {
@@ -60,6 +59,7 @@ class LocationDetailViewModel: ObservableObject {
             .sink(receiveCompletion: { completion in
                 
                 self.showProgressView = false
+                self.getAllCharactersById()
                 
                 switch completion {
                 case .finished:

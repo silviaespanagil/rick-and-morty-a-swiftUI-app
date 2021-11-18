@@ -54,8 +54,6 @@ class EpisodeDetailViewModel: ObservableObject {
         
         self.episode = episode
         charactersIds = getCharactersID()
-        self.getEpisodeDetail()
-        
     }
     
     func getEpisodeDetail() {
@@ -67,6 +65,7 @@ class EpisodeDetailViewModel: ObservableObject {
             .sink(receiveCompletion: { completion in
                 
                 self.showProgressView = false
+                self.getAllEpisodeCharactersById()
                 
                 switch completion {
                 case .finished:
