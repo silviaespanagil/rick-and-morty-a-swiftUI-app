@@ -90,5 +90,5 @@ https://user-images.githubusercontent.com/81619759/142444591-bf440de1-a32c-494c-
 
 If you want to clone this repo please feel free to! Go for it!
 
-## Codefactor 
-[![CodeFactor](https://www.codefactor.io/repository/github/silviaespanagil/my-comics-app/badge/main)](https://www.codefactor.io/repository/github/silviaespanagil/my-comics-app/overview/main)
+## Codefactor
+[![CodeFactor](https://www.codefactor.io/repository/github/silviaespanagil/rick-and-morty-a-swiftui-app/badge)](https://www.codefactor.io/repository/github/silviaespanagil/rick-and-morty-a-swiftui-app)
