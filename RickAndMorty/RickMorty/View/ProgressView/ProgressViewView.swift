@@ -8,16 +8,25 @@
 import SwiftUI
 
 struct ProgressViewView: View {
+    
     var body: some View {
         
-        ProgressView()
+        HStack {
             
-            .progressViewStyle(CircularProgressViewStyle(tint:Color("DeepBlue")))
+            Spacer()
+            
+            ProgressView()
+                .progressViewStyle(CircularProgressViewStyle(tint:Color("DeepBlue")))
+            
+            Spacer()
+        }
     }
 }
 
 struct ProgressViewView_Previews: PreviewProvider {
+    
     static var previews: some View {
+        
         ProgressViewView()
     }
 }
