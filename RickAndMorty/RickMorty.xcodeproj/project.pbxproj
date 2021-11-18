@@ -11,6 +11,7 @@
 		47B665DA273BC6860086E96F /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B665D9273BC6850086E96F /* HTTPError.swift */; };
 		47B665DC273BC74D0086E96F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47B665DB273BC74D0086E96F /* Assets.xcassets */; };
 		A743A9A127396983008A5CA0 /* CharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A743A9A027396983008A5CA0 /* CharacterDetailView.swift */; };
+		A75853852746ADA300EB40C5 /* CharacterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75853842746ADA300EB40C5 /* CharacterListView.swift */; };
 		A794FF24273BF060003E8043 /* LocationRepositoryImplementationUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794FF23273BF060003E8043 /* LocationRepositoryImplementationUnitTest.swift */; };
 		A794FF26273C0049003E8043 /* LocationRemoteDataSourceUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794FF25273C0049003E8043 /* LocationRemoteDataSourceUnitTest.swift */; };
 		A794FF2C273C0A70003E8043 /* CharacterRemoteDataSourceUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794FF2B273C0A70003E8043 /* CharacterRemoteDataSourceUnitTest.swift */; };
@@ -75,7 +76,6 @@
 		A7CE2B8B27344AC5001B5491 /* CharacterRepositoryImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE2B8A27344AC5001B5491 /* CharacterRepositoryImplementation.swift */; };
 		A7CE2B8E273526B5001B5491 /* GetAllCharactersUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE2B8D273526B5001B5491 /* GetAllCharactersUseCase.swift */; };
 		A7CE2B9327352A63001B5491 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE2B9227352A63001B5491 /* TabBar.swift */; };
-		A7CE2B9627352BD2001B5491 /* CharacterCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE2B9527352BD2001B5491 /* CharacterCellView.swift */; };
 		A7CE2BA427357521001B5491 /* CharacterListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE2BA327357521001B5491 /* CharacterListViewModel.swift */; };
 		A7CE2BCF27393741001B5491 /* CharacterDetailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE2BCE27393741001B5491 /* CharacterDetailUseCase.swift */; };
 		A7CE2BD527394A57001B5491 /* CharacterDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE2BD427394A57001B5491 /* CharacterDetailViewModel.swift */; };
@@ -111,6 +111,7 @@
 		47B665D9273BC6850086E96F /* HTTPError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPError.swift; sourceTree = "<group>"; };
 		47B665DB273BC74D0086E96F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A743A9A027396983008A5CA0 /* CharacterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailView.swift; sourceTree = "<group>"; };
+		A75853842746ADA300EB40C5 /* CharacterListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterListView.swift; sourceTree = "<group>"; };
 		A794FF23273BF060003E8043 /* LocationRepositoryImplementationUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRepositoryImplementationUnitTest.swift; sourceTree = "<group>"; };
 		A794FF25273C0049003E8043 /* LocationRemoteDataSourceUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRemoteDataSourceUnitTest.swift; sourceTree = "<group>"; };
 		A794FF2B273C0A70003E8043 /* CharacterRemoteDataSourceUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterRemoteDataSourceUnitTest.swift; sourceTree = "<group>"; };
@@ -179,7 +180,6 @@
 		A7CE2B8A27344AC5001B5491 /* CharacterRepositoryImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterRepositoryImplementation.swift; sourceTree = "<group>"; };
 		A7CE2B8D273526B5001B5491 /* GetAllCharactersUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllCharactersUseCase.swift; sourceTree = "<group>"; };
 		A7CE2B9227352A63001B5491 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
-		A7CE2B9527352BD2001B5491 /* CharacterCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCellView.swift; sourceTree = "<group>"; };
 		A7CE2BA327357521001B5491 /* CharacterListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewModel.swift; sourceTree = "<group>"; };
 		A7CE2BCE27393741001B5491 /* CharacterDetailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailUseCase.swift; sourceTree = "<group>"; };
 		A7CE2BD427394A57001B5491 /* CharacterDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewModel.swift; sourceTree = "<group>"; };
@@ -521,7 +521,7 @@
 		A7CE2B9427352BB1001B5491 /* CharacterList */ = {
 			isa = PBXGroup;
 			children = (
-				A7CE2B9527352BD2001B5491 /* CharacterCellView.swift */,
+				A75853842746ADA300EB40C5 /* CharacterListView.swift */,
 				A7CE2BA327357521001B5491 /* CharacterListViewModel.swift */,
 			);
 			path = CharacterList;
@@ -779,13 +779,13 @@
 			files = (
 				A7CE2B7E27343B7B001B5491 /* ServerCharacterResponse.swift in Sources */,
 				A7CE2B7227342F2A001B5491 /* Constants.swift in Sources */,
-				A7CE2B9627352BD2001B5491 /* CharacterCellView.swift in Sources */,
 				A7CE2B7027341ED8001B5491 /* APIManager.swift in Sources */,
 				A794FF3B273D3513003E8043 /* ProgressViewView.swift in Sources */,
 				A7CE2B762734342B001B5491 /* CharacterRemoteDataSource.swift in Sources */,
 				47670E632742AF020071B3CF /* GetAllCharactersByIdUseCase.swift in Sources */,
 				A7CE2B87273440EE001B5491 /* ServerEpisodeResponse.swift in Sources */,
 				A7CE2BCF27393741001B5491 /* CharacterDetailUseCase.swift in Sources */,
+				A75853852746ADA300EB40C5 /* CharacterListView.swift in Sources */,
 				A7AF76AE273AA587009A410C /* LocationView.swift in Sources */,
 				A7AF769C273A7FA5009A410C /* Location.swift in Sources */,
 				A7AF76B2273AAFFD009A410C /* LocationViewModel.swift in Sources */,
