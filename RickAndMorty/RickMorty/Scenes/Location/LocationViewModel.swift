@@ -47,7 +47,7 @@ class LocationViewModel: ObservableObject {
                 
             }, receiveValue: {(locations: [Location]) in
                 
-                self.locations = locations
+                self.locations.append(contentsOf: locations)
             })
     }
 }
