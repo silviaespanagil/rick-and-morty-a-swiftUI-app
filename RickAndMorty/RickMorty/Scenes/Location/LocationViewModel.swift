@@ -20,12 +20,7 @@ class LocationViewModel: ObservableObject {
     let dimension = "Dimension: "
     
     private var cancellable: AnyCancellable?
-    
-    init(page: Int) {
-        
-        getLocation(page: page)
-    }
-    
+
     func getLocation(page: Int) {
         
         showProgressView = true

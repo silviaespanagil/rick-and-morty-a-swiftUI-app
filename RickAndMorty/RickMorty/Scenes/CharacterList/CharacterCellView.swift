@@ -13,14 +13,14 @@ struct CharacterCellView: View {
     
     var body: some View {
         
-        if viewModel.showProgressView {
-            
-            ProgressViewView()
-        }
-        
         List {
             
             Section(header: ListHeaderView()) {
+                
+                if viewModel.showProgressView {
+                    
+                    ProgressViewView()
+                }
                 
                 ForEach(viewModel.characters) { character in
                     
@@ -33,7 +33,6 @@ struct CharacterCellView: View {
                                 .frame(width: viewModel.imageSize, height: viewModel.imageSize)
                                 .clipShape(RoundedRectangle(cornerRadius: viewModel.cornerRadius))
                                 .shadow(color: .gray, radius: 2, x: 0, y: 2)
-                            
                             
                             VStack(spacing:10) {
                                 
@@ -66,6 +65,13 @@ struct CharacterCellView: View {
                 )
                 Spacer()
             }
+            .onAppear {
+                
+                if viewModel.characters.count < 1 {
+                    
+                    viewModel.getAllCharacters(page: viewModel.currentPage)
+                }
+            }
         }
     }
 }
@@ -73,6 +79,6 @@ struct CharacterCellView: View {
 struct CharacterCellView_Previews: PreviewProvider {
     
     static var previews: some View {
-        CharacterCellView(viewModel: CharacterListViewModel(page: 1))
+        CharacterCellView(viewModel: CharacterListViewModel())
     }
 } 
