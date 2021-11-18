@@ -27,21 +27,21 @@ struct TabBar: View {
         
         TabView(selection: $activeTab){
             
-            CharacterCellView(viewModel: CharacterListViewModel(page: 1))
+            CharacterCellView(viewModel: CharacterListViewModel())
                 .tabItem {
                     
                     Label(characterTab, systemImage: "person.2")
                 }
                 .tag(Tabs.characters)
             
-            LocationView(viewModel: LocationViewModel(page: 1))
+            LocationView(viewModel: LocationViewModel())
                 .tabItem {
                     
                     Label(locationTab, systemImage: "map")
                 }
                 .tag(Tabs.locations)
             
-            EpisodeView(viewModel: EpisodeViewModel(page: 1))
+            EpisodeView(viewModel: EpisodeViewModel())
                 .tabItem {
                     
                     Label(episodeTab, systemImage: "tv")
@@ -53,7 +53,6 @@ struct TabBar: View {
         .navigationBarTitleDisplayMode(.inline)
         .accentColor(Color("NeonGreen"))
     }
-    
 }
 
 func getTabBarTitle(for tabItem: Tabs) -> String {
@@ -67,7 +66,6 @@ func getTabBarTitle(for tabItem: Tabs) -> String {
         return "Episodes"
     }
 }
-
 
 extension TabBar {
     
@@ -85,6 +83,7 @@ extension TabBar {
 struct TabBar_Previews: PreviewProvider {
     
     static var previews: some View {
+        
         TabBar()
     }
 }

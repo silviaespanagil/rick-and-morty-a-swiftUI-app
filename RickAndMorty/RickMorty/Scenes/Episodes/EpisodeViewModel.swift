@@ -19,11 +19,6 @@ class EpisodeViewModel: ObservableObject {
     
     private var cancellable: AnyCancellable?
     
-    init(page: Int) {
-        
-        getEpisode(page: page)
-    }
-    
     func getEpisode(page: Int) {
        
         showProgressView = true
@@ -49,7 +44,5 @@ class EpisodeViewModel: ObservableObject {
                 
                 self.episodes = episodes
             })
-        
     }
-    
 }

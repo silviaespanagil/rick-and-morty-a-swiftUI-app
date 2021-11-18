@@ -13,16 +13,17 @@ struct EpisodeView: View {
     
     var body: some View {
         
-        if viewModel.showProgressView {
-            
-            ProgressViewView()
-        }
-        
         VStack{
             
             List {
                 
                 Section(header:ListHeaderView()) {
+                    
+                    
+                    if viewModel.showProgressView {
+                        
+                        ProgressViewView()
+                    }
                     
                     ForEach(viewModel.episodes) { episode in
                         
@@ -51,13 +52,22 @@ struct EpisodeView: View {
                         }
                     }
                 }
+                .onAppear {
+                    
+                    if viewModel.episodes.count < 1 {
+                        
+                        viewModel.getEpisode(page: viewModel.currentPage)
+                    }
+                }
             }
         }
     }
 }
 
 struct EpisodeCellView_Previews: PreviewProvider {
+    
     static var previews: some View {
-        EpisodeView(viewModel: EpisodeViewModel(page: 1))
+        
+        EpisodeView(viewModel: EpisodeViewModel())
     }
 }

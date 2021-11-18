@@ -13,16 +13,16 @@ struct LocationView: View {
     
     var body: some View {
         
-        if viewModel.showProgressView {
-            
-            ProgressViewView()
-        }
-        
         VStack{
             
             List {
                 
                 Section(header:ListHeaderView()) {
+                    
+                    if viewModel.showProgressView {
+                        
+                        ProgressViewView()
+                    }
                     
                     ForEach(viewModel.locations) { location in
                         
@@ -51,6 +51,13 @@ struct LocationView: View {
                         }
                     }
                 }
+                .onAppear {
+                    
+                    if viewModel.locations.count < 1 {
+                        
+                        viewModel.getLocation(page: viewModel.currentPage)
+                    }
+                }
             }
         }
     }
@@ -58,6 +65,6 @@ struct LocationView: View {
 
 struct LocationView_Previews: PreviewProvider {
     static var previews: some View {
-        LocationView(viewModel: LocationViewModel(page: 1))
+        LocationView(viewModel: LocationViewModel())
     }
 }
