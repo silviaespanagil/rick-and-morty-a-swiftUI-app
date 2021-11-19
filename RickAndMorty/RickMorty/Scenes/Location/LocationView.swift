@@ -30,7 +30,7 @@ struct LocationView: View {
                         
                         NavigationLink(destination: LocationDetailView(viewModel: LocationDetailViewModel(location: location))) {
                             
-                            LocationCellView(name: location.name, type: location.type, dimension: location.dimension)
+                            OtherCellView(name: location.name, infoA: location.type, infoB: location.dimension)
                             
                         }
                         .onAppear {
