@@ -82,65 +82,67 @@ struct LocationDetailView: View {
                         
                         VStack(spacing: 5) {
                             
-                        Image(systemName: "exclamationmark.triangle")
-                        Text("“Wubba lubba dub dub!”")
+                            Image(systemName: "exclamationmark.triangle")
+                            Text("“Wubba lubba dub dub!”")
                                 .font(.footnote)
-                        Text("There are no residents in this \(viewModel.location.type)")
-                            .font(.footnote)
-                           } .foregroundColor(currentMode == .dark ? Color("DeepBlue") : Color("LightBlue"))
+                            Text("There are no residents in this \(viewModel.location.type)")
+                                .font(.footnote)
+                        } .foregroundColor(currentMode == .dark ? Color("DeepBlue") : Color("LightBlue"))
                         
                     } else {
-                    
-                    ForEach(viewModel.characters, id: \.self) { character in
                         
-                        HStack {
+                        ForEach(viewModel.characters, id: \.self) { character in
                             
-                            Image("")
-                                .renderImage(url: URL(string: character.image)!)
-                                .frame(width: viewModel.imageSize, height: viewModel.imageSize)
-                                .clipShape(RoundedRectangle(cornerRadius: viewModel.cornerRadius))
-                                .shadow(color: .gray, radius: 2, x: 0, y: 2)
-                            
-                            Text(character.name)
-                                .foregroundColor(currentMode == .dark ? Color("LightBlue") : Color("NoBlack"))
-                            
-                            Spacer()
-                            
-                            VStack(alignment: .trailing) {
+                            NavigationLink(destination: CharacterDetailView(viewModel: CharacterDetailViewModel(character: character))) {
                                 
-                                if character.origin == viewModel.unknownInfo {
+                                HStack {
                                     
-                                    Text("\(viewModel.bornIn) \(viewModel.unknownString)")
-                                } else {
+                                    Image("")
+                                        .renderImage(url: URL(string: character.image)!)
+                                        .frame(width: viewModel.imageSize, height: viewModel.imageSize)
+                                        .clipShape(RoundedRectangle(cornerRadius: viewModel.cornerRadius))
+                                        .shadow(color: .gray, radius: 2, x: 0, y: 2)
                                     
-                                    Text("\(viewModel.bornIn) \(character.origin)")
-                                }
-                                
-                                Divider().frame(maxWidth: 40)
-                                
-                                Text(viewModel.lastSeen)
-                                if character.location == viewModel.unknownInfo {
+                                    Text(character.name)
+                                        .foregroundColor(currentMode == .dark ? Color("LightBlue") : Color("NoBlack"))
                                     
-                                    Text("\(character.location)")
-                                } else {
+                                    Spacer()
                                     
-                                Text("\(character.location)")
-                                }
-        
-                            }.font(.footnote)
-                                .foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue")).multilineTextAlignment(.trailing)
-                        }.frame(maxWidth:.infinity)
-                            .padding(5)
-                    }
-                }
-            }.frame(maxWidth:.infinity)
-                .listStyle(.grouped)
-            
-        }.onAppear {
-            
-            viewModel.getLocationDetail()
-        }
-    }}
+                                    VStack(alignment: .trailing) {
+                                        
+                                        if character.origin == viewModel.unknownInfo {
+                                            
+                                            Text("\(viewModel.bornIn) \(viewModel.unknownString)")
+                                        } else {
+                                            
+                                            Text("\(viewModel.bornIn) \(character.origin)")
+                                        }
+                                        
+                                        Divider().frame(maxWidth: 40)
+                                        
+                                        Text(viewModel.lastSeen)
+                                        if character.location == viewModel.unknownInfo {
+                                            
+                                            Text("\(character.location)")
+                                        } else {
+                                            
+                                            Text("\(character.location)")
+                                        }
+                                        
+                                    }.font(.footnote)
+                                        .foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue")).multilineTextAlignment(.trailing)
+                                }.frame(maxWidth:.infinity)
+                                    .padding(5)
+                            }
+                        }}
+                }.frame(maxWidth:.infinity)
+                    .listStyle(.grouped)
+                
+            }.onAppear {
+                
+                viewModel.getLocationDetail()
+            }
+        }}
 }
 
 struct LocationDetailView_Previews: PreviewProvider {

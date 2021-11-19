@@ -90,6 +90,8 @@ struct EpisodeDetailView: View {
                     
                     ForEach(viewModel.characters, id: \.self){ character in
                         
+                        NavigationLink(destination: CharacterDetailView(viewModel: CharacterDetailViewModel(character: character))) {
+    
                         HStack{
                             
                             Image("")
@@ -122,6 +124,7 @@ struct EpisodeDetailView: View {
                                 .foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue")).multilineTextAlignment(.trailing)
                         }.frame(maxWidth:.infinity)
                             .padding(5)
+                        }
                     }
                 }
             }.frame(maxWidth:.infinity)
