@@ -13,16 +13,16 @@ struct OtherCellView: View {
     
     var name: String
     var infoA: String
+    var infoBName: String
     var infoB: String
-    
-    var dimensionText = "Dimension: "
     
     let spacing: CGFloat = 10
     
-    init(name: String, infoA: String, infoB: String) {
+    init(name: String, infoA: String, infoBName: String, infoB: String) {
         
         self.name = name
         self.infoA = infoA
+        self.infoBName = infoBName
         self.infoB = infoB
     }
     
@@ -41,10 +41,10 @@ struct OtherCellView: View {
                 
                 if infoB == "unknown" {
                     
-                    Text("\(dimensionText)Unknown")
+                    Text("Unknown")
                 } else {
                     
-                    Text("\(dimensionText)\(infoB)")
+                    Text("\(infoBName): \(infoB)")
                 }
             }
             .font(.footnote)
@@ -61,6 +61,7 @@ struct OtherCellView_Previews: PreviewProvider {
         OtherCellView(
             name: "Earth",
             infoA: "Planet",
+            infoBName: "Dimension",
             infoB: "Unknown")
     }
 }
