@@ -30,6 +30,8 @@ class LocationDetailViewModel: ObservableObject {
     let unknownInfo: String
     let unknownString: String
     
+    var noResidents = false
+    
     let imageSize: CGFloat = 50
     let cornerRadius: CGFloat = 50
     
@@ -108,6 +110,12 @@ class LocationDetailViewModel: ObservableObject {
             
             residentIds.append(residentID)
         }
+        
+        if residentIds.count < 1 {
+            
+            noResidents = true
+            
+        } 
         
         return residentIds
     }

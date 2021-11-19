@@ -78,7 +78,20 @@ struct LocationDetailView: View {
                         ProgressViewView()
                     }
                     
-                    ForEach(viewModel.characters, id: \.self){ character in
+                    if viewModel.noResidents == true {
+                        
+                        VStack(spacing: 5) {
+                            
+                        Image(systemName: "exclamationmark.triangle")
+                        Text("“Wubba lubba dub dub!”")
+                                .font(.footnote)
+                        Text("There are no residents in this \(viewModel.location.type)")
+                            .font(.footnote)
+                           } .foregroundColor(currentMode == .dark ? Color("DeepBlue") : Color("LightBlue"))
+                        
+                    } else {
+                    
+                    ForEach(viewModel.characters, id: \.self) { character in
                         
                         HStack {
                             
@@ -127,7 +140,7 @@ struct LocationDetailView: View {
             
             viewModel.getLocationDetail()
         }
-    }
+    }}
 }
 
 struct LocationDetailView_Previews: PreviewProvider {
