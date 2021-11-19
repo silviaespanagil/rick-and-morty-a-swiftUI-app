@@ -134,7 +134,8 @@ struct LocationDetailView: View {
                                 }.frame(maxWidth:.infinity)
                                     .padding(5)
                             }
-                        }}
+                        }                        
+                    }
                 }.frame(maxWidth:.infinity)
                     .listStyle(.grouped)
                 
@@ -142,7 +143,8 @@ struct LocationDetailView: View {
                 
                 viewModel.getLocationDetail()
             }
-        }}
+        }
+    }
 }
 
 struct LocationDetailView_Previews: PreviewProvider {
