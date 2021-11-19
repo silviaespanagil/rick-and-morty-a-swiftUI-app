@@ -31,7 +31,7 @@ struct EpisodeView: View {
                         
                         NavigationLink(destination: EpisodeDetailView(viewModel: EpisodeDetailViewModel(episode: episode))) {
                             
-                            EpisodeCellView(name: episode.name, episode: episode.episode, airDate: episode.airDate)
+                            OtherCellView(name: episode.name, infoA: episode.episode, infoB: episode.airDate)
                         }
                         .onAppear {
                             if episode == viewModel.episodes.last {

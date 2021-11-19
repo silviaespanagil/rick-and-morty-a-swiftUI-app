@@ -1,5 +1,5 @@
 //
-//  EpisodeCellView.swift
+//  LocationCellView.swift
 //  RickMorty
 //
 //  Created by Silvia España on 18/11/21.
@@ -7,21 +7,23 @@
 
 import SwiftUI
 
-struct EpisodeCellView: View {
+struct OtherCellView: View {
     
     @Environment(\.colorScheme) var currentMode
     
+    var name: String
+    var infoA: String
+    var infoB: String
+    
+    var dimensionText = "Dimension: "
+    
     let spacing: CGFloat = 10
     
-    var name: String
-    var episode: String
-    var airDate: String
-    
-    init(name: String, episode: String, airDate: String) {
+    init(name: String, infoA: String, infoB: String) {
         
         self.name = name
-        self.episode = episode
-        self.airDate = airDate
+        self.infoA = infoA
+        self.infoB = infoB
     }
     
     var body: some View {
@@ -35,9 +37,15 @@ struct EpisodeCellView: View {
             
             VStack(alignment: .leading) {
                 
-                Text(episode)
-                Text(airDate)
+                Text(infoA)
                 
+                if infoB == "unknown" {
+                    
+                    Text("\(dimensionText)Unknown")
+                } else {
+                    
+                    Text("\(dimensionText)\(infoB)")
+                }
             }
             .font(.footnote)
             .foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue"))
@@ -46,11 +54,13 @@ struct EpisodeCellView: View {
     }
 }
 
-struct EpisodeCellView_Previews: PreviewProvider {
+struct OtherCellView_Previews: PreviewProvider {
+    
     static var previews: some View {
-        EpisodeCellView(
-            name: "Episode",
-            episode: "S34E12",
-            airDate: "July 16")
+        
+        OtherCellView(
+            name: "Earth",
+            infoA: "Planet",
+            infoB: "Unknown")
     }
 }
