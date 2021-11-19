@@ -58,44 +58,16 @@ struct CharacterDetailView: View {
                                 .foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue"))
                         }
                     }
-                }.frame(maxWidth:.infinity)
+                }
+                .frame(maxWidth:.infinity)
                 
-                HStack {
-                    
-                    Text(viewModel.species)
-                        .foregroundColor(Color("LightBlue"))
-                        .font(.footnote)
-                    
-                    Spacer()
-                    
-                    VStack {
-                        
-                        Text(viewModel.character.species)
-                            .foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue"))
-                    }
-                }.frame(maxWidth:.infinity)
+                CharacterDetailItemView(title: viewModel.species,
+                                        value: viewModel.character.species)
+                    .frame(maxWidth:.infinity)
                 
-                HStack {
-                    
-                    Text(viewModel.status)
-                        .foregroundColor(Color("LightBlue"))
-                        .font(.footnote)
-                    
-                    Spacer()
-                    
-                    VStack {
-                        
-                        if viewModel.character.status == viewModel.unknownInfo {
-                            
-                            Text(viewModel.unknownString)
-                                .foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue"))
-                        } else {
-                            
-                            Text(viewModel.character.status)
-                                .foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue"))
-                        }
-                    }
-                }.frame(maxWidth:.infinity)
+                CharacterDetailItemView(title: viewModel.status,
+                                        value: viewModel.character.status)
+                    .frame(maxWidth:.infinity)
                 
                 HStack {
                     
@@ -117,7 +89,8 @@ struct CharacterDetailView: View {
                                 .foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue"))
                         }
                     }
-                }.frame(maxWidth:.infinity)
+                }
+                .frame(maxWidth:.infinity)
                 
                 HStack {
                     
@@ -138,13 +111,15 @@ struct CharacterDetailView: View {
                                 .foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue"))
                         }
                     }
-                }.frame(maxWidth:.infinity)
+                }
+                .frame(maxWidth:.infinity)
                 
                 Spacer()
                 
-            }.padding()
-            
-        }.onAppear {
+            }
+            .padding()
+        }
+        .onAppear {
             
             viewModel.getCharacterDetail()
         }

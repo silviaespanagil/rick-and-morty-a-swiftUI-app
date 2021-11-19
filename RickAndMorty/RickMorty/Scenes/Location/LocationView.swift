@@ -36,6 +36,7 @@ struct LocationView: View {
                         .onAppear {
                             
                             if location == viewModel.locations.last {
+                                
                                 viewModel.getLocation(page: viewModel.currentPage)
                             }
                         }
@@ -54,7 +55,9 @@ struct LocationView: View {
 }
 
 struct LocationView_Previews: PreviewProvider {
+    
     static var previews: some View {
+        
         LocationView(viewModel: LocationViewModel())
     }
 }

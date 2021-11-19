@@ -51,7 +51,6 @@ extension CharacterRemoteDataSource {
         let urlRequest = URLRequest(url: (components?.url!)!)
         
         return urlRequest
-        
     }
     
     func getCharacterDetailEndpoint(id: Int) -> URLRequest {

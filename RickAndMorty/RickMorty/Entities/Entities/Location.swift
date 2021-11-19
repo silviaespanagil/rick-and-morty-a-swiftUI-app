@@ -14,5 +14,4 @@ struct Location: Identifiable, Equatable {
     let type: String
     let residents: [String]
     let dimension: String
-    
 }

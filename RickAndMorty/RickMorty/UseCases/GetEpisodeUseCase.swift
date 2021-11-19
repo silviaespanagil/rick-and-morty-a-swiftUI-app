@@ -22,4 +22,3 @@ class GetEpisodeUseCase {
         repository.getEpisode(page: page)
     }
 }
-

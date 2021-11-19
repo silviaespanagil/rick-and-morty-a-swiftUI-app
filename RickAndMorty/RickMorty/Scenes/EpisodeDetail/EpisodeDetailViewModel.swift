@@ -36,6 +36,8 @@ class EpisodeDetailViewModel: ObservableObject {
     let imageSize: CGFloat = 50
     let cornerRadius: CGFloat = 50
     
+    // MARK: - Methods
+    
     init(episode: Episode){
         
         episodeSeasonIcon = "📺"
@@ -113,7 +115,6 @@ class EpisodeDetailViewModel: ObservableObject {
             let characterId = (characterSplit.last! as NSString).integerValue
             
             charactersIds.append(characterId)
-
         }
 
         return charactersIds

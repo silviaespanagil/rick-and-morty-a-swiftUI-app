@@ -25,12 +25,12 @@ struct ServerCharacterResponse: Codable {
         
         return Character(id: id,
                          name: name,
-                         status: status,
+                         status: status.capitalizingFirstLetter(),
                          species: species,
                          type: type ?? "",
-                         gender: gender,
-                         origin: origin?.name ?? "",
-                         location: location?.name ?? "",
+                         gender: gender.capitalizingFirstLetter(),
+                         origin: origin?.name?.capitalizingFirstLetter() ?? "",
+                         location: location?.name?.capitalizingFirstLetter() ?? "",
                          image: image,
                          url: url,
                          episode: episode)

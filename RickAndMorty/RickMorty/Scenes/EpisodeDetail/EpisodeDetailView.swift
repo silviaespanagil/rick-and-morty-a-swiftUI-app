@@ -27,57 +27,22 @@ struct EpisodeDetailView: View {
             
             VStack(spacing: 20) {
                 
-                HStack {
-                    
-                    Text(viewModel.episodeSeasonIcon)
-                        .font(.footnote)
-                    Text(viewModel.episodeSeason)
-                        .foregroundColor(Color("LightBlue"))
-                        .font(.footnote)
-                    
-                    Spacer()
-                    
-                    VStack {
-                        
-                        Text("\(viewModel.episode.episode)")
-                            .foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue"))
-                    }
-                }.frame(maxWidth:.infinity)
+                EpisodeDetailItemView(titleIcon: viewModel.episodeSeasonIcon,
+                                      title: viewModel.episodeSeason,
+                                      value: "\(viewModel.episode.episode)")
+                    .frame(maxWidth:.infinity)
                 
-                HStack {
-                    
-                    Text(viewModel.airDateIcon)
-                        .font(.footnote)
-                    Text(viewModel.airDate)
-                        .foregroundColor(Color("LightBlue"))
-                        .font(.footnote)
-                    
-                    Spacer()
-                    
-                    VStack {
-                        
-                        Text("\(viewModel.episode.airDate)")
-                            .foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue"))
-                    }
-                }.frame(maxWidth:.infinity)
+                EpisodeDetailItemView(titleIcon: viewModel.airDateIcon,
+                                      title: viewModel.airDate,
+                                      value: "\(viewModel.episode.airDate)")
+                    .frame(maxWidth:.infinity)
                 
-                HStack {
-                    
-                    Text(viewModel.characterStarringIcon)
-                        .font(.footnote)
-                    Text(viewModel.characterStarring)
-                        .foregroundColor(Color("LightBlue"))
-                        .font(.footnote)
-                    
-                    Spacer()
-                    
-                    VStack {
-                        
-                        Text("\(viewModel.characters.count)")
-                            .foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue"))
-                    }
-                }.frame(maxWidth:.infinity)
-            }.padding()
+                EpisodeDetailItemView(titleIcon: viewModel.characterStarringIcon,
+                                      title: viewModel.characterStarring,
+                                      value: "\(viewModel.characters.count)")
+                    .frame(maxWidth:.infinity)
+            }
+            .padding()
             
             List {
                 
@@ -91,45 +56,49 @@ struct EpisodeDetailView: View {
                     ForEach(viewModel.characters, id: \.self){ character in
                         
                         NavigationLink(destination: CharacterDetailView(viewModel: CharacterDetailViewModel(character: character))) {
-    
-                        HStack{
                             
-                            Image("")
-                                .renderImage(url: URL(string: character.image)!)
-                                .frame(width: viewModel.imageSize, height: viewModel.imageSize)
-                                .clipShape(RoundedRectangle(cornerRadius: viewModel.cornerRadius))
-                                .shadow(color: .gray, radius: 2, x: 0, y: 2)
-                            
-                            Text(character.name)
-                                .foregroundColor(currentMode == .dark ? Color("LightBlue") : Color("NoBlack"))
-                            
-                            Spacer()
-                            
-                            VStack(alignment: .trailing) {
+                            HStack{
                                 
-                                Text("\(viewModel.episodeDetail) \(character.episode.count) \(viewModel.episodeString)")
+                                Image("")
+                                    .renderImage(url: URL(string: character.image)!)
+                                    .frame(width: viewModel.imageSize, height: viewModel.imageSize)
+                                    .clipShape(RoundedRectangle(cornerRadius: viewModel.cornerRadius))
+                                    .shadow(color: .gray, radius: 2, x: 0, y: 2)
                                 
-                                Divider().frame(maxWidth: 40)
+                                Text(character.name)
+                                    .foregroundColor(currentMode == .dark ? Color("LightBlue") : Color("NoBlack"))
                                 
-                                if character.status == viewModel.unknownInfo {
+                                Spacer()
+                                
+                                VStack(alignment: .trailing) {
                                     
-                                    Text("\(viewModel.currentStatus) \(viewModel.unknownString)")
+                                    Text("\(viewModel.episodeDetail) \(character.episode.count) \(viewModel.episodeString)")
                                     
-                                } else {
+                                    Divider().frame(maxWidth: 40)
                                     
-                                    Text("\(viewModel.currentStatus) \(character.status)")
+                                    if character.status == viewModel.unknownInfo {
+                                        
+                                        Text("\(viewModel.currentStatus) \(viewModel.unknownString)")
+                                        
+                                    } else {
+                                        
+                                        Text("\(viewModel.currentStatus) \(character.status)")
+                                    }
+                                    
                                 }
-                                
-                            }.font(.footnote)
+                                .font(.footnote)
                                 .foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue")).multilineTextAlignment(.trailing)
-                        }.frame(maxWidth:.infinity)
+                            }
+                            .frame(maxWidth:.infinity)
                             .padding(5)
                         }
                     }
                 }
-            }.frame(maxWidth:.infinity)
-                .listStyle(.grouped)
-        }.onAppear {
+            }
+            .frame(maxWidth:.infinity)
+            .listStyle(.grouped)
+        }
+        .onAppear {
             
             viewModel.getEpisodeDetail()
         }
