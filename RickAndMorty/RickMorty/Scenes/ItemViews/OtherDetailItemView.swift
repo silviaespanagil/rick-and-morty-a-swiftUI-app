@@ -1,5 +1,5 @@
 //
-//  EpisodeDetailItemView.swift
+//  OtherDetailItemView.swift
 //  RickMorty
 //
 //  Created by Xavi on 19/11/21.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct EpisodeDetailItemView: View {
+struct OtherDetailItemView: View {
     
     @Environment(\.colorScheme) var currentMode
     
@@ -44,10 +44,10 @@ struct EpisodeDetailItemView: View {
     }
 }
 
-struct EpisodeDetailItemView_Previews: PreviewProvider {
+struct OtherDetailItemView_Previews: PreviewProvider {
     
     static var previews: some View {
         
-        EpisodeDetailItemView(titleIcon: "📺", title: "Title", value: "Value")
+        OtherDetailItemView(titleIcon: "📺", title: "Title", value: "Value")
     }
 }

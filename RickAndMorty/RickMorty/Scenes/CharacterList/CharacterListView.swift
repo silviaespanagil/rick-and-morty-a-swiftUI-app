@@ -35,7 +35,9 @@ struct CharacterListView: View {
                                               status: character.status)
                         }
                         .onAppear {
+                            
                             if character == viewModel.characters.last {
+                                
                                 viewModel.getAllCharacters(page: viewModel.currentPage)
                             }
                         }
@@ -55,7 +57,6 @@ struct CharacterListView: View {
         }
     }
 }
-
 
 struct CharacterListView_Previews: PreviewProvider {
     

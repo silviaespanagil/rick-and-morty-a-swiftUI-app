@@ -19,6 +19,8 @@ class EpisodeViewModel: ObservableObject {
     
     private var cancellable: AnyCancellable?
     
+    // MARK: - Methods
+    
     func getEpisode(page: Int) {
        
         showProgressView = true

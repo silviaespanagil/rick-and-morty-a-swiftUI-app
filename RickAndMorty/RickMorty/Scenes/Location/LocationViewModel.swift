@@ -18,6 +18,8 @@ class LocationViewModel: ObservableObject {
     var currentPage = 1
     
     private var cancellable: AnyCancellable?
+    
+    // MARK: - Methods
 
     func getLocation(page: Int) {
         

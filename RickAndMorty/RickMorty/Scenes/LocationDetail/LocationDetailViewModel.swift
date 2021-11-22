@@ -35,6 +35,8 @@ class LocationDetailViewModel: ObservableObject {
     let imageSize: CGFloat = 50
     let cornerRadius: CGFloat = 50
     
+    // MARK: - Methods
+    
     init(location: Location) {
 
         typeIcon = "🪐"
@@ -111,10 +113,9 @@ class LocationDetailViewModel: ObservableObject {
             residentIds.append(residentID)
         }
         
-        if residentIds.count < 1 {
+        if residentIds.isEmpty {
             
             noResidents = true
-            
         } 
         
         return residentIds

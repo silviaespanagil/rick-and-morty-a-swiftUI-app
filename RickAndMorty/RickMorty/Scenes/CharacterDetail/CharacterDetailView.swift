@@ -88,7 +88,6 @@ struct CharacterDetailView_Previews: PreviewProvider {
                                   url:"",
                                   episode:[""])
         
-        
         CharacterDetailView(viewModel: CharacterDetailViewModel(character: character))
     }
 }

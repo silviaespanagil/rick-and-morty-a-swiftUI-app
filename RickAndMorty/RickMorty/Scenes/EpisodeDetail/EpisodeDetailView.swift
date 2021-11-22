@@ -27,19 +27,19 @@ struct EpisodeDetailView: View {
             
             VStack(spacing: 20) {
                 
-                EpisodeDetailItemView(titleIcon: viewModel.episodeSeasonIcon,
-                                      title: viewModel.episodeSeason,
-                                      value: "\(viewModel.episode.episode)")
+                OtherDetailItemView(titleIcon: viewModel.episodeSeasonIcon,
+                                    title: viewModel.episodeSeason,
+                                    value: "\(viewModel.episode.episode)")
                     .frame(maxWidth:.infinity)
                 
-                EpisodeDetailItemView(titleIcon: viewModel.airDateIcon,
-                                      title: viewModel.airDate,
-                                      value: "\(viewModel.episode.airDate)")
+                OtherDetailItemView(titleIcon: viewModel.airDateIcon,
+                                    title: viewModel.airDate,
+                                    value: "\(viewModel.episode.airDate)")
                     .frame(maxWidth:.infinity)
                 
-                EpisodeDetailItemView(titleIcon: viewModel.characterStarringIcon,
-                                      title: viewModel.characterStarring,
-                                      value: "\(viewModel.characters.count)")
+                OtherDetailItemView(titleIcon: viewModel.characterStarringIcon,
+                                    title: viewModel.characterStarring,
+                                    value: "\(viewModel.characters.count)")
                     .frame(maxWidth:.infinity)
             }
             .padding()
@@ -76,14 +76,16 @@ struct EpisodeDetailView: View {
                                     
                                     Divider().frame(maxWidth: 40)
                                     
-                                    if character.status == viewModel.unknownInfo {
+                                    /*if character.status == viewModel.unknownInfo {
                                         
                                         Text("\(viewModel.currentStatus) \(viewModel.unknownString)")
                                         
                                     } else {
                                         
                                         Text("\(viewModel.currentStatus) \(character.status)")
-                                    }
+                                    }*/
+                                    
+                                    Text("\(viewModel.currentStatus) \(character.status)")
                                     
                                 }
                                 .font(.footnote)
@@ -106,6 +108,7 @@ struct EpisodeDetailView: View {
 }
 
 struct EpisodeDetailView_Previews: PreviewProvider {
+    
     static var previews: some View {
         
         let episode = Episode(id: 1,

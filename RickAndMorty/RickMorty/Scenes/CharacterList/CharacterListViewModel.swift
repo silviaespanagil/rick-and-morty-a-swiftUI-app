@@ -19,6 +19,8 @@ class CharacterListViewModel: ObservableObject {
     
     private var cancellable: AnyCancellable?
     
+    // MARK: - Methods
+    
     func getAllCharacters(page: Int) {
         
         showProgressView = true

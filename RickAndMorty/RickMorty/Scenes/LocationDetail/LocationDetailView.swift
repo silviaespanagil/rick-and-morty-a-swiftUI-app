@@ -27,47 +27,17 @@ struct LocationDetailView: View {
             
             VStack(spacing: 20) {
                 
-                HStack {
-                    
-                    Text(viewModel.typeIcon)
-                        .font(.footnote)
-                    Text(viewModel.type)
-                        .foregroundColor(Color("LightBlue"))
-                        .font(.footnote)
-                    
-                    Spacer()
-                    
-                    VStack {
-                        
-                        Text("\(viewModel.location.type)")
-                            .foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue"))
-                    }
-                }.frame(maxWidth:.infinity)
+                OtherDetailItemView(titleIcon: viewModel.typeIcon,
+                                    title: viewModel.type,
+                                    value: "\(viewModel.location.type)")
+                    .frame(maxWidth:.infinity)
                 
-                HStack {
-                    
-                    Text(viewModel.dimensionIcon)
-                        .font(.footnote)
-                    Text(viewModel.dimension)
-                        .foregroundColor(Color("LightBlue"))
-                        .font(.footnote)
-                    
-                    Spacer()
-                    
-                    VStack {
-                        
-                        if viewModel.location.dimension == viewModel.unknownInfo {
-                            
-                            Text(viewModel.unknownString)
-                                .foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue"))
-                        } else {
-                            
-                            Text("\(viewModel.location.dimension)")
-                                .foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue"))
-                        }
-                    }
-                }.frame(maxWidth:.infinity)
-            }.padding()
+                OtherDetailItemView(titleIcon: viewModel.dimensionIcon,
+                                    title: viewModel.dimension,
+                                    value: "\(viewModel.location.dimension)")
+                    .frame(maxWidth:.infinity)
+            }
+            .padding()
             
             List {
                 
@@ -78,7 +48,7 @@ struct LocationDetailView: View {
                         ProgressViewView()
                     }
                     
-                    if viewModel.noResidents == true {
+                    if viewModel.noResidents {
                         
                         VStack(spacing: 5) {
                             
@@ -110,24 +80,28 @@ struct LocationDetailView: View {
                                     
                                     VStack(alignment: .trailing) {
                                         
-                                        if character.origin == viewModel.unknownInfo {
+                                        /*if character.origin == viewModel.unknownInfo {
                                             
                                             Text("\(viewModel.bornIn) \(viewModel.unknownString)")
                                         } else {
                                             
                                             Text("\(viewModel.bornIn) \(character.origin)")
-                                        }
+                                        }*/
+                                        
+                                        Text("\(viewModel.bornIn) \(character.origin)")
                                         
                                         Divider().frame(maxWidth: 40)
                                         
                                         Text(viewModel.lastSeen)
-                                        if character.location == viewModel.unknownInfo {
+                                        /*if character.location == viewModel.unknownInfo {
                                             
                                             Text("\(character.location)")
                                         } else {
                                             
                                             Text("\(character.location)")
-                                        }
+                                        }*/
+                                        
+                                        Text("\(character.location)")
                                         
                                     }.font(.footnote)
                                         .foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue")).multilineTextAlignment(.trailing)
