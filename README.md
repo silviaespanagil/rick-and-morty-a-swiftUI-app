@@ -83,7 +83,7 @@ Here you can see a light and a dark mode video.
 
 https://user-images.githubusercontent.com/81619759/142444545-ab92d7b3-cf14-4a39-98fd-69db30ccd831.mov
 
-https://user-images.githubusercontent.com/81619759/142444591-bf440de1-a32c-494c-895b-961da1bd577c.mov
+https://user-images.githubusercontent.com/81619759/142637572-3e8376a8-2122-4ac3-8f22-3b8ca37d243c.mov
 
 
 ## Want to clone this repo? 🐑
