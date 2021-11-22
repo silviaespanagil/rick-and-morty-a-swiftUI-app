@@ -41,10 +41,8 @@ struct CharacterListView: View {
                                 viewModel.getAllCharacters(page: viewModel.currentPage)
                             }
                         }
-                    }.padding()
-                        .foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue"))
+                    }.foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue"))
                     
-                    Spacer()
                 }
                 .onAppear {
                     

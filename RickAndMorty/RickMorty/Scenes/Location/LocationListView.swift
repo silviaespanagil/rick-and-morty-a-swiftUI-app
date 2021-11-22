@@ -15,7 +15,7 @@ struct LocationListView: View {
     
     var body: some View {
         
-        VStack{
+        VStack {
             
             List {
                 
