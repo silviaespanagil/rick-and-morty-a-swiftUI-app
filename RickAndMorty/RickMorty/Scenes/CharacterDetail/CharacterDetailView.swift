@@ -40,93 +40,40 @@ struct CharacterDetailView: View {
                 
                 HStack {
                     
-                    Text(viewModel.gender)
-                        .foregroundColor(Color("LightBlue"))
-                        .font(.footnote)
+                    CharacterDetailItemView(title: viewModel.gender,
+                                            value: viewModel.character.gender)
+                        .frame(maxWidth:.infinity)
+                    
+                    CharacterDetailItemView(title: viewModel.species,
+                                            value: viewModel.character.species)
+                        .frame(maxWidth:.infinity)
+                    
+                    CharacterDetailItemView(title: viewModel.status,
+                                            value: viewModel.character.status)
+                        .frame(maxWidth:.infinity)
+                    
+                    CharacterDetailItemView(title: viewModel.origin,
+                                            value: viewModel.character.origin)
+                        .frame(maxWidth:.infinity)
+                    
+                    CharacterDetailItemView(title: viewModel.location,
+                                            value: viewModel.character.location)
+                        .frame(maxWidth:.infinity)
                     
                     Spacer()
-                    
-                    VStack {
-                        
-                        if viewModel.character.gender == viewModel.unknownInfo {
-                            
-                            Text(viewModel.unknownString)
-                                .foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue"))
-                        } else {
-                            
-                            Text(viewModel.character.gender)
-                                .foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue"))
-                        }
-                    }
                 }
-                .frame(maxWidth:.infinity)
-                
-                CharacterDetailItemView(title: viewModel.species,
-                                        value: viewModel.character.species)
-                    .frame(maxWidth:.infinity)
-                
-                CharacterDetailItemView(title: viewModel.status,
-                                        value: viewModel.character.status)
-                    .frame(maxWidth:.infinity)
-                
-                HStack {
-                    
-                    Text(viewModel.origin)
-                        .foregroundColor(Color("LightBlue"))
-                        .font(.footnote)
-                    
-                    Spacer()
-                    
-                    VStack {
-                        
-                        if viewModel.character.origin == viewModel.unknownInfo {
-                            
-                            Text(viewModel.unknownString)
-                                .foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue"))
-                        } else {
-                            
-                            Text(viewModel.character.origin)
-                                .foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue"))
-                        }
-                    }
-                }
-                .frame(maxWidth:.infinity)
-                
-                HStack {
-                    
-                    Text(viewModel.location)
-                        .foregroundColor(Color("LightBlue"))
-                        .font(.footnote)
-                    
-                    Spacer()
-                    
-                    VStack {
-                        
-                        if viewModel.character.location == viewModel.unknownInfo {
-                            
-                            Text(viewModel.unknownString)
-                                .foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue"))
-                        } else {
-                            Text(viewModel.character.location)
-                                .foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue"))
-                        }
-                    }
-                }
-                .frame(maxWidth:.infinity)
-                
-                Spacer()
-                
+                .padding()
             }
-            .padding()
-        }
-        .onAppear {
-            
-            viewModel.getCharacterDetail()
+            .onAppear {
+                
+                viewModel.getCharacterDetail()
+            }
         }
     }
 }
 
 struct CharacterDetailView_Previews: PreviewProvider {
+    
     static var previews: some View {
         
         let character = Character(id: 1,
