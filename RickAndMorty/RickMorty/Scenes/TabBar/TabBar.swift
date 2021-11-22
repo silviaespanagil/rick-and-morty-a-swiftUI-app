@@ -34,14 +34,14 @@ struct TabBar: View {
                 }
                 .tag(Tabs.characters)
             
-            LocationView(viewModel: LocationViewModel())
+            LocationListView(viewModel: LocationListViewModel())
                 .tabItem {
                     
                     Label(locationTab, systemImage: "map")
                 }
                 .tag(Tabs.locations)
             
-            EpisodeView(viewModel: EpisodeViewModel())
+            EpisodeListView(viewModel: EpisodeListViewModel())
                 .tabItem {
                     
                     Label(episodeTab, systemImage: "tv")

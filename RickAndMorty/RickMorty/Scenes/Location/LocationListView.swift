@@ -1,5 +1,5 @@
 //
-//  LocationCellView.swift
+//  LocationListView.swift
 //  RickMorty
 //
 //  Created by Silvia España on 5/11/21.
@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct LocationView: View {
+struct LocationListView: View {
     
-    @StateObject var viewModel: LocationViewModel
+    @StateObject var viewModel: LocationListViewModel
     
     @Environment(\.colorScheme) var currentMode
     
@@ -56,10 +56,10 @@ struct LocationView: View {
     }
 }
 
-struct LocationView_Previews: PreviewProvider {
+struct LocationListView_Previews: PreviewProvider {
     
     static var previews: some View {
         
-        LocationView(viewModel: LocationViewModel())
+        LocationListView(viewModel: LocationListViewModel())
     }
 }

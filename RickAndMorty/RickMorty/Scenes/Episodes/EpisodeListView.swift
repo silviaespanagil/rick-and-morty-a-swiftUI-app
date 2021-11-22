@@ -1,5 +1,5 @@
 //
-//  EpisodeCellView.swift
+//  EpisodeListView.swift
 //  RickMorty
 //
 //  Created by Silvia España on 5/11/21.
@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct EpisodeView: View {
+struct EpisodeListView: View {
     
-    @StateObject var viewModel: EpisodeViewModel
+    @StateObject var viewModel: EpisodeListViewModel
     
     @Environment(\.colorScheme) var currentMode
     
@@ -54,10 +54,10 @@ struct EpisodeView: View {
     }
 }
 
-struct EpisodeView_Previews: PreviewProvider {
+struct EpisodeListView_Previews: PreviewProvider {
     
     static var previews: some View {
         
-        EpisodeView(viewModel: EpisodeViewModel())
+        EpisodeListView(viewModel: EpisodeListViewModel())
     }
 }
