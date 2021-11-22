@@ -29,12 +29,12 @@ struct EpisodeDetailView: View {
                 
                 OtherDetailItemView(titleIcon: viewModel.episodeSeasonIcon,
                                     title: viewModel.episodeSeason,
-                                    value: "\(viewModel.episode.episode)")
+                                    value: viewModel.episode.episode)
                     .frame(maxWidth:.infinity)
                 
                 OtherDetailItemView(titleIcon: viewModel.airDateIcon,
                                     title: viewModel.airDate,
-                                    value: "\(viewModel.episode.airDate)")
+                                    value: viewModel.episode.airDate)
                     .frame(maxWidth:.infinity)
                 
                 OtherDetailItemView(titleIcon: viewModel.characterStarringIcon,
@@ -57,42 +57,14 @@ struct EpisodeDetailView: View {
                         
                         NavigationLink(destination: CharacterDetailView(viewModel: CharacterDetailViewModel(character: character))) {
                             
-                            HStack{
-                                
-                                Image("")
-                                    .renderImage(url: URL(string: character.image)!)
-                                    .frame(width: viewModel.imageSize, height: viewModel.imageSize)
-                                    .clipShape(RoundedRectangle(cornerRadius: viewModel.cornerRadius))
-                                    .shadow(color: .gray, radius: 2, x: 0, y: 2)
-                                
-                                Text(character.name)
-                                    .foregroundColor(currentMode == .dark ? Color("LightBlue") : Color("NoBlack"))
-                                
-                                Spacer()
-                                
-                                VStack(alignment: .trailing) {
-                                    
-                                    Text("\(viewModel.episodeDetail) \(character.episode.count) \(viewModel.episodeString)")
-                                    
-                                    Divider().frame(maxWidth: 40)
-                                    
-                                    /*if character.status == viewModel.unknownInfo {
-                                        
-                                        Text("\(viewModel.currentStatus) \(viewModel.unknownString)")
-                                        
-                                    } else {
-                                        
-                                        Text("\(viewModel.currentStatus) \(character.status)")
-                                    }*/
-                                    
-                                    Text("\(viewModel.currentStatus) \(character.status)")
-                                    
-                                }
-                                .font(.footnote)
-                                .foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue")).multilineTextAlignment(.trailing)
-                            }
-                            .frame(maxWidth:.infinity)
-                            .padding(5)
+                            OtherCharacterCellView(image: character.image,
+                                                   name: character.name,
+                                                   titleA: viewModel.episodeDetail,
+                                                   subtitleA: "\(character.episode.count) \(viewModel.episodeString)",
+                                                   titleB: viewModel.currentStatus,
+                                                   subtitleB: character.status)
+                                .frame(maxWidth:.infinity)
+                                .padding(5)
                         }
                     }
                 }

@@ -48,7 +48,7 @@ struct CharacterListView: View {
                 }
                 .onAppear {
                     
-                    if viewModel.characters.count < 1 {
+                    if viewModel.characters.isEmpty {
                         
                         viewModel.getAllCharacters(page: 1)
                     }

@@ -43,16 +43,9 @@ struct CharacterCellView: View {
                     .foregroundColor(currentMode == .dark ? Color("LightBlue") : Color("NoBlack"))
                     .frame(maxWidth: .infinity, alignment: .leading)
                 
-                if status == "unknown" {
-                    Text("Unknown")
-                        .font(.footnote)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                } else {
-                    
-                    Text(status)
-                        .font(.footnote)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                }
+                Text(status)
+                    .font(.footnote)
+                    .frame(maxWidth: .infinity, alignment: .leading)
             }
         }.padding()
     }

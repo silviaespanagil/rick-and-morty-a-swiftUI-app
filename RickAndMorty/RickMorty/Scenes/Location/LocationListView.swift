@@ -46,7 +46,7 @@ struct LocationListView: View {
                 }
                 .onAppear {
                     
-                    if viewModel.locations.count < 1 {
+                    if viewModel.locations.isEmpty {
                         
                         viewModel.getLocation(page: 1)
                     }

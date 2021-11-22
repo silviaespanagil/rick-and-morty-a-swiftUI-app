@@ -36,7 +36,9 @@ struct EpisodeListView: View {
                                           infoB: episode.airDate)
                         }
                         .onAppear {
+                            
                             if episode == viewModel.episodes.last {
+                                
                                 viewModel.getEpisode(page: viewModel.currentPage)
                             }
                         }
@@ -44,7 +46,7 @@ struct EpisodeListView: View {
                 }
                 .onAppear {
                     
-                    if viewModel.episodes.count < 1 {
+                    if viewModel.episodes.isEmpty {
                         
                         viewModel.getEpisode(page: 1)
                     }

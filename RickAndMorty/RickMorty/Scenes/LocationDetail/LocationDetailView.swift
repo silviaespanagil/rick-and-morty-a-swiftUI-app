@@ -29,12 +29,12 @@ struct LocationDetailView: View {
                 
                 OtherDetailItemView(titleIcon: viewModel.typeIcon,
                                     title: viewModel.type,
-                                    value: "\(viewModel.location.type)")
+                                    value: viewModel.location.type)
                     .frame(maxWidth:.infinity)
                 
                 OtherDetailItemView(titleIcon: viewModel.dimensionIcon,
                                     title: viewModel.dimension,
-                                    value: "\(viewModel.location.dimension)")
+                                    value: viewModel.location.dimension)
                     .frame(maxWidth:.infinity)
             }
             .padding()
@@ -65,58 +65,24 @@ struct LocationDetailView: View {
                             
                             NavigationLink(destination: CharacterDetailView(viewModel: CharacterDetailViewModel(character: character))) {
                                 
-                                HStack {
-                                    
-                                    Image("")
-                                        .renderImage(url: URL(string: character.image)!)
-                                        .frame(width: viewModel.imageSize, height: viewModel.imageSize)
-                                        .clipShape(RoundedRectangle(cornerRadius: viewModel.cornerRadius))
-                                        .shadow(color: .gray, radius: 2, x: 0, y: 2)
-                                    
-                                    Text(character.name)
-                                        .foregroundColor(currentMode == .dark ? Color("LightBlue") : Color("NoBlack"))
-                                    
-                                    Spacer()
-                                    
-                                    VStack(alignment: .trailing) {
-                                        
-                                        /*if character.origin == viewModel.unknownInfo {
-                                            
-                                            Text("\(viewModel.bornIn) \(viewModel.unknownString)")
-                                        } else {
-                                            
-                                            Text("\(viewModel.bornIn) \(character.origin)")
-                                        }*/
-                                        
-                                        Text("\(viewModel.bornIn) \(character.origin)")
-                                        
-                                        Divider().frame(maxWidth: 40)
-                                        
-                                        Text(viewModel.lastSeen)
-                                        /*if character.location == viewModel.unknownInfo {
-                                            
-                                            Text("\(character.location)")
-                                        } else {
-                                            
-                                            Text("\(character.location)")
-                                        }*/
-                                        
-                                        Text("\(character.location)")
-                                        
-                                    }.font(.footnote)
-                                        .foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue")).multilineTextAlignment(.trailing)
-                                }.frame(maxWidth:.infinity)
+                                OtherCharacterCellView(image: character.image,
+                                                       name: character.name,
+                                                       titleA: viewModel.bornIn,
+                                                       subtitleA: character.origin,
+                                                       titleB: viewModel.lastSeen,
+                                                       subtitleB: character.location)
+                                    .frame(maxWidth:.infinity)
                                     .padding(5)
                             }
-                        }                        
+                        }
                     }
-                }.frame(maxWidth:.infinity)
-                    .listStyle(.grouped)
-                
-            }.onAppear {
-                
-                viewModel.getLocationDetail()
-            }
+                }
+            }.frame(maxWidth:.infinity)
+                .listStyle(.grouped)
+            
+        }.onAppear {
+            
+            viewModel.getLocationDetail()
         }
     }
 }
