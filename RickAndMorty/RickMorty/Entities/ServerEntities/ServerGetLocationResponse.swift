@@ -19,8 +19,8 @@ struct ServerGetLocationResponse: Codable {
         
         return Location(id: id,
                         name: name.capitalizingFirstLetter(),
-                        type: type,
+                        type: type.capitalizingFirstLetter(),
                         residents: residents,
-                        dimension: dimension)
+                        dimension: dimension.capitalizingFirstLetter())
     }
 }

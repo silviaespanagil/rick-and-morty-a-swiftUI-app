@@ -13,7 +13,7 @@ struct ServerCharacterResponse: Codable {
     let name: String
     let status: String
     let species: String
-    let type: String?
+    let type: String
     let gender: String
     let origin: ServerOriginResponse?
     let location: ServerLocationResponse?
@@ -27,7 +27,7 @@ struct ServerCharacterResponse: Codable {
                          name: name,
                          status: status.capitalizingFirstLetter(),
                          species: species,
-                         type: type ?? "",
+                         type: type.capitalizingFirstLetter(),
                          gender: gender.capitalizingFirstLetter(),
                          origin: origin?.name?.capitalizingFirstLetter() ?? "",
                          location: location?.name?.capitalizingFirstLetter() ?? "",
