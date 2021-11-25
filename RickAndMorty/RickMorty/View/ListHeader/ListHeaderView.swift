@@ -21,7 +21,9 @@ struct ListHeaderView: View {
 }
 
 struct ListHeaderView_Previews: PreviewProvider {
+    
     static var previews: some View {
+        
         ListHeaderView()
     }
 }

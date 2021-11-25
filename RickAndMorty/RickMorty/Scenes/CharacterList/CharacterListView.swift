@@ -35,18 +35,18 @@ struct CharacterListView: View {
                                               status: character.status)
                         }
                         .onAppear {
+                            
                             if character == viewModel.characters.last {
+                                
                                 viewModel.getAllCharacters(page: viewModel.currentPage)
                             }
                         }
-                    }.padding()
-                        .foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue"))
+                    }.foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue"))
                     
-                    Spacer()
                 }
                 .onAppear {
                     
-                    if viewModel.characters.count < 1 {
+                    if viewModel.characters.isEmpty {
                         
                         viewModel.getAllCharacters(page: 1)
                     }
@@ -55,7 +55,6 @@ struct CharacterListView: View {
         }
     }
 }
-
 
 struct CharacterListView_Previews: PreviewProvider {
     

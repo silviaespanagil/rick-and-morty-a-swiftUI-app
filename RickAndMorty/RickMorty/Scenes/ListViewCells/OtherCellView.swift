@@ -39,7 +39,7 @@ struct OtherCellView: View {
                 
                 Text(infoA)
                 
-                if infoB == "unknown" {
+                if infoB == "Unknown" {
                     
                     Text("Unknown")
                 } else {

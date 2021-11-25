@@ -15,10 +15,8 @@ struct CharacterCellView: View {
     var name: String
     var status: String
     
-    let imageSize: CGFloat = 90
+    let imageSize: CGFloat = 60
     let cornerRadius: CGFloat = 50
-    
-    let spacing: CGFloat = 10
     
     init(image: String, name: String, status: String) {
         
@@ -37,27 +35,19 @@ struct CharacterCellView: View {
                 .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
                 .shadow(color: .gray, radius: 2, x: 0, y: 2)
             
-            VStack(spacing: spacing) {
+            VStack() {
                 
                 Text(name)
                     .foregroundColor(currentMode == .dark ? Color("LightBlue") : Color("NoBlack"))
                     .frame(maxWidth: .infinity, alignment: .leading)
                 
-                if status == "unknown" {
-                    Text("Unknown")
-                        .font(.footnote)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                } else {
-                    
-                    Text(status)
-                        .font(.footnote)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                }
+                Text(status)
+                    .font(.footnote)
+                    .frame(maxWidth: .infinity, alignment: .leading)
             }
         }.padding()
     }
 }
-
 
 struct CharacterCellView_Previews: PreviewProvider {
     

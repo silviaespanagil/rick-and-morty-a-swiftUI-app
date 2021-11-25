@@ -18,7 +18,7 @@ struct ServerGetEpisodeResponse: Codable {
     func converToEntity() -> Episode {
         
         return Episode(id: id,
-                       name: name,
+                       name: name.capitalizingFirstLetter(),
                        episode: episode,
                        airDate: airDate,
                        characters: characters)

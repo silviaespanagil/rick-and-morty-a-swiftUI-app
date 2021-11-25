@@ -16,7 +16,8 @@ struct RickMortyApp: App {
             
             NavigationView {
                 
-            TabBar()
+                TabBar()
+                
             }
         }
     }

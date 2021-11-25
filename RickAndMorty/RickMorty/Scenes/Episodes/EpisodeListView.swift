@@ -1,5 +1,5 @@
 //
-//  EpisodeCellView.swift
+//  EpisodeListView.swift
 //  RickMorty
 //
 //  Created by Silvia España on 5/11/21.
@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct EpisodeView: View {
+struct EpisodeListView: View {
     
-    @StateObject var viewModel: EpisodeViewModel
+    @StateObject var viewModel: EpisodeListViewModel
     
     @Environment(\.colorScheme) var currentMode
     
@@ -21,7 +21,6 @@ struct EpisodeView: View {
                 
                 Section(header:ListHeaderView()) {
                     
-                    
                     if viewModel.showProgressView {
                         
                         ProgressViewView()
@@ -31,10 +30,15 @@ struct EpisodeView: View {
                         
                         NavigationLink(destination: EpisodeDetailView(viewModel: EpisodeDetailViewModel(episode: episode))) {
                             
-                            OtherCellView(name: episode.name, infoA: episode.episode, infoBName: "Air date", infoB: episode.airDate)
+                            OtherCellView(name: episode.name,
+                                          infoA: episode.episode,
+                                          infoBName: "Air date",
+                                          infoB: episode.airDate)
                         }
                         .onAppear {
+                            
                             if episode == viewModel.episodes.last {
+                                
                                 viewModel.getEpisode(page: viewModel.currentPage)
                             }
                         }
@@ -42,7 +46,7 @@ struct EpisodeView: View {
                 }
                 .onAppear {
                     
-                    if viewModel.episodes.count < 1 {
+                    if viewModel.episodes.isEmpty {
                         
                         viewModel.getEpisode(page: 1)
                     }
@@ -52,10 +56,10 @@ struct EpisodeView: View {
     }
 }
 
-struct EpisodeView_Previews: PreviewProvider {
+struct EpisodeListView_Previews: PreviewProvider {
     
     static var previews: some View {
         
-        EpisodeView(viewModel: EpisodeViewModel())
+        EpisodeListView(viewModel: EpisodeListViewModel())
     }
 }

@@ -38,113 +38,31 @@ struct CharacterDetailView: View {
                     ProgressViewView()
                 }
                 
-                HStack {
-                    
-                    Text(viewModel.gender)
-                        .foregroundColor(Color("LightBlue"))
-                        .font(.footnote)
-                    
-                    Spacer()
-                    
-                    VStack {
-                        
-                        if viewModel.character.gender == viewModel.unknownInfo {
-                            
-                            Text(viewModel.unknownString)
-                                .foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue"))
-                        } else {
-                            
-                            Text(viewModel.character.gender)
-                                .foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue"))
-                        }
-                    }
-                }.frame(maxWidth:.infinity)
+                CharacterDetailItemView(title: viewModel.gender,
+                                        value: viewModel.character.gender)
+                    .frame(maxWidth:.infinity)
                 
-                HStack {
-                    
-                    Text(viewModel.species)
-                        .foregroundColor(Color("LightBlue"))
-                        .font(.footnote)
-                    
-                    Spacer()
-                    
-                    VStack {
-                        
-                        Text(viewModel.character.species)
-                            .foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue"))
-                    }
-                }.frame(maxWidth:.infinity)
+                CharacterDetailItemView(title: viewModel.species,
+                                        value: viewModel.character.species)
+                    .frame(maxWidth:.infinity)
                 
-                HStack {
-                    
-                    Text(viewModel.status)
-                        .foregroundColor(Color("LightBlue"))
-                        .font(.footnote)
-                    
-                    Spacer()
-                    
-                    VStack {
-                        
-                        if viewModel.character.status == viewModel.unknownInfo {
-                            
-                            Text(viewModel.unknownString)
-                                .foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue"))
-                        } else {
-                            
-                            Text(viewModel.character.status)
-                                .foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue"))
-                        }
-                    }
-                }.frame(maxWidth:.infinity)
+                CharacterDetailItemView(title: viewModel.status,
+                                        value: viewModel.character.status)
+                    .frame(maxWidth:.infinity)
                 
-                HStack {
-                    
-                    Text(viewModel.origin)
-                        .foregroundColor(Color("LightBlue"))
-                        .font(.footnote)
-                    
-                    Spacer()
-                    
-                    VStack {
-                        
-                        if viewModel.character.origin == viewModel.unknownInfo {
-                            
-                            Text(viewModel.unknownString)
-                                .foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue"))
-                        } else {
-                            
-                            Text(viewModel.character.origin)
-                                .foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue"))
-                        }
-                    }
-                }.frame(maxWidth:.infinity)
+                CharacterDetailItemView(title: viewModel.origin,
+                                        value: viewModel.character.origin)
+                    .frame(maxWidth:.infinity)
                 
-                HStack {
-                    
-                    Text(viewModel.location)
-                        .foregroundColor(Color("LightBlue"))
-                        .font(.footnote)
-                    
-                    Spacer()
-                    
-                    VStack {
-                        
-                        if viewModel.character.location == viewModel.unknownInfo {
-                            
-                            Text(viewModel.unknownString)
-                                .foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue"))
-                        } else {
-                            Text(viewModel.character.location)
-                                .foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue"))
-                        }
-                    }
-                }.frame(maxWidth:.infinity)
+                CharacterDetailItemView(title: viewModel.location,
+                                        value: viewModel.character.location)
+                    .frame(maxWidth:.infinity)
                 
                 Spacer()
-                
-            }.padding()
-            
-        }.onAppear {
+            }
+            .padding()
+        }
+        .onAppear {
             
             viewModel.getCharacterDetail()
         }
@@ -152,6 +70,7 @@ struct CharacterDetailView: View {
 }
 
 struct CharacterDetailView_Previews: PreviewProvider {
+    
     static var previews: some View {
         
         let character = Character(id: 1,
@@ -165,7 +84,6 @@ struct CharacterDetailView_Previews: PreviewProvider {
                                   image: "https://pbs.twimg.com/profile_banners/729468343/1620046601/1500x500",
                                   url:"",
                                   episode:[""])
-        
         
         CharacterDetailView(viewModel: CharacterDetailViewModel(character: character))
     }

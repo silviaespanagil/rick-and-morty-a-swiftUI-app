@@ -1,5 +1,5 @@
 //
-//  EpisodeViewModel.swift
+//  LocationListViewModel.swift
 //  RickMorty
 //
 //  Created by Silvia España on 9/11/21.
@@ -9,9 +9,9 @@ import Foundation
 import SwiftUI
 import Combine
 
-class EpisodeViewModel: ObservableObject {
+class LocationListViewModel: ObservableObject {
     
-    @Published public private(set) var episodes: [Episode] = []
+    @Published public private(set) var locations: [Location] = []
     
     @Published public private(set) var showProgressView = false
     
@@ -19,11 +19,13 @@ class EpisodeViewModel: ObservableObject {
     
     private var cancellable: AnyCancellable?
     
-    func getEpisode(page: Int) {
-       
+    // MARK: - Methods
+
+    func getLocation(page: Int) {
+        
         showProgressView = true
         
-        cancellable = GetEpisodeUseCase().execute(page: page)
+        cancellable = GetLocationUseCase().execute(page: page)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { completion in
                 
@@ -40,9 +42,9 @@ class EpisodeViewModel: ObservableObject {
                     break
                 }
                 
-            }, receiveValue: {(episodes: [Episode]) in
+            }, receiveValue: {(locations: [Location]) in
                 
-                self.episodes.append(contentsOf: episodes)
+                self.locations.append(contentsOf: locations)
             })
     }
 }

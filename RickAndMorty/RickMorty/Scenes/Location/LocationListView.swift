@@ -1,5 +1,5 @@
 //
-//  LocationCellView.swift
+//  LocationListView.swift
 //  RickMorty
 //
 //  Created by Silvia España on 5/11/21.
@@ -7,15 +7,15 @@
 
 import SwiftUI
 
-struct LocationView: View {
+struct LocationListView: View {
     
-    @StateObject var viewModel: LocationViewModel
+    @StateObject var viewModel: LocationListViewModel
     
     @Environment(\.colorScheme) var currentMode
     
     var body: some View {
         
-        VStack{
+        VStack {
             
             List {
                 
@@ -30,12 +30,15 @@ struct LocationView: View {
                         
                         NavigationLink(destination: LocationDetailView(viewModel: LocationDetailViewModel(location: location))) {
                             
-                            OtherCellView(name: location.name, infoA: location.type, infoBName: "Dimension", infoB: location.dimension)
-                            
+                            OtherCellView(name: location.name,
+                                          infoA: location.type,
+                                          infoBName: "Dimension",
+                                          infoB: location.dimension)
                         }
                         .onAppear {
                             
                             if location == viewModel.locations.last {
+                                
                                 viewModel.getLocation(page: viewModel.currentPage)
                             }
                         }
@@ -43,7 +46,7 @@ struct LocationView: View {
                 }
                 .onAppear {
                     
-                    if viewModel.locations.count < 1 {
+                    if viewModel.locations.isEmpty {
                         
                         viewModel.getLocation(page: 1)
                     }
@@ -53,8 +56,10 @@ struct LocationView: View {
     }
 }
 
-struct LocationView_Previews: PreviewProvider {
+struct LocationListView_Previews: PreviewProvider {
+    
     static var previews: some View {
-        LocationView(viewModel: LocationViewModel())
+        
+        LocationListView(viewModel: LocationListViewModel())
     }
 }

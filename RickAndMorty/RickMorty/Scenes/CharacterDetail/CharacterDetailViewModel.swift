@@ -28,6 +28,8 @@ class CharacterDetailViewModel: ObservableObject {
     
     private var cancellable: AnyCancellable?
     
+    // MARK: - Methods
+    
     init(character: Character) {
         
         self.character = character
