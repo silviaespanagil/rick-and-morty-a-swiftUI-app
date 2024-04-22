@@ -13,7 +13,7 @@ struct Character: Identifiable, Equatable, Hashable {
     let name: String
     var status: String
     let species: String
-    let type: String
+    let type: CharacterStatus
     let gender: String
     let origin: String
     let location: String

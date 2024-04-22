@@ -64,23 +64,3 @@ struct CharacterDetailView: View {
         }
     }
 }
-
-struct CharacterDetailView_Previews: PreviewProvider {
-    
-    static var previews: some View {
-        
-        let character = Character(id: 1,
-                                  name: "Rick",
-                                  status: "Alive",
-                                  species: "Human",
-                                  type: "Ni idea",
-                                  gender: "Male",
-                                  origin: "No se",
-                                  location: "Earth",
-                                  image: "https://pbs.twimg.com/profile_banners/729468343/1620046601/1500x500",
-                                  url:"",
-                                  episode:[""])
-        
-        CharacterDetailView(viewModel: CharacterDetailViewModel(character: character))
-    }
-}
