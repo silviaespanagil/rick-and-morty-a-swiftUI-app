@@ -11,6 +11,8 @@ import Combine
 
 class CharacterListViewModel: ObservableObject {
     
+    @Published internal var state: State = .loading
+    
     @Published public private(set) var characters: [Character] = []
     
     @Published public private(set) var showProgressView = false
@@ -30,17 +32,14 @@ class CharacterListViewModel: ObservableObject {
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { [self] completion in
                 
-                self.showProgressView = false
-                
                 switch completion {
                 case .finished:
                     
                     self.currentPage += 1
-                    
-                    break
+                    self.state = .loaded
                     
                 case .failure:
-                    break
+                    self.state = .failed
                 }
                 
             }, receiveValue: {(characters: [Character]) in
@@ -48,6 +47,11 @@ class CharacterListViewModel: ObservableObject {
                 self.characters.append(contentsOf: characters)
             })
     }
+    
+    func shouldLoadMoreCharacters(currentCharacter: Character) -> Bool {
+        
+           return currentCharacter == characters.last
+       }
     
     internal var filteredCharacters: [Character] {
         
@@ -58,5 +62,15 @@ class CharacterListViewModel: ObservableObject {
             
             return characters.filter { $0.status == selectedStatus.rawValue }
         }
+    }
+}
+
+extension CharacterListViewModel {
+    
+    enum State: Equatable {
+        
+        case loading
+        case loaded
+        case failed
     }
 }
