@@ -24,7 +24,7 @@ struct CharacterCellView: View {
     
     var body: some View {
         
-        HStack {
+        HStack(spacing: 16) {
             
             RenderImage(imageUrlString: image)
             
@@ -38,7 +38,7 @@ struct CharacterCellView: View {
                     .font(.footnote)
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
-        }.padding()
+        }.padding(.bottom, 16)
     }
 }
 

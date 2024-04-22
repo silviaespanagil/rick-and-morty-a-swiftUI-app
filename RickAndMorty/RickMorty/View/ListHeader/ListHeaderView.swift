@@ -16,7 +16,8 @@ struct ListHeaderView: View {
             Image(systemName: "eyes")
             Text("Click on any cell for further information")
         }
-        .font(.system(size: 10))
+        .font(.caption)
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
 
