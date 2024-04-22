@@ -7,17 +7,40 @@
 
 import SwiftUI
 
-extension Image {
+struct RenderImage: View {
+
+    let imageUrlString: String
     
-    func renderImage(url: URL) -> Self {
+    var body: some View {
         
-        if let image = try? Data(contentsOf: url) {
+        VStack {
             
-            return Image(uiImage: UIImage(data: image)!)
-                .resizable()
+            AsyncImage(url: URL(string: imageUrlString)) { phase in
+                
+                switch phase {
+                    
+                case .empty:
+                    ProgressView()
+                    
+                case .success(let image):
+                    image.resizable()
+                         .aspectRatio(contentMode: .fit)
+                         .frame(maxWidth: 60, maxHeight: 60)
+                         .clipShape(RoundedRectangle(cornerRadius: 60))
+                         .shadow(color: .gray, radius: 2, x: 0, y: 2)
+                    
+                case .failure:
+                    Image("noImageAvailable")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(maxWidth: 60, maxHeight: 60)
+                        .clipShape(RoundedRectangle(cornerRadius: 60))
+                        .shadow(color: .gray, radius: 2, x: 0, y: 2)
+                    
+                @unknown default:
+                    EmptyView()
+                }
+            }
         }
-        
-        return self
-            .resizable()
     }
 }
