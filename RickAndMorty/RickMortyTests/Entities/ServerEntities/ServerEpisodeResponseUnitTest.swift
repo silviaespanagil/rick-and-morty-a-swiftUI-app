@@ -34,7 +34,7 @@ class ServerEpisodeResponseUnitTest: XCTestCase {
         
         // Then
         XCTAssertEqual(episode.id, serverEpisodeResponse.id)
-        XCTAssertEqual(episode.name, serverEpisodeResponse.name)
+        XCTAssertEqual(episode.name, serverEpisodeResponse.name.capitalizingFirstLetter())
         XCTAssertEqual(episode.episode, serverEpisodeResponse.episode)
         XCTAssertEqual(episode.airDate, serverEpisodeResponse.airDate)
     }

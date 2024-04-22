@@ -30,7 +30,7 @@ class MockCharacterRepository: CharacterRepository {
         
         return Just(Character(id: 1,
                               name: "",
-                              status: "",
+                              status: CharacterStatus(rawValue: "Unknown")!,
                               species: "",
                               type: "",
                               gender: "",

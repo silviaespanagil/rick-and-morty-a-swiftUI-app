@@ -25,9 +25,9 @@ class ServerCharacterResponseUnitTests: XCTestCase {
         // Given
         let serverCharacterResponse = ServerCharacterResponse(id: 0,
                                                               name: "name",
-                                                              status: "realName",
+                                                              status: "unknown",
                                                               species: "aliases",
-                                                              type: "type",
+                                                              type: "unknown",
                                                               gender: "gender",
                                                               origin: nil,
                                                               location: nil,
@@ -41,10 +41,10 @@ class ServerCharacterResponseUnitTests: XCTestCase {
         // Then
         XCTAssertEqual(character.id, serverCharacterResponse.id)
         XCTAssertEqual(character.name, serverCharacterResponse.name)
-        XCTAssertEqual(character.status, serverCharacterResponse.status)
+        XCTAssertEqual(character.status.rawValue, serverCharacterResponse.status.capitalizingFirstLetter())
         XCTAssertEqual(character.species, serverCharacterResponse.species)
-        XCTAssertEqual(character.type, serverCharacterResponse.type)
-        XCTAssertEqual(character.gender, serverCharacterResponse.gender)
+        XCTAssertEqual(character.type, serverCharacterResponse.type.capitalizingFirstLetter())
+        XCTAssertEqual(character.gender, serverCharacterResponse.gender.capitalizingFirstLetter())
         XCTAssertEqual(character.image, serverCharacterResponse.image)
         XCTAssertEqual(character.url, serverCharacterResponse.url)
     }
