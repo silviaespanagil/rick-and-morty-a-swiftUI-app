@@ -23,9 +23,6 @@ class CharacterDetailViewModel: ObservableObject {
     let unknownInfo: String
     let unknownString: String
     
-    let imageSize: CGFloat = 90
-    let cornerRadius: CGFloat = 50
-    
     private var cancellable: AnyCancellable?
     
     // MARK: - Methods

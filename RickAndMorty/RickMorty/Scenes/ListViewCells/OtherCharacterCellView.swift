@@ -18,9 +18,6 @@ struct OtherCharacterCellView: View {
     var titleB: String
     var subtitleB: String
     
-    let imageSize: CGFloat = 60
-    let cornerRadius: CGFloat = 50
-    
     init(image: String, name: String, titleA: String, subtitleA: String, titleB: String, subtitleB: String) {
         
         self.image = image

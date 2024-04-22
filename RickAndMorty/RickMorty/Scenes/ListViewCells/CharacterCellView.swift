@@ -15,9 +15,6 @@ struct CharacterCellView: View {
     var name: String
     var status: String
     
-    let imageSize: CGFloat = 60
-    let cornerRadius: CGFloat = 50
-    
     init(image: String, name: String, status: String) {
         
         self.image = image
