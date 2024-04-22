@@ -18,9 +18,6 @@ struct OtherCharacterCellView: View {
     var titleB: String
     var subtitleB: String
     
-    let imageSize: CGFloat = 60
-    let cornerRadius: CGFloat = 50
-    
     init(image: String, name: String, titleA: String, subtitleA: String, titleB: String, subtitleB: String) {
         
         self.image = image
@@ -35,11 +32,7 @@ struct OtherCharacterCellView: View {
         
         HStack{
             
-            Image("")
-                .renderImage(url: URL(string: image)!)
-                .frame(width: imageSize, height: imageSize)
-                .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
-                .shadow(color: .gray, radius: 2, x: 0, y: 2)
+            RenderImage(imageUrlString: image)
             
             Text(name)
                 .foregroundColor(currentMode == .dark ? Color("LightBlue") : Color("NoBlack"))

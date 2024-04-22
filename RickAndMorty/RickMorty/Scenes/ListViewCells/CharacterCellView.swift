@@ -15,9 +15,6 @@ struct CharacterCellView: View {
     var name: String
     var status: String
     
-    let imageSize: CGFloat = 60
-    let cornerRadius: CGFloat = 50
-    
     init(image: String, name: String, status: String) {
         
         self.image = image
@@ -29,11 +26,7 @@ struct CharacterCellView: View {
         
         HStack {
             
-            Image("")
-                .renderImage(url: URL(string: image)!)
-                .frame(width: imageSize, height: imageSize)
-                .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
-                .shadow(color: .gray, radius: 2, x: 0, y: 2)
+            RenderImage(imageUrlString: image)
             
             VStack() {
                 

@@ -17,11 +17,7 @@ struct CharacterDetailView: View {
         
         VStack {
             
-            Image("")
-                .renderImage(url: URL(string:viewModel.character.image)!)
-                .frame(width: viewModel.imageSize, height: viewModel.imageSize)
-                .clipShape(RoundedRectangle(cornerRadius: viewModel.cornerRadius))
-                .shadow(color: .gray, radius: 2, x: 0, y: 2)
+            RenderImage(imageUrlString: viewModel.character.image)
             
             Text(viewModel.character.name)
                 .font(.title)
