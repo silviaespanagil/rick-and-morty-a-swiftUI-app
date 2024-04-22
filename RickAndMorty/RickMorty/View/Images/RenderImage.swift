@@ -10,6 +10,14 @@ import SwiftUI
 struct RenderImage: View {
 
     let imageUrlString: String
+    var width: CGFloat? = 60
+    var height: CGFloat? = 60
+    
+    init(imageUrlString: String, width: CGFloat? = 60, height: CGFloat? = 60) {
+        self.imageUrlString = imageUrlString
+        self.width = width
+        self.height = height
+    }
     
     var body: some View {
         
@@ -25,7 +33,7 @@ struct RenderImage: View {
                 case .success(let image):
                     image.resizable()
                          .aspectRatio(contentMode: .fit)
-                         .frame(maxWidth: 60, maxHeight: 60)
+                         .frame(maxWidth: width, maxHeight: height)
                          .clipShape(RoundedRectangle(cornerRadius: 60))
                          .shadow(color: .gray, radius: 2, x: 0, y: 2)
                     
@@ -33,7 +41,7 @@ struct RenderImage: View {
                     Image("noImageAvailable")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(maxWidth: 60, maxHeight: 60)
+                        .frame(maxWidth: width, maxHeight: height)
                         .clipShape(RoundedRectangle(cornerRadius: 60))
                         .shadow(color: .gray, radius: 2, x: 0, y: 2)
                     
