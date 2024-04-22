@@ -62,7 +62,7 @@ struct EpisodeDetailView: View {
                                                    titleA: viewModel.episodeDetail,
                                                    subtitleA: "\(character.episode.count) \(viewModel.episodeString)",
                                                    titleB: viewModel.currentStatus,
-                                                   subtitleB: character.status)
+                                                   subtitleB: character.status.rawValue)
                                 .frame(maxWidth:.infinity)
                                 .padding(5)
                         }

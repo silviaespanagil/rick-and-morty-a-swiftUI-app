@@ -34,8 +34,8 @@ class ServerLocationResponseUnitTest: XCTestCase {
         
         // Then
         XCTAssertEqual(location.id, serverLocationResponse.id)
-        XCTAssertEqual(location.name, serverLocationResponse.name)
-        XCTAssertEqual(location.type, serverLocationResponse.type)
-        XCTAssertEqual(location.dimension, serverLocationResponse.dimension)
+        XCTAssertEqual(location.name, serverLocationResponse.name.capitalizingFirstLetter())
+        XCTAssertEqual(location.type, serverLocationResponse.type.capitalizingFirstLetter())
+        XCTAssertEqual(location.dimension, serverLocationResponse.dimension.capitalizingFirstLetter())
     }
 }

@@ -61,7 +61,7 @@ class CharacterRepositoryImplementationUnitTest: XCTestCase {
                 XCTAssertEqual(character.count, 1)
                 XCTAssertEqual(character.first?.id, 1)
                 XCTAssertEqual(character.first?.name, "Rick")
-                XCTAssertEqual(character.first?.status, "Alive")
+                XCTAssertEqual(character.first?.status.rawValue, "Alive")
                 XCTAssertEqual(character.first?.species, "Human")
                 XCTAssertEqual(character.first?.type, "Genetic experiment")
                 XCTAssertEqual(character.first?.gender, "Male")
@@ -138,7 +138,7 @@ class CharacterRepositoryImplementationUnitTest: XCTestCase {
                 
                 XCTAssertEqual(character.id, 1)
                 XCTAssertEqual(character.name, "Rick Sanchez")
-                XCTAssertEqual(character.status, "Alive")
+                XCTAssertEqual(character.status.rawValue, "Alive")
                 XCTAssertEqual(character.species, "Human")
                 XCTAssertEqual(character.type, "")
                 XCTAssertEqual(character.gender, "Male")
