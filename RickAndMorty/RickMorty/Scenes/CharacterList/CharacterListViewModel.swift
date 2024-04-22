@@ -14,6 +14,7 @@ class CharacterListViewModel: ObservableObject {
     @Published public private(set) var characters: [Character] = []
     
     @Published public private(set) var showProgressView = false
+    @Published internal var selectedStatus: CharacterStatus = .all
     
     var currentPage = 1
     
@@ -46,5 +47,16 @@ class CharacterListViewModel: ObservableObject {
                 
                 self.characters.append(contentsOf: characters)
             })
+    }
+    
+    internal var filteredCharacters: [Character] {
+        
+        if selectedStatus == .all {
+            
+            return characters
+        } else {
+            
+            return characters.filter { $0.status == selectedStatus.rawValue }
+        }
     }
 }
