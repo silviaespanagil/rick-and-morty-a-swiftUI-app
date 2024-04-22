@@ -17,7 +17,9 @@ struct CharacterListView: View {
         
         VStack {
             
-            List {
+            characterStatusFilter
+            
+            ScrollView {
                 
                 Section(header: ListHeaderView()) {
                     
@@ -26,23 +28,21 @@ struct CharacterListView: View {
                         ProgressViewView()
                     }
                     
-                    ForEach(viewModel.characters) { character in
+                    ForEach(viewModel.filteredCharacters) { character in
                         
-                        NavigationLink(destination: CharacterDetailView(viewModel: CharacterDetailViewModel(character: character))){
+                        NavigationLink(destination: CharacterDetailView(viewModel: CharacterDetailViewModel(character: character))) {
                             
                             CharacterCellView(image: character.image,
                                               name: character.name,
                                               status: character.status)
                         }
                         .onAppear {
-                            
                             if character == viewModel.characters.last {
-                                
                                 viewModel.getAllCharacters(page: viewModel.currentPage)
                             }
                         }
-                    }.foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue"))
-                    
+                    }
+                    .foregroundColor(currentMode == .dark ? Color("Silver") : Color("DeepBlue"))
                 }
                 .onAppear {
                     
@@ -52,14 +52,26 @@ struct CharacterListView: View {
                     }
                 }
             }
+            Spacer()
+        }.padding(.horizontal, 16)
+    }
+    
+    @ViewBuilder
+    var characterStatusFilter: some View {
+        
+        Text("Filter by status")
+            .font(.caption)
+            .frame(maxWidth: .infinity, alignment: .leading)
+        
+        Picker(selection: $viewModel.selectedStatus, label: Text("Status")) {
+            
+            ForEach(CharacterStatus.allCases, id: \.self) { status in
+                
+                Text(status.rawValue).tag(status)
+            }
         }
+        .pickerStyle(SegmentedPickerStyle())
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.bottom, 16)
     }
 }
-
-struct CharacterListView_Previews: PreviewProvider {
-    
-    static var previews: some View {
-        
-        CharacterListView(viewModel: CharacterListViewModel())
-    }
-} 
