@@ -60,7 +60,7 @@ class CharacterListViewModel: ObservableObject {
             return characters
         } else {
             
-            return characters.filter { $0.status == selectedStatus.rawValue }
+            return characters.filter { $0.status.rawValue == selectedStatus.rawValue }
         }
     }
 }

@@ -25,9 +25,9 @@ struct ServerCharacterResponse: Codable {
         
         return Character(id: id,
                          name: name,
-                         status: status.capitalizingFirstLetter(),
+                         status: CharacterStatus(rawValue: status.capitalizingFirstLetter()) ?? .unknown,
                          species: species,
-                         type: CharacterStatus(rawValue: type.capitalizingFirstLetter()) ?? .unknown,
+                         type: type.capitalizingFirstLetter(),
                          gender: gender.capitalizingFirstLetter(),
                          origin: origin?.name?.capitalizingFirstLetter() ?? "",
                          location: location?.name?.capitalizingFirstLetter() ?? "",

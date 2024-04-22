@@ -43,7 +43,7 @@ struct CharacterDetailView: View {
                     .frame(maxWidth:.infinity)
                 
                 CharacterDetailItemView(title: viewModel.status,
-                                        value: viewModel.character.status)
+                                        value: viewModel.character.status.rawValue)
                     .frame(maxWidth:.infinity)
                 
                 CharacterDetailItemView(title: viewModel.origin,

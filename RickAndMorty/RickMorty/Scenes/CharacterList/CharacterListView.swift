@@ -78,7 +78,7 @@ struct CharacterListView: View {
                         
                         CharacterCellView(image: character.image,
                                           name: character.name,
-                                          status: character.status)
+                                          status: character.status.rawValue)
                     }
                     .onAppear {
                         
