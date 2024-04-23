@@ -35,6 +35,11 @@ The app has six main views with general information and each of them has a detai
 - Pagination as infinite scroll to three main views
 - Cute styles 💅
 
+## Last updates 🚀 
+
+- Added states in CharacterList for reactive rending
+- Added ViewInspector 
+
 ## Built with 🔨
 - XCode
 - SwiftUI
