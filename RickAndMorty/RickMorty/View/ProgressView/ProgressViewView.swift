@@ -17,6 +17,7 @@ struct ProgressViewView: View {
             
             ProgressView()
                 .progressViewStyle(CircularProgressViewStyle(tint:Color("DeepBlue")))
+                .id("loader")
             
             Spacer()
         }

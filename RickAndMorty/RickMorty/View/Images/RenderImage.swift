@@ -36,6 +36,7 @@ struct RenderImage: View {
                          .frame(maxWidth: width, maxHeight: height)
                          .clipShape(RoundedRectangle(cornerRadius: 60))
                          .shadow(color: .gray, radius: 2, x: 0, y: 2)
+                         .id("imageLoaded")
                     
                 case .failure:
                     Image("noImageAvailable")
@@ -44,6 +45,7 @@ struct RenderImage: View {
                         .frame(maxWidth: width, maxHeight: height)
                         .clipShape(RoundedRectangle(cornerRadius: 60))
                         .shadow(color: .gray, radius: 2, x: 0, y: 2)
+                        .id("defaultImageLoaded")
                     
                 @unknown default:
                     EmptyView()
